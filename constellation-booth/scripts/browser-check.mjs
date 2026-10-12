@@ -310,7 +310,7 @@ async function skyFlow(vw, vh, label) {
       for (const n of names) {
         await page.fill("#answer", n.replace(/자리$/, ""));
         await page.click("#btn-submit");
-        await page.waitForTimeout(150);
+        await page.waitForTimeout(450);
         if (await page.locator("#screen-success").isVisible()) {
           found = n;
           break;
@@ -320,13 +320,14 @@ async function skyFlow(vw, vh, label) {
       askedNames.add(found);
       // 다시 탐색으로 (처음으로 → 학습 복원 필요하므로 같은 3개를 다시 학습)
       await page.click("#btn-home-success");
-      await page.waitForTimeout(500);
+      await page.waitForTimeout(600);
       await page.click("#btn-explore");
-      await page.waitForTimeout(400);
+      await page.waitForTimeout(500);
       for (let k = 0; k < 3; k++) {
         await chips.nth(k).click();
         await page.waitForTimeout(250);
         await page.click("#btn-detail-close");
+        await page.waitForTimeout(120);
       }
     }
     check("S-03", "10회 출제 모두 학습한 별자리에서만 선택됨", allFromLearned, [...askedNames].join(","));
@@ -386,7 +387,7 @@ async function skyFlow(vw, vh, label) {
     for (const n of names) {
       await page.fill("#answer", ` ${n} `);
       await page.click("#btn-submit");
-      await page.waitForTimeout(150);
+      await page.waitForTimeout(450);
       if (await page.locator("#screen-success").isVisible()) {
         answer = n;
         break;
@@ -431,7 +432,7 @@ async function skyFlow(vw, vh, label) {
         await page.waitForTimeout(120);
         await page.fill("#answer", nm);
         await page.click("#btn-submit");
-        await page.waitForTimeout(150);
+        await page.waitForTimeout(450);
         await page.click("#btn-home-success");
         await page.waitForTimeout(350);
         await page.click("#btn-explore");

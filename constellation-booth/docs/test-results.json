@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-10-12T03:56:40.755Z",
+ "startedAt": "2026-10-12T03:59:21.749Z",
  "chromium": "141.0.7390.37",
  "checks": [
   {
@@ -11,8 +11,8 @@
   {
    "id": "F-03",
    "name": "12장 모두 순서대로 등장하고 12번째 → 1번째로 이어짐",
-   "pass": false,
-   "detail": "aries,gemini,leo,libra,sagittarius,aquarius,aries,gemini,leo,libra,sagittarius,aquarius"
+   "pass": true,
+   "detail": "aries,taurus,gemini,cancer,leo,virgo,libra,scorpio,sagittarius,capricorn,aquarius,pisces"
   },
   {
    "id": "F-04",
@@ -29,8 +29,8 @@
   {
    "id": "F-05",
    "name": "정렬된 가운데 카드에 은은한 빛 효과",
-   "pass": false,
-   "detail": "opacity 0.183037"
+   "pass": true,
+   "detail": "opacity 1"
   },
   {
    "id": "F-07",
@@ -42,7 +42,7 @@
    "id": "F-08",
    "name": "두 번째 탭: 뒤집혀 뒷면 운세 표시",
    "pass": true,
-   "detail": "내 열정이 누군가에게 좋은 자극이 돼요. 즐겁게 하는 "
+   "detail": "고마운 마음을 전하면 기분 좋은 일이 이어질지도 몰라요"
   },
   {
    "id": "F-10",
@@ -105,23 +105,93 @@
    "detail": "listeners 28→28, intervals 0→0, nodes 342→342"
   },
   {
+   "id": "F-01/시간",
+   "name": "캐시 재실행 → 첫 조작 가능까지 77 ms 이하 (5회: 65, 53, 57, 57, 77)",
+   "pass": true,
+   "detail": "{\"note\":\"navigation timing 없음(가상 시계)\"}"
+  },
+  {
+   "id": "콘솔/fortune/600x960",
+   "name": "콘솔 오류 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/600x960/home",
+   "name": "세로 600×960: 홈 큰 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/600x960/explore",
+   "name": "탐색 화면: 시간 버튼·퀴즈 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/600x960/quiz",
+   "name": "퀴즈 입력창·정답 확인 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "S-01",
+   "name": "시간 4개를 바꾸면 가시 별자리 목록과 별 좌표가 바뀌고 '다음 날 0시' 안내",
+   "pass": true,
+   "detail": "{\"t18\":8,\"t20\":9,\"t22\":10,\"t00\":9}"
+  },
+  {
+   "id": "S-01b",
+   "name": "화면에 '봉화 기준 · 한국 시간' 표시",
+   "pass": true,
+   "detail": "2026. 11. 4. · 봉화 기준 · 한국 시간"
+  },
+  {
+   "id": "S-01c",
+   "name": "설정-데이터 불일치 경고 없음(일치)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "S-02",
+   "name": "별자리 3개를 연속으로 확인해도 탐색 화면 유지",
+   "pass": true,
+   "detail": "페가수스자리,안드로메다자리,카시오페이아자리"
+  },
+  {
+   "id": "S-02b",
+   "name": "학습 화면: 별·선·모양·이름 레이어 표시 및 토글",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "S-01d",
+   "name": "설명에 해당 시간의 방향·높이 표기",
+   "pass": true,
+   "detail": "밤 8시에는 거의 머리 위에 떠 있어요 (고도 약 71°)."
+  },
+  {
    "id": "실행",
    "name": "검수 스크립트가 끝까지 실행됨",
    "pass": false,
-   "detail": "Error: page.evaluate: TypeError: Cannot read properties of undefined (reading 'domInteractive')\n    at eval (eval at evaluate (:370:30), <anonymous>:3:45)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+   "detail": "TimeoutError: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#btn-submit')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"submit\" id=\"btn-submit\" class=\"btn btn--primary\">정답 확인</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be vi"
   }
  ],
  "screenshots": [
   "fortune-600x960-browse.jpg",
   "fortune-600x960-preview.jpg",
-  "fortune-600x960-result.jpg"
+  "fortune-600x960-result.jpg",
+  "sky-600x960-home.jpg",
+  "sky-600x960-explore.jpg",
+  "sky-600x960-detail.jpg",
+  "sky-600x960-quiz.jpg"
  ],
  "externalRequests": [],
  "consoleErrors": [],
- "finishedAt": "2026-10-12T03:58:56.620Z",
+ "finishedAt": "2026-10-12T04:02:25.336Z",
  "summary": {
-  "total": 18,
-  "pass": 15,
-  "fail": 3
+  "total": 29,
+  "pass": 28,
+  "fail": 1
  }
 }
