@@ -105,11 +105,13 @@ p {
   font-size: var(--text-lg);
   color: var(--lavender-soft);
   text-align: center;
+  word-break: keep-all;
 }
 .hint {
   font-size: var(--text-base);
   color: var(--lavender);
   text-align: center;
+  word-break: keep-all;
 }
 .meta {
   font-size: 16px;

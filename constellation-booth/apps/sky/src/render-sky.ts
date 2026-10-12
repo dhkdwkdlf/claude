@@ -5,8 +5,24 @@ import { compassPoint, magnitudeRadius, skyMapPoint } from "./projection.ts";
 
 export interface SkyMapOptions {
   selectedId: string | null;
-  onSelect(constellationId: string): void;
   lowPerformance: boolean;
+}
+
+/** 지도 SVG 에 한 번만 붙이는 위임 핸들러 (다시 그려도 리스너가 늘지 않는다) */
+export function bindSkyMapSelection(svg: SVGSVGElement, onSelect: (constellationId: string) => void): void {
+  const pick = (target: EventTarget | null) => (target as Element | null)?.closest<SVGGElement>(".skymap__hit.is-selectable")?.dataset.id ?? null;
+  svg.addEventListener("click", (e) => {
+    const id = pick(e.target);
+    if (id) onSelect(id);
+  });
+  svg.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const id = pick(e.target);
+    if (id) {
+      e.preventDefault();
+      onSelect(id);
+    }
+  });
 }
 
 const VB = 1000;
@@ -111,13 +127,6 @@ export function renderSkyMap(svg: SVGSVGElement, slot: SkySlot, constellations: 
     const text = svgEl("text", { x: p.x, y: labelY, class: "skymap__label", "text-anchor": "middle" }, [document.createTextNode(labelText)]);
     hit.append(svgEl("rect", { x: p.x - w / 2, y: labelY - 21, width: w, height: 30, rx: 15, class: "skymap__label-bg" }));
     hit.append(text);
-    if (st === "visible") {
-      const act = () => opts.onSelect(c.id);
-      hit.addEventListener("click", act);
-      hit.addEventListener("keydown", (e) => {
-        if ((e as KeyboardEvent).key === "Enter" || (e as KeyboardEvent).key === " ") act();
-      });
-    }
     labels.append(hit);
   }
   g.append(labels);

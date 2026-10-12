@@ -16,7 +16,7 @@ import { mountStarsBackground } from "@shared/utils/stars-bg.ts";
 import { registerServiceWorker } from "@shared/pwa/register.ts";
 import { createOperatorPanel } from "@shared/utils/operator-panel.ts";
 
-import { renderSkyMap } from "./render-sky.ts";
+import { bindSkyMapSelection, renderSkyMap } from "./render-sky.ts";
 import { renderDetail, type DetailRender } from "./render-detail.ts";
 import { buildAnswerSet, checkAnswer } from "./normalize.ts";
 import { emptySession, reduceSky, type Session, type SkyEvent, type SkyState } from "./session.ts";
@@ -149,7 +149,7 @@ async function render(prev: SkyState): Promise<void> {
 /* ---------- HOME ---------- */
 function prepareHome(): void {
   const slot = slotById.get(settings.defaultSlotId) ?? slots[0];
-  renderSkyMap(homeSky, slot, constellations, { selectedId: null, onSelect: () => {}, lowPerformance: settings.lowPerformance });
+  renderSkyMap(homeSky, slot, constellations, { selectedId: null, lowPerformance: settings.lowPerformance });
   answerInput.value = "";
   feedback.textContent = "";
   detailPanel.hidden = true;
@@ -159,6 +159,12 @@ $("#btn-explore").addEventListener("click", () => dispatch({ type: "start-explor
 $("#btn-quiz-home").addEventListener("click", () => dispatch({ type: "start-quiz" }));
 
 /* ---------- EXPLORE ---------- */
+bindSkyMapSelection(skySvg, (id) => dispatch({ type: "select-constellation", constellationId: id }));
+chipsEl.addEventListener("click", (e) => {
+  const id = (e.target as Element | null)?.closest<HTMLButtonElement>(".chip[data-id]")?.dataset.id;
+  if (id) dispatch({ type: "select-constellation", constellationId: id });
+});
+
 function slotButton(s: SkySlot): HTMLButtonElement {
   const b = el("button", { class: "slot", type: "button", role: "tab", "data-slot": s.id }, [s.labelKo, el("small", { text: s.localISO.slice(11, 16) })]);
   b.addEventListener("click", () => dispatch({ type: "select-slot", slotId: s.id }));
@@ -180,7 +186,6 @@ function prepareExplore(prevSlotId: string | null): void {
   const draw = () =>
     renderSkyMap(skySvg, slot, constellations, {
       selectedId: state.mode === "explore" ? state.selectedId : null,
-      onSelect: (id) => dispatch({ type: "select-constellation", constellationId: id }),
       lowPerformance: settings.lowPerformance,
     });
   if (prevSlotId && prevSlotId !== slot.id && !reducedMotion) {
@@ -197,9 +202,7 @@ function prepareExplore(prevSlotId: string | null): void {
     const st = slot.constellationViews[c.id].status;
     if (st === "belowHorizon") continue;
     if (st === "visible") {
-      const chip = el("button", { class: `chip${learnedIds.has(c.id) ? " is-learned" : ""}${state.mode === "explore" && state.selectedId === c.id ? " is-on" : ""}`, type: "button", text: c.nameKo });
-      chip.addEventListener("click", () => dispatch({ type: "select-constellation", constellationId: c.id }));
-      chipsEl.append(chip);
+      chipsEl.append(el("button", { class: `chip${learnedIds.has(c.id) ? " is-learned" : ""}${state.mode === "explore" && state.selectedId === c.id ? " is-on" : ""}`, type: "button", "data-id": c.id, text: c.nameKo }));
     } else {
       chipsEl.append(el("span", { class: "chip is-near", "aria-disabled": "true" }, [c.nameKo, " ", el("small", { text: "지평선 가까이" })]));
     }

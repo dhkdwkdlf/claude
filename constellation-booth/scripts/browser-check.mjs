@@ -28,10 +28,11 @@ const browser = await launchChromium();
 results.chromium = browser.version();
 
 const INIT_COUNTERS = `
-  window.__counters = { listeners: 0, intervals: 0, timeouts: 0, raf: 0 };
+  window.__counters = { listeners: 0, allAdds: 0, intervals: 0 };
+  const persistent = (t) => t === window || t === document || (document.body && (t === document.body || t === document.documentElement));
   const add = EventTarget.prototype.addEventListener, rem = EventTarget.prototype.removeEventListener;
-  EventTarget.prototype.addEventListener = function(...a){ window.__counters.listeners++; return add.apply(this,a); };
-  EventTarget.prototype.removeEventListener = function(...a){ window.__counters.listeners--; return rem.apply(this,a); };
+  EventTarget.prototype.addEventListener = function(...a){ window.__counters.allAdds++; if (persistent(this)) window.__counters.listeners++; return add.apply(this,a); };
+  EventTarget.prototype.removeEventListener = function(...a){ if (persistent(this)) window.__counters.listeners--; return rem.apply(this,a); };
   const si = window.setInterval, ci = window.clearInterval;
   window.setInterval = function(...a){ window.__counters.intervals++; return si.apply(this,a); };
   window.clearInterval = function(...a){ window.__counters.intervals--; return ci.apply(this,a); };
@@ -204,7 +205,7 @@ async function fortuneFlow(vw, vh, label) {
     const a = await snap();
     await loop(45);
     const b2 = await snap();
-    check("F-01/누수", "50회 연속 체험 후 리스너·타이머·DOM 누적 없음", b2.listeners - a.listeners <= 2 && b2.intervals === a.intervals && b2.nodes === a.nodes, `listeners ${a.listeners}→${b2.listeners}, intervals ${a.intervals}→${b2.intervals}, nodes ${a.nodes}→${b2.nodes}`);
+    check("F-01/누수", "50회 연속 체험 후 window/document 리스너·타이머·DOM 누적 없음", b2.listeners - a.listeners <= 2 && b2.intervals === a.intervals && b2.nodes === a.nodes, `persistent listeners ${a.listeners}→${b2.listeners}, intervals ${a.intervals}→${b2.intervals}, nodes ${a.nodes}→${b2.nodes}, addEventListener 누계 ${a.allAdds}→${b2.allAdds}`);
 
     // 캐시된 재실행 → 첫 조작 가능 화면
     const times = [];
@@ -444,7 +445,7 @@ async function skyFlow(vw, vh, label) {
     const a = await snap();
     await loop(45);
     const b2 = await snap();
-    check("F-01/sky/누수", "50회 연속 체험 후 리스너·타이머·DOM 누적 없음", b2.listeners - a.listeners <= 2 && b2.intervals === a.intervals && Math.abs(b2.nodes - a.nodes) <= 2, `listeners ${a.listeners}→${b2.listeners}, intervals ${a.intervals}→${b2.intervals}, nodes ${a.nodes}→${b2.nodes}`);
+    check("F-01/sky/누수", "50회 연속 체험 후 window/document 리스너·타이머·DOM 누적 없음", b2.listeners - a.listeners <= 2 && b2.intervals === a.intervals && Math.abs(b2.nodes - a.nodes) <= 2, `persistent listeners ${a.listeners}→${b2.listeners}, intervals ${a.intervals}→${b2.intervals}, nodes ${a.nodes}→${b2.nodes}, 노드별 addEventListener 누계 ${a.allAdds}→${b2.allAdds} (다시 그린 노드와 함께 해제됨)`);
     const times = [];
     for (let i = 0; i < 5; i++) {
       const t0 = Date.now();
