@@ -299,16 +299,17 @@ async function skyFlow(vw, vh, label) {
     check("S-01d", "설명에 해당 시간의 방향·높이 표기", /쪽|머리 위/.test(where) && where.includes("고도"), where);
     await page.click("#btn-detail-close");
 
-    // S-03: 학습한 후보만 출제 (10회)
-    const learnedSet = new Set(names.map((n) => n));
+    // S-03: 현재 시각에 보이는 별자리 중 랜덤 출제 (10회) — 학습 없이도 가능
+    const poolNames = await page.$$eval(".chips .chip:not(.is-near)", (els) => els.map((e) => e.textContent.trim()));
+    const learnedSet = new Set(poolNames);
     let allFromLearned = true;
     let askedNames = new Set();
     for (let i = 0; i < 10; i++) {
       await page.click("#btn-quiz-explore");
       await page.waitForTimeout(400);
-      // 정답 화면을 통해 출제 별자리 확인: 모든 후보 이름을 차례로 입력
+      // 정답 화면을 통해 출제 별자리 확인: 보이는 별자리 이름을 차례로 입력
       let found = null;
-      for (const n of names) {
+      for (const n of poolNames) {
         await page.fill("#answer", n.replace(/자리$/, ""));
         await page.click("#btn-submit");
         await page.waitForTimeout(450);
@@ -331,7 +332,7 @@ async function skyFlow(vw, vh, label) {
         await page.waitForTimeout(120);
       }
     }
-    check("S-03", "10회 출제 모두 학습한 별자리에서만 선택됨", allFromLearned, [...askedNames].join(","));
+    check("S-03", "10회 출제 모두 현재 시각에 보이는 별자리 중에서 선택되고 여러 별자리가 섞여 나옴", allFromLearned && askedNames.size >= 2, [...askedNames].join(","));
 
     // 퀴즈 상세: 처음 화면은 별만
     await page.click("#btn-quiz-explore");
@@ -370,22 +371,28 @@ async function skyFlow(vw, vh, label) {
     await page.click("#btn-hint");
     await page.waitForTimeout(700);
     const l2 = await page.$eval("#quiz-svg", (s) => s.classList.contains("show-lines") && s.classList.contains("show-shape") && !s.classList.contains("show-labels"));
-    const disabled = await page.locator("#btn-hint").isDisabled();
+    const notYetDisabled = !(await page.locator("#btn-hint").isDisabled());
     await shot(page, "sky-600x960-hint2");
+    await page.click("#btn-hint");
+    await page.waitForTimeout(300);
+    const chosungText = await page.locator("#quiz-chosung").textContent();
+    const chosungShown = (await page.locator("#quiz-chosung").isVisible()) && /초성 힌트: [ㄱ-ㅎ]/.test(chosungText);
+    const disabled = await page.locator("#btn-hint").isDisabled();
+    await shot(page, "sky-600x960-hint3");
     await page.fill("#answer", "또틀림");
     await page.keyboard.press("Enter");
     await page.waitForTimeout(200);
     const stayL2 = await page.$eval("#quiz-svg", (s) => s.classList.contains("show-shape"));
-    check("S-07", "힌트 1회=선 잇기, 2회=모양 씌우기(이름 없음), 3회 없음, 이후 오답에도 단계 유지", l1 && l2 && disabled && stayL2);
+    check("S-07", "힌트 1회=선 잇기, 2회=모양 씌우기(이름 없음), 3회=초성, 4회 없음, 이후 오답에도 단계 유지", l1 && l2 && notYetDisabled && chosungShown && disabled && stayL2, chosungText);
     // 부분 문자열·다른 이름 실패, 짧은 이름·전체 이름 통과
     let answer = null;
-    for (const n of names) {
+    for (const n of poolNames) {
       await page.fill("#answer", n.slice(0, 1));
       await page.click("#btn-submit");
       await page.waitForTimeout(100);
     }
     const partialFailed = await page.locator("#screen-quiz").isVisible();
-    for (const n of names) {
+    for (const n of poolNames) {
       await page.fill("#answer", ` ${n} `);
       await page.click("#btn-submit");
       await page.waitForTimeout(450);
@@ -414,10 +421,15 @@ async function skyFlow(vw, vh, label) {
     const home = await page.locator("#screen-home").isVisible();
     await page.click("#btn-quiz-home");
     await page.clock.runFor(500);
-    const needLearning = (await page.locator("#screen-explore").isVisible()) && (await page.locator("#explore-quiz-hint").textContent()).includes("먼저");
+    await page.waitForTimeout(100);
+    const quizFromHome = (await page.locator("#screen-quiz").isVisible()) && (await page.locator("#btn-hint").isHidden()) && (await page.inputValue("#answer")) === "";
+    await page.click("#btn-home-quiz");
+    await page.clock.runFor(500);
+    await page.click("#btn-explore");
+    await page.clock.runFor(500);
     const noLearned = (await page.locator(".chips .chip.is-learned").count()) === 0;
-    const quizDisabled = await page.locator("#btn-quiz-explore").isDisabled();
-    check("S-10", "복귀 후 HOME, 학습 목록·문제·힌트 초기화, 퀴즈는 학습으로 연결", home && needLearning && noLearned && quizDisabled);
+    const quizEnabled = !(await page.locator("#btn-quiz-explore").isDisabled());
+    check("S-10", "복귀 후 HOME, 학습 목록·문제·힌트 초기화; 학습 없이도 HOME 에서 바로 퀴즈 시작", home && quizFromHome && noLearned && quizEnabled);
     await page.clock.runFor(10);
     const inputEmpty = (await page.inputValue("#answer")) === "";
     check("S-10b", "이전 참가자의 답안이 입력창에 남지 않음", inputEmpty);

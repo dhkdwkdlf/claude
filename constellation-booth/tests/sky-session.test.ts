@@ -2,9 +2,16 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { emptySession, pickQuestion, reduceSky, type Session, type SkyState } from "../apps/sky/src/session.ts";
 
+const POOL: Record<string, string[]> = {
+  t18: ["pegasus", "cygnus", "lyra"],
+  t20: ["pegasus", "cygnus", "lyra", "perseus"],
+  t22: ["pegasus", "perseus", "taurus"],
+  t00: ["pegasus", "orion", "taurus"],
+};
 const ctx = {
   defaultSlotId: "t20",
   isSelectable: (cid: string, sid: string) => !(cid === "orion" && sid !== "t00"),
+  candidates: (sid: string) => POOL[sid] ?? [],
   rng: () => 0.3,
 };
 
@@ -20,27 +27,44 @@ function play(events: Parameters<typeof reduceSky>[2][], start: { state: SkyStat
   return { state, session, effects };
 }
 
-test("HOME 에서 학습 없이 퀴즈를 누르면 학습으로 연결하고 안내한다 (S-03)", () => {
+test("HOME 에서 학습 없이도 바로 퀴즈가 시작된다 (기본 시각의 보이는 별자리 중 랜덤)", () => {
   const r = play([{ type: "start-quiz" }]);
-  assert.equal(r.state.mode, "explore");
-  assert.ok(r.effects.includes("need-learning"));
-});
-
-test("설명을 본 별자리만 출제 후보가 된다", () => {
-  const r = play([
-    { type: "start-explore" },
-    { type: "select-constellation", constellationId: "pegasus" },
-    { type: "close-detail" },
-    { type: "select-constellation", constellationId: "cygnus" },
-    { type: "start-quiz" },
-  ]);
   assert.equal(r.state.mode, "quiz");
   if (r.state.mode === "quiz") {
-    assert.ok(["pegasus", "cygnus"].includes(r.state.question.constellationId));
+    assert.ok(POOL.t20.includes(r.state.question.constellationId));
     assert.equal(r.state.question.slotId, "t20");
     assert.equal(r.state.hintLevel, 0);
     assert.equal(r.state.hasWrongAnswer, false);
   }
+});
+
+test("탐색 중 퀴즈는 현재 시각에 보이는 별자리 중에서 출제된다 (방금 본 별자리 고정 아님)", () => {
+  const r = play([
+    { type: "start-explore" },
+    { type: "select-slot", slotId: "t22" },
+    { type: "select-constellation", constellationId: "pegasus" },
+    { type: "start-quiz" },
+  ]);
+  assert.equal(r.state.mode, "quiz");
+  if (r.state.mode === "quiz") {
+    assert.ok(POOL.t22.includes(r.state.question.constellationId));
+    assert.equal(r.state.question.slotId, "t22");
+  }
+  // 같은 흐름을 여러 난수로 돌리면 본 별자리 외의 것도 출제된다
+  const seen = new Set<string>();
+  for (let i = 0; i < 20; i++) {
+    const c = { ...ctx, rng: () => (i + 0.5) / 20 };
+    const t = reduceSky({ mode: "explore", slotId: "t22", selectedId: "pegasus" }, emptySession(), { type: "start-quiz" }, c);
+    if (t.state.mode === "quiz") seen.add(t.state.question.constellationId);
+  }
+  assert.ok(seen.size > 1, [...seen].join(","));
+});
+
+test("출제할 별자리가 없는 시각이면 탐색 화면에서 안내한다", () => {
+  const c = { ...ctx, candidates: () => [] };
+  const t = reduceSky({ mode: "home" }, emptySession(), { type: "start-quiz" }, c);
+  assert.equal(t.state.mode, "explore");
+  assert.ok(t.effects.some((f) => f.kind === "no-candidates"));
 });
 
 test("보이지 않는 시각의 별자리는 선택되지 않는다", () => {
@@ -72,18 +96,20 @@ test("오답은 힌트 버튼을 열고(S-05), 오답만으로 힌트 단계가 
   assert.equal(wrong.state.mode === "quiz" && wrong.state.wrongCount, 2);
 });
 
-test("힌트는 1회=선, 2회=모양, 3회째는 증가하지 않는다 (S-07)", () => {
+test("힌트는 1회=선, 2회=모양, 3회=초성, 4회째는 증가하지 않는다 (S-07)", () => {
   const base = play([{ type: "start-explore" }, { type: "select-constellation", constellationId: "lyra" }, { type: "start-quiz" }, { type: "answer", result: "wrong" }]);
   const h1 = play([{ type: "hint" }], base);
   assert.equal(h1.state.mode === "quiz" && h1.state.hintLevel, 1);
   const h2 = play([{ type: "hint" }], h1);
   assert.equal(h2.state.mode === "quiz" && h2.state.hintLevel, 2);
   const h3 = play([{ type: "hint" }], h2);
-  assert.equal(h3.state.mode === "quiz" && h3.state.hintLevel, 2);
-  assert.equal(h3.state.mode, "quiz", "세 번째 힌트로 정답이 공개되거나 문제가 바뀌지 않는다");
+  assert.equal(h3.state.mode === "quiz" && h3.state.hintLevel, 3);
+  const h4 = play([{ type: "hint" }], h3);
+  assert.equal(h4.state.mode === "quiz" && h4.state.hintLevel, 3);
+  assert.equal(h4.state.mode, "quiz", "네 번째 힌트로 정답이 공개되거나 문제가 바뀌지 않는다");
   // 힌트 뒤 오답도 단계를 유지
-  const again = play([{ type: "answer", result: "wrong" }], h2);
-  assert.equal(again.state.mode === "quiz" && again.state.hintLevel, 2);
+  const again = play([{ type: "answer", result: "wrong" }], h3);
+  assert.equal(again.state.mode === "quiz" && again.state.hintLevel, 3);
 });
 
 test("빈 입력은 상태를 바꾸지 않는다", () => {
@@ -106,16 +132,20 @@ test("정답 → SUCCESS, 문제는 바뀌지 않고 '처음으로'만 HOME 으�
 });
 
 test("후보가 2개 이상이면 직전 문제와 다른 별자리를 고른다", () => {
-  const learned = [
-    { constellationId: "a", slotId: "t20" },
-    { constellationId: "b", slotId: "t20" },
-    { constellationId: "c", slotId: "t20" },
-  ];
   for (let i = 0; i < 50; i++) {
-    const q = pickQuestion(learned, "b", Math.random);
+    const q = pickQuestion(["a", "b", "c"], "t20", "b", Math.random);
     assert.notEqual(q?.constellationId, "b");
+    assert.equal(q?.slotId, "t20");
   }
-  const only = pickQuestion([{ constellationId: "b", slotId: "t20" }], "b", Math.random);
+  const only = pickQuestion(["b"], "t20", "b", Math.random);
   assert.equal(only?.constellationId, "b", "후보가 1개뿐이면 그 별자리를 출제할 수 있다");
-  assert.equal(pickQuestion([], null, Math.random), null);
+  assert.equal(pickQuestion([], "t20", null, Math.random), null);
+});
+
+test("초성 힌트", async () => {
+  const { chosung } = await import("../apps/sky/src/chosung.ts");
+  assert.equal(chosung("페가수스"), "ㅍㄱㅅㅅ");
+  assert.equal(chosung("카시오페이아"), "ㅋㅅㅇㅍㅇㅇ");
+  assert.equal(chosung("양"), "ㅇ");
+  assert.equal(chosung("Pegasus 1"), "Pegasus 1");
 });

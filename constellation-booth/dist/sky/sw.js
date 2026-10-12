@@ -1,8 +1,8 @@
 /* 별자리 부스 서비스 워커 (빌드 시 생성). 자기 앱 범위만 관리한다. */
-const CACHE_NAME = "sky-v1.0.0+20261012-dbc7bcaead";
+const CACHE_NAME = "sky-v1.0.0+20261012-857ce995aa";
 const CACHE_PREFIX = "sky-v";
 const BASE = "/sky/";
-const PRECACHE = ["/sky/assets/GowunBatang-Bold.subset-DV4VzIHC.woff2","/sky/assets/GowunBatang-Regular.subset-DDL4HcVx.woff2","/sky/assets/NotoSansKR-Bold.subset-25Rfu__e.woff2","/sky/assets/NotoSansKR-Regular.subset-DVUY0z-S.woff2","/sky/assets/index-B1PTShpK.css","/sky/assets/index-NFnJOeB2.js","/sky/icons/apple-touch-icon.png","/sky/icons/icon-192.png","/sky/icons/icon-512.png","/sky/icons/icon-maskable-512.png","/sky/","/sky/manifest.webmanifest","/sky/precache-manifest.json"];
+const PRECACHE = ["/sky/assets/GowunBatang-Bold.subset-DV4VzIHC.woff2","/sky/assets/GowunBatang-Regular.subset-DDL4HcVx.woff2","/sky/assets/NotoSansKR-Bold.subset-25Rfu__e.woff2","/sky/assets/NotoSansKR-Regular.subset-DVUY0z-S.woff2","/sky/assets/index-CxV6cWuV.css","/sky/assets/index-dJCtdfCI.js","/sky/icons/apple-touch-icon.png","/sky/icons/icon-192.png","/sky/icons/icon-512.png","/sky/icons/icon-maskable-512.png","/sky/","/sky/manifest.webmanifest","/sky/precache-manifest.json"];
 
 self.addEventListener("install", (event) => {
   // 전체 필수 자산을 한 번에 내려받는다. 하나라도 실패하면 설치가 실패하고 '준비 완료'가 되지 않는다.

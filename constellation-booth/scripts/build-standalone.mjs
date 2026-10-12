@@ -51,7 +51,7 @@ for (const app of APPS) {
   }
   // 2) public 자산(그림·아이콘) → data: URL 매핑. 아이콘은 favicon 으로만 인라인.
   for (const f of files) {
-    if (f.startsWith("art/")) assets[f] = dataUrl(`${outDir}/${f}`);
+    if (f.startsWith("art/") || f.startsWith("shapes/")) assets[f] = dataUrl(`${outDir}/${f}`);
   }
   const icon192 = files.includes("icons/icon-192.png") ? dataUrl(`${outDir}/icons/icon-192.png`) : "";
   html = html

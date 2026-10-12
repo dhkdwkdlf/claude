@@ -4,6 +4,15 @@ import type { Constellation, ConstellationFrame, SkySlot } from "@shared/types.t
 import { fitSimilarity, layoutDetail, magnitudeRadius, similarityToSvgMatrix, type DetailLayout } from "./projection.ts";
 import { SHAPES } from "./shapes.ts";
 
+export interface ShapePlacement {
+  asset: string; // 예: shapes/pegasus.webp
+  x: number; // 기준 프레임 좌표
+  y: number;
+  width: number;
+  height: number;
+  opacity?: number;
+}
+
 export interface DetailLayers {
   lines: boolean;
   shape: boolean;
@@ -24,6 +33,7 @@ export function renderDetail(
   frame: ConstellationFrame,
   layers: DetailLayers,
   rng: () => number = Math.random,
+  shapeImage?: { placement: ShapePlacement; href: string },
 ): DetailRender {
   svg.setAttribute("viewBox", "0 0 1000 1000");
   svg.textContent = "";
@@ -44,12 +54,27 @@ export function renderDetail(
   }
   const sim = fitSimilarity(pairs);
   const shape = SHAPES[constellation.shapeAsset];
-  if (shape) {
-    const inner = svgEl("g", { transform: similarityToSvgMatrix(sim) });
+  const inner = svgEl("g", { transform: similarityToSvgMatrix(sim) });
+  if (shapeImage) {
+    // 생성 선화 이미지: 기준 프레임 좌표에 배치하고 같은 닮음 변환으로 별 위에 얹는다
+    const pl = shapeImage.placement;
+    inner.append(
+      svgEl("image", {
+        href: shapeImage.href,
+        x: pl.x,
+        y: pl.y,
+        width: pl.width,
+        height: pl.height,
+        preserveAspectRatio: "none",
+        class: "detail__shape-image",
+        style: `opacity:${pl.opacity ?? 0.9}`,
+      }),
+    );
+  } else if (shape) {
     for (const d of shape.fills ?? []) inner.append(svgEl("path", { d, class: "detail__shape-fill" }));
     for (const d of shape.strokes) inner.append(svgEl("path", { d, class: "detail__shape-stroke", "vector-effect": "non-scaling-stroke" }));
-    shapeG.append(inner);
   }
+  shapeG.append(inner);
   root.append(shapeG);
 
   // 선

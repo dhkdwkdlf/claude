@@ -7,6 +7,7 @@ import constellationsJson from "@data/constellations.json";
 import slotsJson from "@data/sky-slots.json";
 import framesJson from "@data/constellation-frames.json";
 import metaJson from "@data/sky-data-metadata.json";
+import placementsJson from "@data/shape-placements.json";
 
 import type { Constellation, ConstellationFrame, EventConfig, SkyDataMetadata, SkySlot } from "@shared/types.ts";
 import { $, el, onMultiTap, switchScreen } from "@shared/utils/dom.ts";
@@ -17,17 +18,24 @@ import { registerServiceWorker } from "@shared/pwa/register.ts";
 import { createOperatorPanel } from "@shared/utils/operator-panel.ts";
 
 import { bindSkyMapSelection, renderSkyMap } from "./render-sky.ts";
-import { renderDetail, type DetailRender } from "./render-detail.ts";
+import { renderDetail, type DetailRender, type ShapePlacement } from "./render-detail.ts";
+import { assetUrl } from "@shared/utils/assets.ts";
 import { buildAnswerSet, checkAnswer } from "./normalize.ts";
-import { emptySession, reduceSky, type Session, type SkyEvent, type SkyState } from "./session.ts";
+import { emptySession, MAX_HINT_LEVEL, reduceSky, type Session, type SkyEvent, type SkyState } from "./session.ts";
+import { chosung } from "./chosung.ts";
 import { burstStardust } from "./effects.ts";
 
+const BASE = import.meta.env.BASE_URL;
 const config = configJson as unknown as EventConfig;
 const constellations = (constellationsJson as unknown as { constellations: Constellation[] }).constellations;
 const slots = (slotsJson as unknown as { slots: SkySlot[] }).slots;
 const frames = (framesJson as unknown as { frames: Record<string, ConstellationFrame> }).frames;
 const meta = metaJson as unknown as SkyDataMetadata;
-const BASE = import.meta.env.BASE_URL;
+const placements = (placementsJson as unknown as { placements: Record<string, ShapePlacement> }).placements;
+const shapeImageFor = (id: string) => {
+  const pl = placements[id];
+  return pl ? { placement: pl, href: assetUrl(BASE, pl.asset) } : undefined;
+};
 const VERSION = __APP_VERSION__;
 
 const conById = new Map(constellations.map((c) => [c.id, c]));
@@ -96,6 +104,7 @@ const successSvg = $<SVGSVGElement>("#success-svg");
 const answerInput = $<HTMLInputElement>("#answer");
 const feedback = $("#quiz-feedback");
 const hintBtn = $<HTMLButtonElement>("#btn-hint");
+const chosungEl = $("#quiz-chosung");
 const exploreQuizHint = $("#explore-quiz-hint");
 const exploreQuizBtn = $<HTMLButtonElement>("#btn-quiz-explore");
 const metaLabel = `${config.eventDateLabel.replace(/\s*\S*요일$/, "")} · ${config.location.shortLabel} 기준 · 한국 시간`;
@@ -113,6 +122,7 @@ const layerPrefs = { lines: true, shape: true, labels: true };
 const ctx = {
   defaultSlotId: settings.defaultSlotId,
   isSelectable: (cid: string, sid: string) => slotById.get(sid)?.constellationViews[cid]?.status === "visible",
+  candidates: (sid: string) => slotById.get(sid)?.quizEligibleConstellationIds ?? [],
   rng: Math.random,
 };
 
@@ -122,9 +132,7 @@ function dispatch(event: SkyEvent): void {
   state = t.state;
   session = t.session;
   for (const fx of t.effects) {
-    if (fx.kind === "need-learning") {
-      exploreQuizHint.textContent = "별자리를 먼저 하나 알아보세요.";
-    }
+    if (fx.kind === "no-candidates") exploreQuizHint.textContent = "이 시각에는 출제할 별자리가 없어요. 다른 시간을 골라 보세요.";
   }
   void render(prev);
 }
@@ -209,9 +217,13 @@ function prepareExplore(prevSlotId: string | null): void {
   }
 
   const n = learnedIds.size;
-  exploreQuizBtn.disabled = n === 0;
-  if (n === 0 && !exploreQuizHint.textContent) exploreQuizHint.textContent = "별자리를 눌러 설명을 보면 퀴즈를 풀 수 있어요.";
-  if (n > 0) exploreQuizHint.textContent = `알아본 별자리 ${n}개 · 퀴즈에 도전해 보세요!`;
+  const pool = slot.quizEligibleConstellationIds.length;
+  exploreQuizBtn.disabled = pool === 0;
+  exploreQuizHint.textContent = pool === 0
+    ? "이 시각에는 출제할 별자리가 없어요. 다른 시간을 골라 보세요."
+    : n > 0
+      ? `알아본 별자리 ${n}개 · 지금 보이는 ${pool}개 중 한 문제가 나와요.`
+      : `지금 보이는 별자리 ${pool}개 중 한 문제가 나와요.`;
 
   if (state.selectedId) showDetail(slot, conById.get(state.selectedId)!);
   else detailPanel.hidden = true;
@@ -229,7 +241,7 @@ function showDetail(slot: SkySlot, c: Constellation): void {
   $("#detail-tip").textContent = c.findTip;
   $("#detail-desc").textContent = c.description;
   $("#detail-note").textContent = c.relatedNote ?? "";
-  detailRender = renderDetail(detailSvg, slot, c, frames[c.id], { ...layerPrefs, twinkle: !settings.lowPerformance && !reducedMotion });
+  detailRender = renderDetail(detailSvg, slot, c, frames[c.id], { ...layerPrefs, twinkle: !settings.lowPerformance && !reducedMotion }, Math.random, shapeImageFor(c.id));
   for (const b of $("#layer-toggles").querySelectorAll<HTMLButtonElement>(".chip")) {
     const key = b.dataset.layer as keyof typeof layerPrefs;
     b.classList.toggle("is-on", layerPrefs[key]);
@@ -278,25 +290,30 @@ function prepareQuiz(): void {
   if (state.mode !== "quiz") return;
   const c = conById.get(state.question.constellationId)!;
   const slot = slotById.get(state.question.slotId)!;
-  quizRender = renderDetail(quizSvg, slot, c, frames[c.id], { lines: false, shape: false, labels: false, twinkle: !settings.lowPerformance && !reducedMotion });
+  quizRender = renderDetail(quizSvg, slot, c, frames[c.id], { lines: false, shape: false, labels: false, twinkle: !settings.lowPerformance && !reducedMotion }, Math.random, shapeImageFor(c.id));
   answerInput.value = "";
   feedback.textContent = "";
   feedback.classList.remove("is-wrong");
+  chosungEl.hidden = true;
   updateQuiz();
 }
 
 function updateQuiz(): void {
   if (state.mode !== "quiz") return;
   const s = state;
+  const c = conById.get(s.question.constellationId)!;
   quizRender?.setLayers({ lines: s.hintLevel >= 1, shape: s.hintLevel >= 2, labels: false });
   hintBtn.hidden = !s.hasWrongAnswer;
-  if (s.hintLevel === 0) hintBtn.textContent = "힌트 보기";
-  else if (s.hintLevel === 1) hintBtn.textContent = "모양 힌트 보기";
-  else {
-    hintBtn.textContent = "힌트를 모두 봤어요";
-    hintBtn.disabled = true;
+  const labels = ["힌트 보기", "모양 힌트 보기", "초성 힌트 보기", "힌트를 모두 봤어요"];
+  hintBtn.textContent = labels[s.hintLevel];
+  hintBtn.disabled = s.hintLevel >= MAX_HINT_LEVEL;
+  if (s.hintLevel >= 3) {
+    chosungEl.hidden = false;
+    chosungEl.textContent = `초성 힌트: ${chosung(c.shortAnswer).split("").join(" ")}`;
+  } else {
+    chosungEl.hidden = true;
+    chosungEl.textContent = "";
   }
-  if (s.hintLevel < 2) hintBtn.disabled = false;
 }
 
 function submitAnswer(): void {
@@ -328,7 +345,7 @@ function prepareSuccess(): void {
   $("#success-name").textContent = c.nameKo;
   $("#success-msg").textContent = `${c.nameKo}를 찾았어요.`;
   $("#success-where").textContent = whereText(slot, c);
-  renderDetail(successSvg, slot, c, frames[c.id], { lines: true, shape: true, labels: true, twinkle: !settings.lowPerformance && !reducedMotion });
+  renderDetail(successSvg, slot, c, frames[c.id], { lines: true, shape: true, labels: true, twinkle: !settings.lowPerformance && !reducedMotion }, Math.random, shapeImageFor(c.id));
 }
 function playSuccessEffects(): void {
   burstStardust($<HTMLCanvasElement>("#dust"), { lowPerformance: settings.lowPerformance, reducedMotion });

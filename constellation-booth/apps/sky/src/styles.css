@@ -509,6 +509,20 @@
   25% { transform: translateX(-6px); }
   75% { transform: translateX(6px); }
 }
+.quiz__chosung {
+  text-align: center;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--card);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(242, 215, 155, 0.18);
+  box-shadow: inset 0 0 0 1.5px rgba(242, 215, 155, 0.5);
+}
+.quiz__chosung[hidden] {
+  display: none;
+}
 .quiz__hint-row {
   display: flex;
   justify-content: center;
