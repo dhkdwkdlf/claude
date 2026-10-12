@@ -3,6 +3,12 @@
  * - 등록 실패(HTTP, file://, 미지원)여도 앱은 정상 동작한다. 상태만 운영자 화면에 보고한다.
  * - 갱신된 워커는 자동 적용하지 않는다. applyUpdate() 로 운영자가 적용한다.
  */
+declare global {
+  interface Window {
+    __STANDALONE__?: boolean;
+  }
+}
+
 export interface OfflineStatus {
   supported: boolean;
   secureContext: boolean;
@@ -25,7 +31,12 @@ export function onUpdateAvailable(fn: () => void): void {
   listeners.add(fn);
 }
 
+function isStandaloneFile(): boolean {
+  return window.__STANDALONE__ === true || window.location.protocol === "file:";
+}
+
 export async function registerServiceWorker(base: string): Promise<void> {
+  if (isStandaloneFile()) return; // 단일 파일 실행: 설치할 것이 없다
   if (!("serviceWorker" in navigator)) return;
   try {
     registration = await navigator.serviceWorker.register(`${base}sw.js`, { scope: base, updateViaCache: "none" });
@@ -78,6 +89,11 @@ export async function getOfflineStatus(base: string): Promise<OfflineStatus> {
     updateWaiting,
     message: "",
   };
+  if (isStandaloneFile()) {
+    status.ready = true;
+    status.message = "단일 파일(standalone)로 실행 중: 글꼴·그림·데이터가 모두 이 파일 안에 있어 설치 없이 오프라인으로 동작합니다. 홈 화면 앱(PWA)으로 설치하려면 HTTPS 서버 버전을 사용하세요.";
+    return status;
+  }
   if (!status.supported) {
     status.message = "이 브라우저는 오프라인 저장(서비스 워커)을 지원하지 않습니다.";
     return status;

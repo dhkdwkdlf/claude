@@ -13,6 +13,7 @@ import { guessLowPerformance, prefersReducedMotion, requestWakeLock } from "@sha
 import { mountStarsBackground } from "@shared/utils/stars-bg.ts";
 import { registerServiceWorker } from "@shared/pwa/register.ts";
 import { createOperatorPanel } from "@shared/utils/operator-panel.ts";
+import { assetUrl } from "@shared/utils/assets.ts";
 
 import { Carousel } from "./carousel.ts";
 import { createDeckManager } from "./deck.ts";
@@ -53,7 +54,7 @@ const returnBtn = $<HTMLButtonElement>("#return-btn");
 $("#event-date").textContent = config.eventDateLabel;
 
 const cardEls = cards.map((c) => {
-  const art = el("div", { class: "card__art" }, [el("img", { src: `${BASE}${c.illustrationAsset}`, alt: "", draggable: "false", loading: "eager", decoding: "async" })]);
+  const art = el("div", { class: "card__art" }, [el("img", { src: assetUrl(BASE, c.illustrationAsset), alt: "", draggable: "false", loading: "eager", decoding: "async" })]);
   const front = el("div", { class: "card__face card__front" }, [
     art,
     el("div", { class: "card__text" }, [

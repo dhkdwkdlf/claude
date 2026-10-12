@@ -32,6 +32,12 @@ try {
 } catch (e) {
   validate = `실패: ${e.stdout?.toString().slice(0, 300) ?? e}`;
 }
+let standalone = "";
+try {
+  standalone = execSync("node scripts/standalone-check.mjs 2>&1 | tail -1", { cwd: root, shell: "/bin/bash" }).toString().trim();
+} catch (e) {
+  standalone = `실패: ${e.stdout?.toString().slice(-200) ?? e}`;
+}
 let astro = "";
 if (existsSync(`${root}docs/ASTRONOMY_VALIDATION.md`)) {
   const m = readFileSync(`${root}docs/ASTRONOMY_VALIDATION.md`, "utf8").match(/대조한 별 × 시각: [^\n]*\n- 판정: [^\n]*/);
@@ -48,7 +54,7 @@ try {
 const rows = [
   ["C-01", "기본적으로 세로로 놓은 태블릿 환경", status(["C-01"], { partial: true })],
   ["F-01", "낮은 사양에서도 부담 없이 작동", status(["F-01"], { partial: true })],
-  ["F-02", "별도 Wi-Fi 불필요", status(["F-02"], { partial: true })],
+  ["F-02", "별도 Wi-Fi 불필요", [status(["F-02"], { partial: true })[0], status(["F-02"], { partial: true })[1] + "; 단일 파일 버전은 서버·설치 없이 file:// 로 동작 (standalone-check)"]],
   ["F-03", "첫 화면 12별자리 카드 회전", status(["F-03"])],
   ["F-04", "슬라이드하면 부드럽게 회전", status(["F-04"], { partial: true })],
   ["F-05", "정지 카드에 몽환적이고 부드러운 효과", status(["F-05"])],
@@ -83,6 +89,7 @@ lines.push(`- 단위 테스트(node --test): ${unit}`);
 lines.push(`- 콘텐츠 검사: ${validate}`);
 lines.push(`- 천문 대조(astropy): ${astro || "docs/ASTRONOMY_VALIDATION.md 참고"} · 계산 기준점 ${meta.location.latitude}°N ${meta.location.longitude}°E ${meta.location.elevationM} m${meta.location.isProvisional ? " (임시 대표점)" : ""}`);
 lines.push(`- 빌드 크기: ${sizes} (목표 8 MB 이하 — 글꼴 서브셋 약 2.0 MB 포함)`);
+lines.push(`- 단일 파일(file://) 검사: ${standalone} (\`scripts/standalone-check.mjs\`: 그림·글꼴·저장소·전체 흐름·외부 요청 0)`);
 lines.push(`- 브라우저 검수 합계: ${r.summary.total}건, 통과 ${r.summary.pass}건, 실패 ${r.summary.fail}건, 외부 요청 ${r.externalRequests.length}건`);
 lines.push("");
 lines.push("**중요**: 아래 '통과'는 데스크톱 Chromium(모바일 에뮬레이션, 터치 이벤트)에서의 자동 검수 결과입니다. 실제 Android/iPad 태블릿에서는 하지 못했으므로, 그 항목은 '실기기 미검증'으로 표시하고 절차를 아래에 적었습니다.");

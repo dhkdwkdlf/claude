@@ -8,9 +8,12 @@ const repo = fileURLToPath(new URL("../..", import.meta.url));
 const pkg = JSON.parse(readFileSync(new URL("../../package.json", import.meta.url), "utf8")) as { version: string };
 const version = `${pkg.version}+${new Date().toISOString().slice(0, 10).replace(/-/g, "")}`;
 
+// STANDALONE=1 이면 단일 HTML 파일용 빌드(상대 경로, 모든 자산 인라인, 서비스 워커 없음)
+const standalone = process.env.STANDALONE === "1";
+
 export default defineConfig({
   root,
-  base: "/fortune/",
+  base: standalone ? "./" : "/fortune/",
   publicDir: "public",
   define: { __APP_VERSION__: JSON.stringify(version) },
   resolve: {
@@ -21,11 +24,12 @@ export default defineConfig({
   },
   server: { host: true, port: 5173, fs: { allow: [repo] } },
   build: {
-    outDir: `${repo}dist/fortune`,
+    outDir: standalone ? `${repo}dist/.standalone/fortune` : `${repo}dist/fortune`,
     emptyOutDir: true,
     target: ["es2020", "safari14"],
     sourcemap: false,
-    assetsInlineLimit: 2048,
+    assetsInlineLimit: standalone ? 1024 * 1024 * 64 : 2048,
+    modulePreload: !standalone,
   },
-  plugins: [precachePlugin({ appId: "fortune", version })],
+  plugins: standalone ? [] : [precachePlugin({ appId: "fortune", version })],
 });

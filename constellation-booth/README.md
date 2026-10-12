@@ -9,13 +9,18 @@
 
 두 앱은 서로 독립적으로 설치·실행되며(각자 manifest·서비스 워커·캐시), 행사 중 외부 네트워크를 전혀 쓰지 않습니다.
 
-## 빠른 시작
+## 가장 쉬운 방법 — 파일 하나로 실행
+
+`release/별자리운세.html`, `release/별자리여행.html` 은 글꼴·그림·데이터가 전부 들어 있는 **단일 파일**입니다. PC 에서 더블클릭하면 바로 열리고, 태블릿에 복사해 Chrome 으로 열면 인터넷 없이 동작합니다. 서버·설치 과정이 없습니다. 자세한 절차와 홈 화면 앱(PWA) 설치 방법은 `docs/OFFLINE_SETUP.md`.
+
+## 빠른 시작 (개발)
 
 ```bash
 cd constellation-booth
 npm ci                      # Node 22 이상
-npm run build               # dist/fortune, dist/sky 생성 (+ sw.js, precache-manifest.json)
+npm run build               # dist/fortune, dist/sky (PWA) + dist/standalone/*.html (단일 파일)
 npm run preview             # http://localhost:4173/fortune/  http://localhost:4173/sky/
+npm run package             # release/*.zip + release/*.html
 ```
 
 개발 서버: `npm run dev:fortune` (5173), `npm run dev:sky` (5174).
@@ -26,8 +31,9 @@ npm run preview             # http://localhost:4173/fortune/  http://localhost:4
 npm run typecheck           # tsc
 npm test                    # node --test (상태 기계·덱·정규화·투영·데이터 불변식, 42건)
 npm run validate            # 콘텐츠·스키마 검사 (ID·이미지·좌표·운세 수·금지 표현)
-npm run test:browser        # Playwright 자동 검수 → docs/test-results.json, docs/screenshots/
-npm run package             # release/fortune.zip, sky.zip, both.zip
+npm run test:browser        # Playwright 자동 검수(PWA 빌드) → docs/test-results.json, docs/screenshots/
+npm run test:standalone     # 단일 파일을 file:// 로 열어 검사
+npm run report              # docs/TEST_REPORT.md 생성
 ```
 
 ## 폴더
@@ -42,8 +48,8 @@ scripts/          generate-sky-data.py, verify-sky-data.py, extract-stars.py, va
                   browser-check.mjs, preview-server.mjs, make-icons.mjs, build-fonts.py,
                   generate-card-art.py, optimize-card-art.py, fallback-card-art.mjs, package-release.mjs
 docs/             OFFLINE_SETUP.md, BOOTH_OPERATION.md, ASTRONOMY_VALIDATION.md, TEST_REPORT.md, screenshots/
-dist/             실행 가능한 빌드 (앱별 독립)
-release/          ZIP 묶음
+dist/             실행 가능한 빌드 (fortune/, sky/ = PWA, standalone/ = 단일 HTML 파일)
+release/          ZIP 묶음 + 단일 파일 2개
 ```
 
 ## 행사 설정 바꾸기
@@ -82,7 +88,8 @@ ChatGPT 웹에서 같은 프롬프트(`scripts/generate-card-art.py` 의 STYLE +
 - 상태 전이는 `apps/fortune/src/state.ts`, `apps/sky/src/session.ts` 의 순수 함수에 모여 있고 테스트로 고정되어 있습니다.
 - 제스처: Pointer Events, 이동 10px 초과 = 드래그, 카드 전환은 50px 또는 너비 12% 중 작은 값, 좌우 우세일 때만 슬라이드, 드래그 후 click 억제.
 - 앱 2 투영: 전체 지도는 방위각 등거리 투영(올려다본 하늘, 북 위·동 왼쪽), 상세는 별자리를 마주 본 심사투영(위 = 천정). 모양 오버레이는 적도좌표 기준 프레임에서 그린 선화를 최소제곱 닮음 변환으로 얹습니다(`projection.ts`).
-- 오프라인: 빌드 시 `shared/build/vite-plugin-precache.ts` 가 dist 전체 목록으로 `sw.js` 를 생성하고 설치 시 한 번에 전부 캐시합니다. 캐시 이름 = `앱ID-v버전-내용해시`. 새 워커는 운영자가 적용할 때까지 대기합니다.
+- 단일 파일: `scripts/build-standalone.mjs` 가 `STANDALONE=1` 로 빌드한 결과(상대 경로, 글꼴 인라인)를 HTML 하나로 합치고 그림은 `window.__STANDALONE_ASSETS__` 에 data URL 로 넣습니다. 앱은 `file://` 에서 서비스 워커 등록을 건너뜁니다.
+- 오프라인(PWA): 빌드 시 `shared/build/vite-plugin-precache.ts` 가 dist 전체 목록으로 `sw.js` 를 생성하고 설치 시 한 번에 전부 캐시합니다. 캐시 이름 = `앱ID-v버전-내용해시`. 새 워커는 운영자가 적용할 때까지 대기합니다.
 - 용량: 앱당 약 2.4 MB (그중 글꼴 서브셋 4개 ≈ 2.0 MB, 카드 그림 12장 ≈ 0.4 MB). 사용자 지시로 8 MB 목표 안에서 글꼴을 번들했습니다.
 
 자세한 내용: `docs/OFFLINE_SETUP.md`, `docs/BOOTH_OPERATION.md`, `docs/ASTRONOMY_VALIDATION.md`, `docs/TEST_REPORT.md`, `ASSET_LICENSES.md`.
