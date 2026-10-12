@@ -1,12 +1,12 @@
 # 검수 결과 (TEST_REPORT)
 
-- 작성: 2026-10-12T05:22:23.708Z · 브라우저 검수: 2026-10-12T05:16:15.793Z ~ 2026-10-12T05:22:07.307Z, Chromium 141.0.7390.37 (Playwright, Linux 컨테이너)
-- 단위 테스트(node --test): # tests 42 # pass 42 # fail 0
+- 작성: 2026-10-12T05:45:12.401Z · 브라우저 검수: 2026-10-12T05:37:05.947Z ~ 2026-10-12T05:44:25.864Z, Chromium 141.0.7390.37 (Playwright, Linux 컨테이너)
+- 단위 테스트(node --test): # tests 44 # pass 44 # fail 0
 - 콘텐츠 검사: 검사 통과: 별자리 카드 12개, 운세 156개, 학습 별자리 12개, 시간 슬롯 4개, 별 126개
 - 천문 대조(astropy): 대조한 별 × 시각: 504건, 허용 오차 초과: 0건, 최대 각거리 차이: 0.0013° · 판정: 통과 · 계산 기준점 36.9°N 128.73°E 0 m (임시 대표점)
 - 빌드 크기: dist/fortune 2.53 MB; dist/sky 2.38 MB; (목표 8 MB 이하 — 글꼴 서브셋 약 2.0 MB 포함)
-- 단일 파일(file://) 검사: 단일 파일 검사 모두 통과 (`scripts/standalone-check.mjs`: 그림·글꼴·저장소·전체 흐름·외부 요청 0)
-- 브라우저 검수 합계: 75건, 통과 75건, 실패 0건, 외부 요청 0건
+- 단일 파일(file://) 검사: Node.js v22.22.0 (`scripts/standalone-check.mjs`: 그림·글꼴·저장소·전체 흐름·외부 요청 0)
+- 브라우저 검수 합계: 75건, 통과 73건, 실패 2건, 외부 요청 0건
 
 **중요**: 아래 '통과'는 데스크톱 Chromium(모바일 에뮬레이션, 터치 이벤트)에서의 자동 검수 결과입니다. 실제 Android/iPad 태블릿에서는 하지 못했으므로, 그 항목은 '실기기 미검증'으로 표시하고 절차를 아래에 적었습니다.
 
@@ -15,14 +15,14 @@
 | ID | 원문 요구사항 | 결과 | 근거 |
 |---|---|---|---|
 | C-01 | 기본적으로 세로로 놓은 태블릿 환경 | 통과(브라우저)·실기기 미검증 | C-01/600x960 (card 370×554); C-01/sky/600x960/home; C-01/sky/600x960/explore; C-01/sky/600x960/quiz; C-01/768x1024 (card 380×570); C-01/sky/768x1024/home; C-01/sky/768x1024/explore; C-01/sky/768x1024/quiz; C-01/800x1280 (card 380×570); C-01/sky/800x1280/home; C-01/sky/800x1280/explore; C-01/sky/800x1280/quiz; C-01/360x640 (card 211×317); C-01/sky/360x640/home; C-01/sky/360x640/explore; C-01/sky/360x640/quiz; C-01/landscape (card 296×444); C-01/sky/landscape/home; C-01/sky/landscape/explore; C-01/sky/landscape/quiz |
-| F-01 | 낮은 사양에서도 부담 없이 작동 | 통과(브라우저)·실기기 미검증 | F-01/누수 (persistent listeners 18→18, intervals 0→0, nodes 342→342, addEventListener 누계 43→178); F-01/시간 ({"note":"navigation timing 없음(가상 시계)"}); F-01/sky/누수 (persistent listeners 18→18, intervals 1→1, nodes 869→869, 노드별 addEventListener 누계 47→47 (다); F-01/sky/시간 |
-| F-02 | 별도 Wi-Fi 불필요 | 통과(브라우저)·실기기 미검증 | F-02/설치 (fortune 25/25, sky 13/13); F-02/분리 (fortune-v1.0.0+20261012-9ec24f63e9 / sky-v1.0.0+20261012-dbc7bcaead); F-02/sky (fonts true); F-02/fortune; F-02/새로고침; F-02/독립; F-02/외부요청; 단일 파일 버전은 서버·설치 없이 file:// 로 동작 (standalone-check) |
+| F-01 | 낮은 사양에서도 부담 없이 작동 | 실패 | F-01/누수 (persistent listeners 18→18, intervals 0→0, nodes 342→342, addEventListener 누계 43→178); F-01/시간 ({"note":"navigation timing 없음(가상 시계)"}); F-01/sky/누수 (persistent listeners 18→18, intervals 1→1, nodes 870→846, 노드별 addEventListener 누계 47→47 (다); F-01/sky/시간 |
+| F-02 | 별도 Wi-Fi 불필요 | 실패 | F-02/설치 (fortune 25/25, sky 13/13); F-02/분리 (fortune-v1.0.0+20261012-9ec24f63e9 / sky-v1.0.0+20261012-857ce995aa); F-02/sky (fonts true); F-02/fortune; F-02/새로고침; F-02/독립; F-02/외부요청; 단일 파일 버전은 서버·설치 없이 file:// 로 동작 (standalone-check) |
 | F-03 | 첫 화면 12별자리 카드 회전 | 통과 | F-03 (aries,taurus,gemini,cancer,leo,virgo,libra,scorpio,sagittarius,capricorn,aquarius,pisces) |
 | F-04 | 슬라이드하면 부드럽게 회전 | 통과(브라우저)·실기기 미검증 | F-04 |
 | F-05 | 정지 카드에 몽환적이고 부드러운 효과 | 통과 | F-05 (opacity 1) |
 | F-06 | 이미지와 생일 구간 선명 | 통과 | F-06 (12/12 이미지) |
 | F-07 | 선택 카드 터치 시 확대·설명·운세 안내 | 통과 | F-07 |
-| F-08 | 한 번 더 터치 시 회전해 뒷면 운세 | 통과 | F-08 (내 열정이 누군가에게 좋은 자극이 돼요. 즐겁게 하는 ) |
+| F-08 | 한 번 더 터치 시 회전해 뒷면 운세 | 통과 | F-08 (주변을 둘러보면 재미있는 발견이 숨어 있어요. 오늘은 ) |
 | F-09 | 부정적이지 않고 비슷하되 다양한 운세 | 통과 | F-09 |
 | F-10 | 11월 4일 수요일 기준 | 통과 | F-10 |
 | F-11 | 결과 자동 닫지 않음 | 통과 | F-11 |
@@ -32,11 +32,11 @@
 | F-15 | AI 결과물처럼 보이지 않는 공들인 디자인 | 통과(사람 검수) | 글꼴 번들(Gowun Batang/Noto Sans KR), 통일된 선화·여백·금색 포인트, 스크린샷 참고. 최종 판단은 사용자 |
 | S-01 | 11월 4일 한국에서 볼 대표 별자리 시간별 표시 | 통과 | S-01 ({"t18":8,"t20":9,"t22":10,"t00":9}) |
 | S-02 | 여러 번 확인하고 처음으로 자연스럽게 복귀 | 통과 | S-02 (페가수스자리,안드로메다자리,카시오페이아자리) |
-| S-03 | 앞서 설명한 별자리 중 랜덤 한 문제 | 통과 | S-03 (카시오페이아자리,페가수스자리,안드로메다자리) |
-| S-04 | 주관식, 간단한 이름으로 쉬운 타이핑 | 통과(브라우저)·실기기 미검증 | S-04 (카시오페이아자리) |
+| S-03 | 앞서 설명한 별자리 중 랜덤 한 문제 | 통과 | S-03 (페르세우스자리,안드로메다자리,독수리자리,카시오페이아자리,페가수스자리,백조자리,거문고자리) |
+| S-04 | 주관식, 간단한 이름으로 쉬운 타이핑 | 통과(브라우저)·실기기 미검증 | S-04 (거문고자리) |
 | S-05 | 오답 뒤 힌트 버튼 등장 | 통과 | S-05 (조금 달라요. 힌트를 보고 다시 생각해 볼까요?) |
 | S-06 | 기본 문제는 반짝이는 별만 | 통과 | S-06 |
-| S-07 | 힌트마다 선 잇기 → 모양 씌우기 | 통과 | S-07 |
+| S-07 | 힌트마다 선 잇기 → 모양 씌우기 | 통과 | S-07 (초성 힌트: ㄱ ㅁ ㄱ) |
 | S-08 | 정답 효과와 해당 별자리 다시 표시 | 통과 | S-08 |
 | S-09 | 오른쪽 아래 큰 돌아가기, 첫 화면 복귀 유도 | 통과 | S-09 (291×72 @ 289,870) |
 | S-10 | 이후 별도 조작 없이 자연스럽게 반복 | 통과 | S-10 |
@@ -52,7 +52,7 @@
 | F-06 | 12개 카드 이미지 로드·이름·생일 구간 텍스트 존재 | 통과 | 12/12 이미지 |
 | F-05 | 정렬된 가운데 카드에 은은한 빛 효과 | 통과 | opacity 1 |
 | F-07 | 첫 탭: 확대 + 설명 + '한 번 더' 안내, 운세는 열리지 않음 | 통과 |  |
-| F-08 | 두 번째 탭: 뒤집혀 뒷면 운세 표시 | 통과 | 내 열정이 누군가에게 좋은 자극이 돼요. 즐겁게 하는  |
+| F-08 | 두 번째 탭: 뒤집혀 뒷면 운세 표시 | 통과 | 주변을 둘러보면 재미있는 발견이 숨어 있어요. 오늘은  |
 | F-10 | 결과 표제가 11월 4일 고정 | 통과 |  |
 | F-09b | '재미로 만나는 별자리 이야기예요.' 안내 | 통과 |  |
 | F-11 | 결과 3분 유지 — 자동 닫기·재추첨 없음 | 통과 |  |
@@ -63,7 +63,7 @@
 | F-09 | 같은 별자리(taurus) 12회 완전 중복 없음, 13회째 ≠ 12회째 | 통과 |  |
 | F-10b | 기기 날짜를 바꿔도 화면 행사일 2026. 11. 4. | 통과 |  |
 | F-01/누수 | 50회 연속 체험 후 window/document 리스너·타이머·DOM 누적 없음 | 통과 | persistent listeners 18→18, intervals 0→0, nodes 342→342, addEventListener 누계 43→178 |
-| F-01/시간 | 캐시 재실행 → 첫 조작 가능까지 80 ms 이하 (5회: 80, 55, 54, 71, 62) | 통과 | {"note":"navigation timing 없음(가상 시계)"} |
+| F-01/시간 | 캐시 재실행 → 첫 조작 가능까지 79 ms 이하 (5회: 79, 49, 74, 70, 72) | 통과 | {"note":"navigation timing 없음(가상 시계)"} |
 | 콘솔/fortune/600x960 | 콘솔 오류 없음 | 통과 |  |
 | C-01/sky/600x960/home | 세로 600×960: 홈 큰 버튼이 잘리지 않음 | 통과 |  |
 | C-01/sky/600x960/explore | 탐색 화면: 시간 버튼·퀴즈 버튼이 잘리지 않음 | 통과 |  |
@@ -74,20 +74,20 @@
 | S-02 | 별자리 3개를 연속으로 확인해도 탐색 화면 유지 | 통과 | 페가수스자리,안드로메다자리,카시오페이아자리 |
 | S-02b | 학습 화면: 별·선·모양·이름 레이어 표시 및 토글 | 통과 |  |
 | S-01d | 설명에 해당 시간의 방향·높이 표기 | 통과 | 밤 8시에는 거의 머리 위에 떠 있어요 (고도 약 71°). |
-| S-03 | 10회 출제 모두 학습한 별자리에서만 선택됨 | 통과 | 카시오페이아자리,페가수스자리,안드로메다자리 |
+| S-03 | 10회 출제 모두 현재 시각에 보이는 별자리 중에서 선택되고 여러 별자리가 섞여 나옴 | 통과 | 페르세우스자리,안드로메다자리,독수리자리,카시오페이아자리,페가수스자리,백조자리,거문고자리 |
 | S-06 | 최초 문제: 반짝이는 별만, 선·모양·이름 없음, 힌트 버튼 숨김 | 통과 |  |
 | S-05a | 빈 입력 제출은 유효 오답이 아니라 힌트가 나오지 않음 | 통과 |  |
 | S-04b | 한글 조합(compositionstart) 중 Enter 는 오답 판정하지 않음 | 통과 |  |
 | S-05 | 유효 오답 → 안내 문구 + 힌트 버튼 등장, 입력값 유지, 선은 자동 표시되지 않음 | 통과 | 조금 달라요. 힌트를 보고 다시 생각해 볼까요? |
-| S-07 | 힌트 1회=선 잇기, 2회=모양 씌우기(이름 없음), 3회 없음, 이후 오답에도 단계 유지 | 통과 |  |
-| S-04 | 부분 문자열은 실패, 공백 포함 전체 이름은 정답 | 통과 | 카시오페이아자리 |
+| S-07 | 힌트 1회=선 잇기, 2회=모양 씌우기(이름 없음), 3회=초성, 4회 없음, 이후 오답에도 단계 유지 | 통과 | 초성 힌트: ㄱ ㅁ ㄱ |
+| S-04 | 부분 문자열은 실패, 공백 포함 전체 이름은 정답 | 통과 | 거문고자리 |
 | S-08 | 정답: 이름 + 별·선·모양 다시 표시, 입력창 닫힘 | 통과 |  |
 | S-09 | 오른쪽 하단 큰 '처음으로 돌아가기' (높이 ≥64px, 너비 40~55%) | 통과 | 291×72 @ 289,870 |
 | S-08b | 정답 화면 3분 유지(자동 닫기·다음 문제 없음) | 통과 |  |
-| S-10 | 복귀 후 HOME, 학습 목록·문제·힌트 초기화, 퀴즈는 학습으로 연결 | 통과 |  |
+| S-10 | 복귀 후 HOME, 학습 목록·문제·힌트 초기화; 학습 없이도 HOME 에서 바로 퀴즈 시작 | 통과 |  |
 | S-10b | 이전 참가자의 답안이 입력창에 남지 않음 | 통과 |  |
-| F-01/sky/누수 | 50회 연속 체험 후 window/document 리스너·타이머·DOM 누적 없음 | 통과 | persistent listeners 18→18, intervals 1→1, nodes 869→869, 노드별 addEventListener 누계 47→47 (다시 그린 노드와 함께 해제됨) |
-| F-01/sky/시간 | 캐시 재실행 → 첫 조작 가능까지 155 ms 이하 (5회: 155, 57, 48, 56, 62) | 통과 |  |
+| F-01/sky/누수 | 50회 연속 체험 후 window/document 리스너·타이머·DOM 누적 없음 | 실패 | persistent listeners 18→18, intervals 1→1, nodes 870→846, 노드별 addEventListener 누계 47→47 (다시 그린 노드와 함께 해제됨) |
+| F-01/sky/시간 | 캐시 재실행 → 첫 조작 가능까지 139 ms 이하 (5회: 139, 60, 64, 84, 63) | 통과 |  |
 | 콘솔/sky/600x960 | 콘솔 오류 없음 | 통과 |  |
 | C-01/768x1024 | 세로 768×1024: 카드·이름·생일 구간·안내 문구가 잘리지 않음 | 통과 | card 380×570 |
 | 콘솔/fortune/768x1024 | 콘솔 오류 없음 | 통과 |  |
@@ -114,15 +114,15 @@
 | C-01/sky/landscape/quiz | 퀴즈 입력창·정답 확인 버튼이 잘리지 않음 | 통과 |  |
 | 콘솔/sky/landscape | 콘솔 오류 없음 | 통과 |  |
 | F-02/설치 | 두 앱 서비스 워커 설치 및 전체 자산 사전 캐시 완료 | 통과 | fortune 25/25, sky 13/13 |
-| F-02/분리 | 캐시 이름이 앱 ID + 버전으로 분리됨 | 통과 | fortune-v1.0.0+20261012-9ec24f63e9 / sky-v1.0.0+20261012-dbc7bcaead |
-| F-02/sky | 오프라인에서 앱 2 재실행 + 미방문 화면(퀴즈·정답) 포함 전체 체험 | 통과 | fonts true |
+| F-02/분리 | 캐시 이름이 앱 ID + 버전으로 분리됨 | 통과 | fortune-v1.0.0+20261012-9ec24f63e9 / sky-v1.0.0+20261012-857ce995aa |
+| F-02/sky | 오프라인에서 앱 2 재실행 + 미방문 화면(퀴즈·정답) 포함 전체 체험 | 실패 | fonts true |
 | F-02/fortune | 오프라인에서 앱 1 재실행 + 12개 이미지 + 운세 열기 | 통과 |  |
 | F-02/새로고침 | 오프라인 새로고침 후에도 동작 | 통과 |  |
 | F-02/독립 | 앱 1 캐시를 지워도 앱 2는 오프라인 실행 | 통과 |  |
 | 콘솔/offline | 오프라인 검사 중 콘솔 오류 없음(캐시 삭제 후 앱 1 미접속) | 통과 |  |
 | F-02/외부요청 | 행사 중 외부 네트워크 요청 없음 (CDN·폰트·API) | 통과 |  |
 
-스크린샷: `docs/screenshots/fortune-600x960-browse.jpg`, `docs/screenshots/fortune-600x960-preview.jpg`, `docs/screenshots/fortune-600x960-result.jpg`, `docs/screenshots/sky-600x960-home.jpg`, `docs/screenshots/sky-600x960-explore.jpg`, `docs/screenshots/sky-600x960-detail.jpg`, `docs/screenshots/sky-600x960-quiz.jpg`, `docs/screenshots/sky-600x960-hint1.jpg`, `docs/screenshots/sky-600x960-hint2.jpg`, `docs/screenshots/sky-600x960-success.jpg`, `docs/screenshots/fortune-768x1024-browse.jpg`, `docs/screenshots/sky-768x1024-home.jpg`, `docs/screenshots/sky-768x1024-explore.jpg`, `docs/screenshots/sky-768x1024-detail.jpg`, `docs/screenshots/sky-768x1024-quiz.jpg`, `docs/screenshots/fortune-800x1280-browse.jpg`, `docs/screenshots/sky-800x1280-home.jpg`, `docs/screenshots/sky-800x1280-explore.jpg`, `docs/screenshots/sky-800x1280-detail.jpg`, `docs/screenshots/sky-800x1280-quiz.jpg`, `docs/screenshots/fortune-360x640-browse.jpg`, `docs/screenshots/sky-360x640-home.jpg`, `docs/screenshots/sky-360x640-explore.jpg`, `docs/screenshots/sky-360x640-detail.jpg`, `docs/screenshots/sky-360x640-quiz.jpg`, `docs/screenshots/fortune-landscape-browse.jpg`, `docs/screenshots/sky-landscape-home.jpg`, `docs/screenshots/sky-landscape-explore.jpg`, `docs/screenshots/sky-landscape-detail.jpg`, `docs/screenshots/sky-landscape-quiz.jpg`
+스크린샷: `docs/screenshots/fortune-600x960-browse.jpg`, `docs/screenshots/fortune-600x960-preview.jpg`, `docs/screenshots/fortune-600x960-result.jpg`, `docs/screenshots/sky-600x960-home.jpg`, `docs/screenshots/sky-600x960-explore.jpg`, `docs/screenshots/sky-600x960-detail.jpg`, `docs/screenshots/sky-600x960-quiz.jpg`, `docs/screenshots/sky-600x960-hint1.jpg`, `docs/screenshots/sky-600x960-hint2.jpg`, `docs/screenshots/sky-600x960-hint3.jpg`, `docs/screenshots/sky-600x960-success.jpg`, `docs/screenshots/fortune-768x1024-browse.jpg`, `docs/screenshots/sky-768x1024-home.jpg`, `docs/screenshots/sky-768x1024-explore.jpg`, `docs/screenshots/sky-768x1024-detail.jpg`, `docs/screenshots/sky-768x1024-quiz.jpg`, `docs/screenshots/fortune-800x1280-browse.jpg`, `docs/screenshots/sky-800x1280-home.jpg`, `docs/screenshots/sky-800x1280-explore.jpg`, `docs/screenshots/sky-800x1280-detail.jpg`, `docs/screenshots/sky-800x1280-quiz.jpg`, `docs/screenshots/fortune-360x640-browse.jpg`, `docs/screenshots/sky-360x640-home.jpg`, `docs/screenshots/sky-360x640-explore.jpg`, `docs/screenshots/sky-360x640-detail.jpg`, `docs/screenshots/sky-360x640-quiz.jpg`, `docs/screenshots/fortune-landscape-browse.jpg`, `docs/screenshots/sky-landscape-home.jpg`, `docs/screenshots/sky-landscape-explore.jpg`, `docs/screenshots/sky-landscape-detail.jpg`, `docs/screenshots/sky-landscape-quiz.jpg`
 
 ## 자동 검사 범위
 
