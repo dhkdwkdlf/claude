@@ -1,0 +1,322 @@
+/* 앱 1 — 즉석 별자리 운세 */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 6px;
+  flex: 0 0 auto;
+  z-index: 2;
+}
+.header .meta {
+  margin-top: 2px;
+}
+
+.stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  perspective: 1400px;
+  perspective-origin: 50% 45%;
+  touch-action: pan-y;
+  z-index: 1;
+  --card-w: 320px;
+  --card-h: 480px;
+  --spacing: 236px;
+}
+
+.footer {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-height: 92px;
+  padding-top: 8px;
+  z-index: 2;
+}
+
+/* 카드 */
+.card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--card-w);
+  height: var(--card-h);
+  margin-left: calc(var(--card-w) / -2);
+  margin-top: calc(var(--card-h) / -2);
+  transform-style: preserve-3d;
+  transform: translateX(calc(var(--d) * var(--spacing))) translateZ(calc(var(--ad) * -170px))
+    rotateY(calc(var(--d) * -30deg)) scale(calc(1 - var(--ad) * 0.1));
+  will-change: transform;
+  cursor: pointer;
+}
+.card__glow {
+  position: absolute;
+  inset: -8px;
+  border-radius: calc(var(--radius-lg) + 8px);
+  box-shadow: 0 0 46px 14px rgba(242, 215, 155, 0.33), 0 0 0 2px rgba(242, 215, 155, 0.45);
+  opacity: 0;
+  transition: opacity 500ms var(--ease-out);
+  pointer-events: none;
+}
+.card.is-center.is-settled .card__glow {
+  opacity: 1;
+  animation: glow-pulse 3.4s ease-in-out infinite alternate;
+}
+@keyframes glow-pulse {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.card__sparkles {
+  position: absolute;
+  inset: -22px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 600ms var(--ease-out);
+}
+.card.is-center.is-settled .card__sparkles {
+  opacity: 1;
+}
+.card__sparkles i {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  animation: sparkle 2.6s ease-in-out infinite;
+}
+.card__sparkles i:nth-child(1) { left: 4%; top: 12%; animation-delay: 0s; }
+.card__sparkles i:nth-child(2) { right: 3%; top: 26%; animation-delay: 0.7s; width: 6px; height: 6px; }
+.card__sparkles i:nth-child(3) { left: 8%; bottom: 20%; animation-delay: 1.3s; width: 6px; height: 6px; }
+.card__sparkles i:nth-child(4) { right: 6%; bottom: 8%; animation-delay: 1.9s; }
+.card__sparkles i:nth-child(5) { left: 50%; top: -2%; animation-delay: 0.4s; width: 7px; height: 7px; }
+@keyframes sparkle {
+  0%, 100% { transform: scale(0.5); opacity: 0.25; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+.card__inner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: scale(var(--zoom, 1)) rotateY(var(--flip, 0deg));
+  transition: transform var(--dur-preview) var(--ease-out);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+.card.is-preview .card__inner {
+  --zoom: 1.07;
+}
+.card.is-flipping .card__inner,
+.card.is-result .card__inner {
+  --flip: 180deg;
+  --zoom: 1.07;
+  transition-duration: var(--dur-flip);
+  transition-timing-function: var(--ease-in-out);
+}
+.card.is-returning .card__inner {
+  --flip: 360deg;
+  --zoom: 1;
+  transition-duration: var(--dur-flip);
+  transition-timing-function: var(--ease-in-out);
+}
+.card.no-transition .card__inner {
+  transition: none !important;
+}
+
+.card__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--card);
+  color: var(--ink);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1.5px solid rgba(220, 232, 248, 0.9);
+}
+.card__back {
+  transform: rotateY(180deg);
+}
+
+/* 앞면 */
+.card__art {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  background: var(--sky-800);
+  overflow: hidden;
+  transition: flex-basis var(--dur-preview) var(--ease-out);
+}
+.card__art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 42%;
+  display: block;
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+.card__art::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 28%;
+  background: linear-gradient(180deg, rgba(20, 37, 67, 0) 0%, rgba(20, 37, 67, 0.55) 100%);
+  pointer-events: none;
+}
+.card__text {
+  flex: 0 0 auto;
+  padding: 14px 18px 16px;
+  text-align: center;
+  background: var(--card);
+}
+.card__name {
+  font-size: calc(var(--card-w) * 0.085);
+  line-height: 1.2;
+  color: var(--ink);
+}
+.card__range {
+  margin-top: 4px;
+  font-size: calc(var(--card-w) * 0.056);
+  font-weight: 700;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+}
+.card__desc {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  font-size: calc(var(--card-w) * 0.049);
+  line-height: 1.5;
+  color: var(--ink);
+  transition: max-height var(--dur-preview) var(--ease-out), opacity var(--dur-preview) var(--ease-out), margin-top var(--dur-preview) var(--ease-out);
+}
+.card__desc strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--gold-ink);
+  font-weight: 700;
+}
+.card.is-preview .card__desc,
+.card.is-flipping .card__desc,
+.card.is-result .card__desc {
+  max-height: 14em;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+/* 뒷면: 운세 */
+.card__back {
+  padding: 22px 22px 18px;
+  background:
+    radial-gradient(90% 60% at 50% 0%, rgba(220, 232, 248, 0.85) 0%, rgba(247, 250, 255, 0) 70%),
+    var(--card);
+  justify-content: space-between;
+  text-align: center;
+}
+.fortune__title {
+  font-size: calc(var(--card-w) * 0.05);
+  font-weight: 700;
+  color: var(--gold-ink);
+  letter-spacing: 0.02em;
+}
+.fortune__name {
+  margin-top: 4px;
+  font-size: calc(var(--card-w) * 0.082);
+  color: var(--ink);
+}
+.fortune__ornament {
+  margin: 10px auto 6px;
+  width: 64%;
+  height: 10px;
+  background:
+    radial-gradient(circle at 50% 50%, var(--gold-deep) 0 3px, transparent 3.5px),
+    linear-gradient(90deg, transparent 0, var(--lavender) 20%, var(--lavender) 80%, transparent 100%) 50% 50% / 100% 1.5px no-repeat;
+}
+.fortune__body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  min-height: 0;
+}
+.fortune__message {
+  font-size: calc(var(--card-w) * 0.062);
+  line-height: 1.5;
+  color: var(--ink);
+  font-weight: 700;
+  word-break: keep-all;
+}
+.fortune__action {
+  font-size: calc(var(--card-w) * 0.052);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  word-break: keep-all;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--lavender-soft);
+}
+.fortune__action::before {
+  content: "오늘의 작은 행동";
+  display: block;
+  font-size: 0.8em;
+  color: var(--gold-ink);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.fortune__note {
+  font-size: calc(var(--card-w) * 0.042);
+  color: var(--ink-muted);
+}
+
+/* 저사양·동작 줄이기 */
+.is-low-perf .card__glow,
+.is-reduced-motion .card__glow {
+  animation: none !important;
+}
+.is-low-perf .card__sparkles,
+.is-reduced-motion .card__sparkles i {
+  animation: none !important;
+}
+.is-low-perf .card__sparkles {
+  display: none;
+}
+.is-low-perf .card {
+  will-change: auto;
+}
+
+/* 작은 화면 */
+@media (max-width: 400px) {
+  .title {
+    font-size: 24px;
+  }
+  .subtitle {
+    font-size: 17px;
+  }
+  .hint {
+    font-size: 16px;
+  }
+  .footer {
+    min-height: 76px;
+  }
+}
+@media (orientation: landscape) and (max-height: 700px) {
+  .header {
+    gap: 2px;
+  }
+  .subtitle {
+    display: none;
+  }
+}

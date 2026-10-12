@@ -1,0 +1,137 @@
+{
+  "$comment": "앱 1 운세 놀이용 12별자리. 생일 구간은 놀이용으로 고정한 통상 구간이며 천문학적 태양 위치·별자리 경계와 같지 않다. 연도를 넘는 염소자리는 startMonthDay > endMonthDay 로 표현한다.",
+  "cards": [
+    {
+      "id": "aries",
+      "nameKo": "양자리",
+      "nameEn": "Aries",
+      "birthRangeLabel": "3월 21일 ~ 4월 19일",
+      "startMonthDay": [3, 21],
+      "endMonthDay": [4, 19],
+      "illustrationAsset": "art/aries.webp",
+      "shortDescription": "봄의 문을 여는 첫 번째 별자리예요. 둥글게 말린 뿔을 가진 황금 양털의 양이, 밝은 별 하말을 머리에 이고 가을 밤하늘 동쪽에 떠 있어요.",
+      "accent": "#F2D79B"
+    },
+    {
+      "id": "taurus",
+      "nameKo": "황소자리",
+      "nameEn": "Taurus",
+      "birthRangeLabel": "4월 20일 ~ 5월 20일",
+      "startMonthDay": [4, 20],
+      "endMonthDay": [5, 20],
+      "illustrationAsset": "art/taurus.webp",
+      "shortDescription": "붉은 별 알데바란이 황소의 눈이에요. V자로 모인 별무리가 얼굴, 길게 뻗은 두 뿔 끝에도 별이 반짝여요. 겨울이 가까워지면 동쪽에서 올라와요.",
+      "accent": "#F2D79B"
+    },
+    {
+      "id": "gemini",
+      "nameKo": "쌍둥이자리",
+      "nameEn": "Gemini",
+      "birthRangeLabel": "5월 21일 ~ 6월 21일",
+      "startMonthDay": [5, 21],
+      "endMonthDay": [6, 21],
+      "illustrationAsset": "art/gemini.webp",
+      "shortDescription": "나란히 선 두 형제 카스토르와 폴룩스의 별자리예요. 머리 부분에 밝은 별 두 개가 꼭 손을 잡은 것처럼 가까이 붙어 있어요.",
+      "accent": "#F2D79B"
+    },
+    {
+      "id": "cancer",
+      "nameKo": "게자리",
+      "nameEn": "Cancer",
+      "birthRangeLabel": "6월 22일 ~ 7월 22일",
+      "startMonthDay": [6, 22],
+      "endMonthDay": [7, 22],
+      "illustrationAsset": "art/cancer.webp",
+      "shortDescription": "조용히 빛나는 작은 별들로 이루어진 게예요. 별자리 한가운데에는 '벌집'이라고 부르는 희미한 별 뭉치가 숨어 있어요.",
+      "accent": "#F2D79B"
+    },
+    {
+      "id": "leo",
+      "nameKo": "사자자리",
+      "nameEn": "Leo",
+      "birthRangeLabel": "7월 23일 ~ 8월 22일",
+      "startMonthDay": [7, 23],
+      "endMonthDay": [8, 22],
+      "illustrationAsset": "art/leo.webp",
+      "shortDescription": "물음표를 거꾸로 세운 듯한 별들이 사자의 갈기와 머리예요. 가슴에서 빛나는 별 레굴루스는 '작은 왕'이라는 뜻이래요.",
+      "accent": "#F2D79B"
+    },
+    {
+      "id": "virgo",
+      "nameKo": "처녀자리",
+      "nameEn": "Virgo",
+      "birthRangeLabel": "8월 23일 ~ 9월 22일",
+      "startMonthDay": [8, 23],
+      "endMonthDay": [9, 22],
+      "illustrationAsset": "art/virgo.webp",
+      "shortDescription": "이삭을 손에 든 수확의 여신이에요. 손끝에서 빛나는 별 스피카는 '보리 이삭'이라는 뜻으로, 봄 밤하늘에서 가장 밝은 별 가운데 하나예요.",
+      "accent": "#F2D79B"
+    },
+    {
+      "id": "libra",
+      "nameKo": "천칭자리",
+      "nameEn": "Libra",
+      "birthRangeLabel": "9월 23일 ~ 10월 22일",
+      "startMonthDay": [9, 23],
+      "endMonthDay": [10, 22],
+      "illustrationAsset": "art/libra.webp",
+      "shortDescription": "양쪽 접시가 가지런히 균형을 이룬 저울이에요. 네 개의 별이 마름모를 그리며, 낮과 밤의 길이가 같아지는 때를 떠올리게 해요.",
+      "accent": "#F2D79B"
+    },
+    {
+      "id": "scorpio",
+      "nameKo": "전갈자리",
+      "nameEn": "Scorpio",
+      "birthRangeLabel": "10월 23일 ~ 11월 22일",
+      "startMonthDay": [10, 23],
+      "endMonthDay": [11, 22],
+      "illustrationAsset": "art/scorpio.webp",
+      "shortDescription": "꼬리를 높이 말아 올린 전갈이에요. 심장 자리에서 붉게 빛나는 별 안타레스는 여름 남쪽 하늘의 주인공이에요. 11월 4일 생일인 친구들의 별자리예요.",
+      "accent": "#F2D79B"
+    },
+    {
+      "id": "sagittarius",
+      "nameKo": "사수자리",
+      "nameEn": "Sagittarius",
+      "birthRangeLabel": "11월 23일 ~ 12월 21일",
+      "startMonthDay": [11, 23],
+      "endMonthDay": [12, 21],
+      "illustrationAsset": "art/sagittarius.webp",
+      "shortDescription": "활시위를 당긴 사수예요. 별들이 주전자 모양으로 모여 있고, 그 뒤로 은하수의 가장 밝은 부분이 흐르고 있어요.",
+      "accent": "#F2D79B"
+    },
+    {
+      "id": "capricorn",
+      "nameKo": "염소자리",
+      "nameEn": "Capricorn",
+      "birthRangeLabel": "12월 22일 ~ 1월 19일",
+      "startMonthDay": [12, 22],
+      "endMonthDay": [1, 19],
+      "illustrationAsset": "art/capricorn.webp",
+      "shortDescription": "염소의 머리에 물고기 꼬리가 달린 신비한 바다 염소예요. 별들이 넓은 삼각형을 그리며, 한 해의 끝과 시작을 이어 줘요.",
+      "accent": "#F2D79B"
+    },
+    {
+      "id": "aquarius",
+      "nameKo": "물병자리",
+      "nameEn": "Aquarius",
+      "birthRangeLabel": "1월 20일 ~ 2월 18일",
+      "startMonthDay": [1, 20],
+      "endMonthDay": [2, 18],
+      "illustrationAsset": "art/aquarius.webp",
+      "shortDescription": "기울인 물병에서 물이 흘러내리는 모습이에요. 작은 별 네 개가 Y자로 모인 곳이 물병이고, 물줄기는 남쪽 물고기자리까지 이어져요.",
+      "accent": "#F2D79B"
+    },
+    {
+      "id": "pisces",
+      "nameKo": "물고기자리",
+      "nameEn": "Pisces",
+      "birthRangeLabel": "2월 19일 ~ 3월 20일",
+      "startMonthDay": [2, 19],
+      "endMonthDay": [3, 20],
+      "illustrationAsset": "art/pisces.webp",
+      "shortDescription": "끈으로 서로 이어진 두 마리 물고기예요. 페가수스 사각형 아래에서 V자로 길게 뻗은 별들이 가을 밤하늘에 조용히 헤엄치고 있어요.",
+      "accent": "#F2D79B"
+    }
+  ]
+}

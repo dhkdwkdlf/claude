@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <title>11월 4일의 별자리 여행</title>
+    <meta name="description" content="별자리 부스 — 계절별 볼 수 있는 별자리 찾기 (봉화 기준)" />
+    <meta name="theme-color" content="#142543" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="별자리 여행" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/icon-192.png" type="image/png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <script type="module" crossorigin src="/sky/assets/index-DKWn85sp.js"></script>
+    <link rel="stylesheet" crossorigin href="/sky/assets/index-C6Tci0bv.css">
+  </head>
+  <body>
+    <canvas class="bg-stars" aria-hidden="true"></canvas>
+    <div class="notice-bar" id="notice-bar" hidden></div>
+    <div id="app" class="app">
+      <!-- HOME -->
+      <section class="screen screen--home" id="screen-home">
+        <header class="home__head">
+          <h1 class="title">11월 4일의 별자리 여행</h1>
+          <p class="subtitle">가을밤, 시간이 흐르면 어떤 별자리가 보일까요?</p>
+          <p class="meta" id="home-meta">2026. 11. 4. · 봉화 기준 · 한국 시간</p>
+        </header>
+        <div class="home__art">
+          <svg class="skymap-svg skymap-svg--deco" id="home-sky" aria-hidden="true"></svg>
+        </div>
+        <div class="home__actions">
+          <button class="btn btn--primary btn--big home__explore" id="btn-explore" type="button">별자리 알아보기</button>
+          <button class="btn btn--ghost" id="btn-quiz-home" type="button">별자리 한 문제 도전</button>
+          <p class="hint" id="home-quiz-hint">별자리를 먼저 하나 알아보세요.</p>
+        </div>
+      </section>
+
+      <!-- EXPLORE -->
+      <section class="screen screen--explore" id="screen-explore" hidden>
+        <header class="topbar">
+          <button class="btn btn--ghost btn--small" id="btn-home-explore" type="button">처음으로</button>
+          <div class="topbar__title">
+            <h2>밤하늘 보기</h2>
+            <p class="meta" id="explore-meta">2026. 11. 4. · 봉화 기준 · 한국 시간</p>
+          </div>
+          <span class="topbar__spacer"></span>
+        </header>
+        <div class="slots" id="slots" role="tablist" aria-label="시간 선택"></div>
+        <p class="hint hint--tight" id="slot-note"></p>
+        <div class="explore__body">
+          <div class="skymap-wrap">
+            <svg class="skymap-svg" id="sky" role="img" aria-label="밤하늘 지도"></svg>
+          </div>
+          <p class="hint hint--tight">위를 올려다본 하늘 지도예요. 북쪽을 위로 두면 동쪽이 왼쪽에 와요.</p>
+          <p class="hint hint--tight hint--muted">맑고 어두운 하늘을 기준으로 한 모습이에요.</p>
+          <div class="chips" id="chips" aria-label="별자리 목록"></div>
+        </div>
+        <footer class="explore__foot">
+          <p class="hint" id="explore-quiz-hint"></p>
+          <button class="btn btn--primary" id="btn-quiz-explore" type="button">별자리 한 문제 도전</button>
+        </footer>
+
+        <!-- DETAIL (overlay) -->
+        <div class="detail-panel" id="detail-panel" hidden>
+          <div class="detail-panel__inner panel">
+            <div class="detail-panel__head">
+              <div>
+                <p class="detail-panel__season" id="detail-season"></p>
+                <h2 class="detail-panel__name" id="detail-name"></h2>
+              </div>
+              <button class="btn btn--small" id="btn-detail-close" type="button">다른 별자리 보기</button>
+            </div>
+            <p class="detail-panel__where" id="detail-where"></p>
+            <div class="detail-fig">
+              <svg class="detail-svg" id="detail-svg" role="img" aria-label="별자리 상세 그림"></svg>
+            </div>
+            <div class="layer-toggles" id="layer-toggles">
+              <button class="chip is-on" data-layer="lines" type="button" aria-pressed="true">선 잇기</button>
+              <button class="chip is-on" data-layer="shape" type="button" aria-pressed="true">모양 씌우기</button>
+              <button class="chip is-on" data-layer="labels" type="button" aria-pressed="true">별 이름</button>
+            </div>
+            <p class="detail-panel__tip" id="detail-tip"></p>
+            <p class="detail-panel__desc" id="detail-desc"></p>
+            <p class="detail-panel__note" id="detail-note"></p>
+            <div class="detail-panel__actions">
+              <button class="btn btn--ghost btn--small" id="btn-home-detail" type="button">처음으로</button>
+              <button class="btn btn--primary" id="btn-detail-quiz" type="button">별자리 한 문제 도전</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUIZ -->
+      <section class="screen screen--quiz" id="screen-quiz" hidden>
+        <header class="topbar">
+          <button class="btn btn--ghost btn--small" id="btn-home-quiz" type="button">처음으로</button>
+          <div class="topbar__title"><h2>별자리 한 문제</h2></div>
+          <span class="topbar__spacer"></span>
+        </header>
+        <p class="quiz__question">반짝이는 별을 보고 별자리 이름을 맞혀 보세요.</p>
+        <div class="quiz__fig">
+          <svg class="detail-svg" id="quiz-svg" role="img" aria-label="퀴즈 별자리 그림"></svg>
+        </div>
+        <form class="quiz__form" id="quiz-form" autocomplete="off">
+          <label class="sr-only" for="answer">별자리 이름</label>
+          <input class="quiz__input" id="answer" name="answer" type="text" maxlength="24" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" placeholder="별자리 이름" />
+          <button class="btn btn--primary" id="btn-submit" type="submit">정답 확인</button>
+        </form>
+        <p class="hint hint--tight">“자리”는 빼고 이름만 써도 좋아요.</p>
+        <p class="quiz__feedback" id="quiz-feedback" aria-live="polite"></p>
+        <div class="quiz__hint-row">
+          <button class="btn btn--ghost" id="btn-hint" type="button" hidden>힌트 보기</button>
+        </div>
+      </section>
+
+      <!-- SUCCESS -->
+      <section class="screen screen--success" id="screen-success" hidden>
+        <canvas class="success__dust" id="dust" aria-hidden="true"></canvas>
+        <div class="success__meteor" id="meteor" aria-hidden="true"></div>
+        <header class="success__head">
+          <p class="success__kicker">정답이에요!</p>
+          <h2 class="success__name" id="success-name"></h2>
+          <p class="success__msg" id="success-msg"></p>
+        </header>
+        <div class="success__fig">
+          <svg class="detail-svg" id="success-svg" role="img" aria-label="정답 별자리 그림"></svg>
+        </div>
+        <p class="success__where" id="success-where"></p>
+        <footer class="success__foot">
+          <p class="hint">다음 친구가 시작할 수 있도록 눌러 주세요.</p>
+          <button class="btn btn--primary btn--big success__home" id="btn-home-success" type="button">처음으로 돌아가기</button>
+        </footer>
+      </section>
+    </div>
+    <noscript>이 앱은 JavaScript 가 필요합니다.</noscript>
+  </body>
+</html>

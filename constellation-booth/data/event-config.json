@@ -1,5 +1,4 @@
 {
-  "$schema": "./schemas/event-config.schema.json",
   "eventDate": "2026-11-04",
   "eventDateLabel": "2026. 11. 4. 수요일",
   "timeZone": "Asia/Seoul",

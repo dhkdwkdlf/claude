@@ -1,0 +1,22 @@
+{
+ "appId": "sky",
+ "version": "1.0.0+20261012",
+ "contentHash": "5e9aa314af",
+ "cacheName": "sky-v1.0.0+20261012-5e9aa314af",
+ "base": "/sky/",
+ "totalBytes": 2489096,
+ "files": [
+  "/sky/assets/GowunBatang-Bold.subset-DV4VzIHC.woff2",
+  "/sky/assets/GowunBatang-Regular.subset-DDL4HcVx.woff2",
+  "/sky/assets/NotoSansKR-Bold.subset-25Rfu__e.woff2",
+  "/sky/assets/NotoSansKR-Regular.subset-DVUY0z-S.woff2",
+  "/sky/assets/index-C6Tci0bv.css",
+  "/sky/assets/index-DKWn85sp.js",
+  "/sky/icons/apple-touch-icon.png",
+  "/sky/icons/icon-192.png",
+  "/sky/icons/icon-512.png",
+  "/sky/icons/icon-maskable-512.png",
+  "/sky/",
+  "/sky/manifest.webmanifest"
+ ]
+}

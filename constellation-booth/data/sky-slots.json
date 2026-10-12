@@ -1,0 +1,3652 @@
+{
+ "configFingerprint": "10e5e58d995f371d",
+ "slots": [
+  {
+   "id": "t18",
+   "labelKo": "저녁 6시",
+   "localISO": "2026-11-04T18:00:00+09:00",
+   "utcISO": "2026-11-04T09:00:00Z",
+   "isNextDay": false,
+   "sunAltitudeDeg": -7.51,
+   "twilight": "nautical",
+   "twilightKo": "하늘이 어두워지는 중이에요. 밝은 별부터 차례로 나타나요.",
+   "moon": {
+    "altitudeDeg": -36.4,
+    "azimuthDeg": 312.36,
+    "fractionIlluminated": 0.238
+   },
+   "stars": [
+    {
+     "id": "hip677",
+     "altitudeDeg": 43.836,
+     "azimuthDeg": 82.763,
+     "magnitude": 2.07
+    },
+    {
+     "id": "hip746",
+     "altitudeDeg": 48.474,
+     "azimuthDeg": 39.281,
+     "magnitude": 2.28
+    },
+    {
+     "id": "hip1067",
+     "altitudeDeg": 35.92,
+     "azimuthDeg": 97.788,
+     "magnitude": 2.83
+    },
+    {
+     "id": "hip2912",
+     "altitudeDeg": 40.09,
+     "azimuthDeg": 73.802,
+     "magnitude": 4.34
+    },
+    {
+     "id": "hip3031",
+     "altitudeDeg": 37.97,
+     "azimuthDeg": 78.802,
+     "magnitude": 4.34
+    },
+    {
+     "id": "hip3092",
+     "altitudeDeg": 38.476,
+     "azimuthDeg": 76.924,
+     "magnitude": 3.27
+    },
+    {
+     "id": "hip3179",
+     "altitudeDeg": 44.43,
+     "azimuthDeg": 43.332,
+     "magnitude": 2.24
+    },
+    {
+     "id": "hip3693",
+     "altitudeDeg": 33.901,
+     "azimuthDeg": 83.209,
+     "magnitude": 4.08
+    },
+    {
+     "id": "hip3881",
+     "altitudeDeg": 40.192,
+     "azimuthDeg": 63.603,
+     "magnitude": 4.53
+    },
+    {
+     "id": "hip4427",
+     "altitudeDeg": 42.46,
+     "azimuthDeg": 37.484,
+     "magnitude": 2.15
+    },
+    {
+     "id": "hip4436",
+     "altitudeDeg": 38.088,
+     "azimuthDeg": 66.183,
+     "magnitude": 3.86
+    },
+    {
+     "id": "hip4463",
+     "altitudeDeg": 31.519,
+     "azimuthDeg": 82.76,
+     "magnitude": 4.4
+    },
+    {
+     "id": "hip5434",
+     "altitudeDeg": 38.56,
+     "azimuthDeg": 54.66,
+     "magnitude": 4.26
+    },
+    {
+     "id": "hip5447",
+     "altitudeDeg": 34.607,
+     "azimuthDeg": 68.29,
+     "magnitude": 2.07
+    },
+    {
+     "id": "hip6686",
+     "altitudeDeg": 38.847,
+     "azimuthDeg": 37.713,
+     "magnitude": 2.66
+    },
+    {
+     "id": "hip7607",
+     "altitudeDeg": 34.405,
+     "azimuthDeg": 51.272,
+     "magnitude": 3.59
+    },
+    {
+     "id": "hip8068",
+     "altitudeDeg": 34.189,
+     "azimuthDeg": 48.554,
+     "magnitude": 4.01
+    },
+    {
+     "id": "hip8832",
+     "altitudeDeg": 18.207,
+     "azimuthDeg": 78.994,
+     "magnitude": 3.88
+    },
+    {
+     "id": "hip8886",
+     "altitudeDeg": 36.118,
+     "azimuthDeg": 32.738,
+     "magnitude": 3.35
+    },
+    {
+     "id": "hip8903",
+     "altitudeDeg": 18.823,
+     "azimuthDeg": 77.51,
+     "magnitude": 2.64
+    },
+    {
+     "id": "hip9640",
+     "altitudeDeg": 27.813,
+     "azimuthDeg": 56.056,
+     "magnitude": 2.1
+    },
+    {
+     "id": "hip9884",
+     "altitudeDeg": 17.843,
+     "azimuthDeg": 73.496,
+     "magnitude": 2.01
+    },
+    {
+     "id": "hip12777",
+     "altitudeDeg": 24.687,
+     "azimuthDeg": 45.657,
+     "magnitude": 4.1
+    },
+    {
+     "id": "hip13209",
+     "altitudeDeg": 11.973,
+     "azimuthDeg": 64.627,
+     "magnitude": 3.61
+    },
+    {
+     "id": "hip13268",
+     "altitudeDeg": 26.902,
+     "azimuthDeg": 38.586,
+     "magnitude": 3.77
+    },
+    {
+     "id": "hip13531",
+     "altitudeDeg": 24.988,
+     "azimuthDeg": 41.404,
+     "magnitude": 3.93
+    },
+    {
+     "id": "hip14328",
+     "altitudeDeg": 23.975,
+     "azimuthDeg": 39.84,
+     "magnitude": 2.91
+    },
+    {
+     "id": "hip14354",
+     "altitudeDeg": 16.025,
+     "azimuthDeg": 52.975,
+     "magnitude": 3.32
+    },
+    {
+     "id": "hip14576",
+     "altitudeDeg": 16.756,
+     "azimuthDeg": 50.82,
+     "magnitude": 2.09
+    },
+    {
+     "id": "hip14632",
+     "altitudeDeg": 21.385,
+     "azimuthDeg": 43.075,
+     "magnitude": 4.05
+    },
+    {
+     "id": "hip14668",
+     "altitudeDeg": 18.743,
+     "azimuthDeg": 47.286,
+     "magnitude": 3.79
+    },
+    {
+     "id": "hip15863",
+     "altitudeDeg": 19.47,
+     "azimuthDeg": 41.413,
+     "magnitude": 1.79
+    },
+    {
+     "id": "hip15900",
+     "altitudeDeg": -5.663,
+     "azimuthDeg": 74.113,
+     "magnitude": 3.61
+    },
+    {
+     "id": "hip16083",
+     "altitudeDeg": -5.675,
+     "azimuthDeg": 73.195,
+     "magnitude": 3.73
+    },
+    {
+     "id": "hip17358",
+     "altitudeDeg": 15.776,
+     "azimuthDeg": 41.268,
+     "magnitude": 3.01
+    },
+    {
+     "id": "hip17448",
+     "altitudeDeg": 5.733,
+     "azimuthDeg": 53.305,
+     "magnitude": 3.84
+    },
+    {
+     "id": "hip17531",
+     "altitudeDeg": 0.483,
+     "azimuthDeg": 59.116,
+     "magnitude": 4.3
+    },
+    {
+     "id": "hip17573",
+     "altitudeDeg": 0.312,
+     "azimuthDeg": 59.099,
+     "magnitude": 3.87
+    },
+    {
+     "id": "hip17608",
+     "altitudeDeg": -0.049,
+     "azimuthDeg": 59.341,
+     "magnitude": 4.14
+    },
+    {
+     "id": "hip17702",
+     "altitudeDeg": -0.146,
+     "azimuthDeg": 59.049,
+     "magnitude": 2.85
+    },
+    {
+     "id": "hip17847",
+     "altitudeDeg": -0.468,
+     "azimuthDeg": 58.836,
+     "magnitude": 3.62
+    },
+    {
+     "id": "hip18246",
+     "altitudeDeg": 3.9,
+     "azimuthDeg": 52.241,
+     "magnitude": 2.84
+    },
+    {
+     "id": "hip18532",
+     "altitudeDeg": 8.734,
+     "azimuthDeg": 45.624,
+     "magnitude": 2.9
+    },
+    {
+     "id": "hip18614",
+     "altitudeDeg": 5.76,
+     "azimuthDeg": 48.648,
+     "magnitude": 3.98
+    },
+    {
+     "id": "hip18724",
+     "altitudeDeg": -10.181,
+     "azimuthDeg": 65.714,
+     "magnitude": 3.41
+    },
+    {
+     "id": "hip20205",
+     "altitudeDeg": -11.467,
+     "azimuthDeg": 60.168,
+     "magnitude": 3.65
+    },
+    {
+     "id": "hip20455",
+     "altitudeDeg": -10.677,
+     "azimuthDeg": 58.233,
+     "magnitude": 3.77
+    },
+    {
+     "id": "hip20889",
+     "altitudeDeg": -10.48,
+     "azimuthDeg": 56.084,
+     "magnitude": 3.53
+    },
+    {
+     "id": "hip20894",
+     "altitudeDeg": -12.827,
+     "azimuthDeg": 58.468,
+     "magnitude": 3.4
+    },
+    {
+     "id": "hip21421",
+     "altitudeDeg": -13.603,
+     "azimuthDeg": 56.737,
+     "magnitude": 0.87
+    },
+    {
+     "id": "hip22449",
+     "altitudeDeg": -22.79,
+     "azimuthDeg": 61.25,
+     "magnitude": 3.19
+    },
+    {
+     "id": "hip22509",
+     "altitudeDeg": -21.546,
+     "azimuthDeg": 59.632,
+     "magnitude": 4.35
+    },
+    {
+     "id": "hip22549",
+     "altitudeDeg": -23.984,
+     "azimuthDeg": 62.041,
+     "magnitude": 3.68
+    },
+    {
+     "id": "hip22797",
+     "altitudeDeg": -26.736,
+     "azimuthDeg": 63.962,
+     "magnitude": 3.71
+    },
+    {
+     "id": "hip22845",
+     "altitudeDeg": -21.382,
+     "azimuthDeg": 57.882,
+     "magnitude": 4.64
+    },
+    {
+     "id": "hip23015",
+     "altitudeDeg": -4.414,
+     "azimuthDeg": 41.852,
+     "magnitude": 2.69
+    },
+    {
+     "id": "hip23123",
+     "altitudeDeg": -28.013,
+     "azimuthDeg": 63.713,
+     "magnitude": 4.47
+    },
+    {
+     "id": "hip23416",
+     "altitudeDeg": 3.216,
+     "azimuthDeg": 34.344,
+     "magnitude": 3.03
+    },
+    {
+     "id": "hip23453",
+     "altitudeDeg": 1.018,
+     "azimuthDeg": 35.996,
+     "magnitude": 3.69
+    },
+    {
+     "id": "hip23767",
+     "altitudeDeg": 0.669,
+     "azimuthDeg": 35.302,
+     "magnitude": 3.18
+    },
+    {
+     "id": "hip24436",
+     "altitudeDeg": -37.657,
+     "azimuthDeg": 69.208,
+     "magnitude": 0.18
+    },
+    {
+     "id": "hip24608",
+     "altitudeDeg": 3.337,
+     "azimuthDeg": 30.949,
+     "magnitude": 0.08
+    },
+    {
+     "id": "hip25281",
+     "altitudeDeg": -35.516,
+     "azimuthDeg": 61.814,
+     "magnitude": 3.35
+    },
+    {
+     "id": "hip25336",
+     "altitudeDeg": -29.23,
+     "azimuthDeg": 54.602,
+     "magnitude": 1.64
+    },
+    {
+     "id": "hip25428",
+     "altitudeDeg": -11.864,
+     "azimuthDeg": 39.649,
+     "magnitude": 1.65
+    },
+    {
+     "id": "hip25930",
+     "altitudeDeg": -35.316,
+     "azimuthDeg": 58.364,
+     "magnitude": 2.25
+    },
+    {
+     "id": "hip26207",
+     "altitudeDeg": -28.062,
+     "azimuthDeg": 49.819,
+     "magnitude": 3.39
+    },
+    {
+     "id": "hip26311",
+     "altitudeDeg": -36.694,
+     "azimuthDeg": 58.175,
+     "magnitude": 1.69
+    },
+    {
+     "id": "hip26451",
+     "altitudeDeg": -19.438,
+     "azimuthDeg": 41.959,
+     "magnitude": 2.97
+    },
+    {
+     "id": "hip26727",
+     "altitudeDeg": -38.009,
+     "azimuthDeg": 57.761,
+     "magnitude": 1.74
+    },
+    {
+     "id": "hip27366",
+     "altitudeDeg": -44.734,
+     "azimuthDeg": 63.348,
+     "magnitude": 2.07
+    },
+    {
+     "id": "hip27913",
+     "altitudeDeg": -22.339,
+     "azimuthDeg": 38.999,
+     "magnitude": 4.39
+    },
+    {
+     "id": "hip27989",
+     "altitudeDeg": -33.077,
+     "azimuthDeg": 47.033,
+     "magnitude": 0.45
+    },
+    {
+     "id": "hip28360",
+     "altitudeDeg": -1.604,
+     "azimuthDeg": 25.204,
+     "magnitude": 1.9
+    },
+    {
+     "id": "hip28380",
+     "altitudeDeg": -8.382,
+     "azimuthDeg": 28.948,
+     "magnitude": 2.65
+    },
+    {
+     "id": "hip28614",
+     "altitudeDeg": -32.279,
+     "azimuthDeg": 43.767,
+     "magnitude": 4.12
+    },
+    {
+     "id": "hip28716",
+     "altitudeDeg": -23.635,
+     "azimuthDeg": 37.011,
+     "magnitude": 4.64
+    },
+    {
+     "id": "hip29038",
+     "altitudeDeg": -28.674,
+     "azimuthDeg": 39.296,
+     "magnitude": 4.42
+    },
+    {
+     "id": "hip29426",
+     "altitudeDeg": -29.703,
+     "azimuthDeg": 38.597,
+     "magnitude": 4.45
+    },
+    {
+     "id": "hip91262",
+     "altitudeDeg": 67.976,
+     "azimuthDeg": 283.531,
+     "magnitude": 0.03
+    },
+    {
+     "id": "hip91919",
+     "altitudeDeg": 69.438,
+     "azimuthDeg": 285.832,
+     "magnitude": 4.67
+    },
+    {
+     "id": "hip91971",
+     "altitudeDeg": 69.413,
+     "azimuthDeg": 279.948,
+     "magnitude": 4.34
+    },
+    {
+     "id": "hip92420",
+     "altitudeDeg": 69.649,
+     "azimuthDeg": 267.424,
+     "magnitude": 3.52
+    },
+    {
+     "id": "hip92791",
+     "altitudeDeg": 71.261,
+     "azimuthDeg": 277.231,
+     "magnitude": 4.22
+    },
+    {
+     "id": "hip93194",
+     "altitudeDeg": 71.213,
+     "azimuthDeg": 263.815,
+     "magnitude": 3.25
+    },
+    {
+     "id": "hip93244",
+     "altitudeDeg": 60.642,
+     "azimuthDeg": 227.934,
+     "magnitude": 4.02
+    },
+    {
+     "id": "hip93747",
+     "altitudeDeg": 60.511,
+     "azimuthDeg": 224.18,
+     "magnitude": 2.99
+    },
+    {
+     "id": "hip93805",
+     "altitudeDeg": 44.107,
+     "azimuthDeg": 208.986,
+     "magnitude": 3.43
+    },
+    {
+     "id": "hip94779",
+     "altitudeDeg": 69.32,
+     "azimuthDeg": 328.703,
+     "magnitude": 3.8
+    },
+    {
+     "id": "hip95501",
+     "altitudeDeg": 53.33,
+     "azimuthDeg": 206.798,
+     "magnitude": 3.36
+    },
+    {
+     "id": "hip95853",
+     "altitudeDeg": 71.82,
+     "azimuthDeg": 329.654,
+     "magnitude": 3.76
+    },
+    {
+     "id": "hip95947",
+     "altitudeDeg": 74.975,
+     "azimuthDeg": 237.915,
+     "magnitude": 3.05
+    },
+    {
+     "id": "hip96468",
+     "altitudeDeg": 50.059,
+     "azimuthDeg": 200.23,
+     "magnitude": 4.36
+    },
+    {
+     "id": "hip97165",
+     "altitudeDeg": 78.335,
+     "azimuthDeg": 318.751,
+     "magnitude": 2.86
+    },
+    {
+     "id": "hip97278",
+     "altitudeDeg": 62.132,
+     "azimuthDeg": 202.465,
+     "magnitude": 2.72
+    },
+    {
+     "id": "hip97649",
+     "altitudeDeg": 60.79,
+     "azimuthDeg": 199.164,
+     "magnitude": 0.76
+    },
+    {
+     "id": "hip97804",
+     "altitudeDeg": 53.246,
+     "azimuthDeg": 194.975,
+     "magnitude": 3.87
+    },
+    {
+     "id": "hip98036",
+     "altitudeDeg": 58.67,
+     "azimuthDeg": 195.813,
+     "magnitude": 3.71
+    },
+    {
+     "id": "hip98110",
+     "altitudeDeg": 83.28,
+     "azimuthDeg": 257.38,
+     "magnitude": 3.89
+    },
+    {
+     "id": "hip99473",
+     "altitudeDeg": 52.161,
+     "azimuthDeg": 186.829,
+     "magnitude": 3.24
+    },
+    {
+     "id": "hip100453",
+     "altitudeDeg": 86.344,
+     "azimuthDeg": 341.022,
+     "magnitude": 2.23
+    },
+    {
+     "id": "hip101093",
+     "altitudeDeg": 63.811,
+     "azimuthDeg": 0.15,
+     "magnitude": 4.21
+    },
+    {
+     "id": "hip102098",
+     "altitudeDeg": 81.179,
+     "azimuthDeg": 14.954,
+     "magnitude": 1.25
+    },
+    {
+     "id": "hip102422",
+     "altitudeDeg": 64.822,
+     "azimuthDeg": 4.531,
+     "magnitude": 3.41
+    },
+    {
+     "id": "hip102488",
+     "altitudeDeg": 85.395,
+     "azimuthDeg": 126.509,
+     "magnitude": 2.48
+    },
+    {
+     "id": "hip104732",
+     "altitudeDeg": 78.636,
+     "azimuthDeg": 121.997,
+     "magnitude": 3.21
+    },
+    {
+     "id": "hip105199",
+     "altitudeDeg": 63.083,
+     "azimuthDeg": 12.611,
+     "magnitude": 2.45
+    },
+    {
+     "id": "hip106032",
+     "altitudeDeg": 55.311,
+     "azimuthDeg": 8.589,
+     "magnitude": 3.23
+    },
+    {
+     "id": "hip107259",
+     "altitudeDeg": 64.859,
+     "azimuthDeg": 22.969,
+     "magnitude": 4.23
+    },
+    {
+     "id": "hip107315",
+     "altitudeDeg": 58.082,
+     "azimuthDeg": 142.62,
+     "magnitude": 2.38
+    },
+    {
+     "id": "hip107354",
+     "altitudeDeg": 70.307,
+     "azimuthDeg": 118.964,
+     "magnitude": 4.14
+    },
+    {
+     "id": "hip109176",
+     "altitudeDeg": 66.077,
+     "azimuthDeg": 111.46,
+     "magnitude": 3.77
+    },
+    {
+     "id": "hip109410",
+     "altitudeDeg": 68.945,
+     "azimuthDeg": 92.213,
+     "magnitude": 4.28
+    },
+    {
+     "id": "hip109427",
+     "altitudeDeg": 51.573,
+     "azimuthDeg": 136.422,
+     "magnitude": 3.52
+    },
+    {
+     "id": "hip109492",
+     "altitudeDeg": 62.826,
+     "azimuthDeg": 29.766,
+     "magnitude": 3.39
+    },
+    {
+     "id": "hip109857",
+     "altitudeDeg": 63.118,
+     "azimuthDeg": 32.525,
+     "magnitude": 4.18
+    },
+    {
+     "id": "hip110991",
+     "altitudeDeg": 60.789,
+     "azimuthDeg": 32.512,
+     "magnitude": 4.07
+    },
+    {
+     "id": "hip112029",
+     "altitudeDeg": 50.363,
+     "azimuthDeg": 122.223,
+     "magnitude": 3.41
+    },
+    {
+     "id": "hip112158",
+     "altitudeDeg": 61.339,
+     "azimuthDeg": 93.187,
+     "magnitude": 2.93
+    },
+    {
+     "id": "hip112440",
+     "altitudeDeg": 57.576,
+     "azimuthDeg": 104.132,
+     "magnitude": 3.97
+    },
+    {
+     "id": "hip112724",
+     "altitudeDeg": 54.272,
+     "azimuthDeg": 23.396,
+     "magnitude": 3.5
+    },
+    {
+     "id": "hip112748",
+     "altitudeDeg": 57.437,
+     "azimuthDeg": 101.717,
+     "magnitude": 3.51
+    },
+    {
+     "id": "hip113881",
+     "altitudeDeg": 56.326,
+     "azimuthDeg": 93.442,
+     "magnitude": 2.44
+    },
+    {
+     "id": "hip113963",
+     "altitudeDeg": 49.183,
+     "azimuthDeg": 111.271,
+     "magnitude": 2.49
+    },
+    {
+     "id": "hip116631",
+     "altitudeDeg": 53.611,
+     "azimuthDeg": 64.53,
+     "magnitude": 4.29
+    },
+    {
+     "id": "hip116727",
+     "altitudeDeg": 44.469,
+     "azimuthDeg": 12.68,
+     "magnitude": 3.21
+    }
+   ],
+   "visibleConstellationIds": [
+    "pegasus",
+    "andromeda",
+    "cassiopeia",
+    "cepheus",
+    "cygnus",
+    "lyra",
+    "aquila",
+    "aries"
+   ],
+   "nearHorizonConstellationIds": [
+    "perseus"
+   ],
+   "belowHorizonConstellationIds": [
+    "taurus",
+    "orion",
+    "auriga"
+   ],
+   "quizEligibleConstellationIds": [
+    "pegasus",
+    "andromeda",
+    "cassiopeia",
+    "cepheus",
+    "cygnus",
+    "lyra",
+    "aquila",
+    "aries"
+   ],
+   "constellationViews": {
+    "pegasus": {
+     "status": "visible",
+     "centerAltitudeDeg": 50.32,
+     "centerAzimuthDeg": 103.3,
+     "lowestRequiredAltitudeDeg": 35.92,
+     "directionKo": "동남동",
+     "heightKo": "높이",
+     "whereKo": "동남동쪽 하늘에 높이 떠 있어요"
+    },
+    "andromeda": {
+     "status": "visible",
+     "centerAltitudeDeg": 36.61,
+     "centerAzimuthDeg": 70.29,
+     "lowestRequiredAltitudeDeg": 27.81,
+     "directionKo": "동북동",
+     "heightKo": "중간 높이",
+     "whereKo": "동북동쪽 하늘 중간 높이에 떠 있어요"
+    },
+    "cassiopeia": {
+     "status": "visible",
+     "centerAltitudeDeg": 42.12,
+     "centerAzimuthDeg": 37.95,
+     "lowestRequiredAltitudeDeg": 36.12,
+     "directionKo": "북동",
+     "heightKo": "중간 높이",
+     "whereKo": "북동쪽 하늘 중간 높이에 떠 있어요"
+    },
+    "cepheus": {
+     "status": "visible",
+     "centerAltitudeDeg": 56.24,
+     "centerAzimuthDeg": 16.88,
+     "lowestRequiredAltitudeDeg": 44.47,
+     "directionKo": "북북동",
+     "heightKo": "높이",
+     "whereKo": "북북동쪽 하늘에 높이 떠 있어요"
+    },
+    "perseus": {
+     "status": "nearHorizon",
+     "centerAltitudeDeg": 14.82,
+     "centerAzimuthDeg": 45.3,
+     "lowestRequiredAltitudeDeg": 3.9,
+     "directionKo": "북동",
+     "heightKo": "지평선 가까이",
+     "whereKo": "북동쪽 지평선 가까이에 있어요"
+    },
+    "cygnus": {
+     "status": "visible",
+     "centerAltitudeDeg": 86.27,
+     "centerAzimuthDeg": 302.99,
+     "lowestRequiredAltitudeDeg": 74.98,
+     "directionKo": "서북서",
+     "heightKo": "거의 머리 위",
+     "whereKo": "거의 머리 위에 떠 있어요"
+    },
+    "lyra": {
+     "status": "visible",
+     "centerAltitudeDeg": 70.06,
+     "centerAzimuthDeg": 274.67,
+     "lowestRequiredAltitudeDeg": 67.98,
+     "directionKo": "서",
+     "heightKo": "거의 머리 위",
+     "whereKo": "거의 머리 위에 떠 있어요"
+    },
+    "aquila": {
+     "status": "visible",
+     "centerAltitudeDeg": 58.45,
+     "centerAzimuthDeg": 201.98,
+     "lowestRequiredAltitudeDeg": 52.16,
+     "directionKo": "남남서",
+     "heightKo": "높이",
+     "whereKo": "남남서쪽 하늘에 높이 떠 있어요"
+    },
+    "taurus": {
+     "status": "belowHorizon",
+     "centerAltitudeDeg": -13.51,
+     "centerAzimuthDeg": 51.0,
+     "lowestRequiredAltitudeDeg": -19.44,
+     "directionKo": "북동",
+     "heightKo": "지평선 아래",
+     "whereKo": "지평선 아래에 있어요"
+    },
+    "orion": {
+     "status": "belowHorizon",
+     "centerAltitudeDeg": -36.56,
+     "centerAzimuthDeg": 58.14,
+     "lowestRequiredAltitudeDeg": -44.73,
+     "directionKo": "동북동",
+     "heightKo": "지평선 아래",
+     "whereKo": "지평선 아래에 있어요"
+    },
+    "aries": {
+     "status": "visible",
+     "centerAltitudeDeg": 18.31,
+     "centerAzimuthDeg": 76.66,
+     "lowestRequiredAltitudeDeg": 17.84,
+     "directionKo": "동북동",
+     "heightKo": "조금 낮게",
+     "whereKo": "동북동쪽 하늘에 조금 낮게 떠 있어요"
+    },
+    "auriga": {
+     "status": "belowHorizon",
+     "centerAltitudeDeg": -3.3,
+     "centerAzimuthDeg": 33.47,
+     "lowestRequiredAltitudeDeg": -11.86,
+     "directionKo": "북북동",
+     "heightKo": "지평선 아래",
+     "whereKo": "지평선 아래에 있어요"
+    }
+   }
+  },
+  {
+   "id": "t20",
+   "labelKo": "밤 8시",
+   "localISO": "2026-11-04T20:00:00+09:00",
+   "utcISO": "2026-11-04T11:00:00Z",
+   "isNextDay": false,
+   "sunAltitudeDeg": -31.33,
+   "twilight": "night",
+   "twilightKo": "완전히 어두운 밤하늘이에요.",
+   "moon": {
+    "altitudeDeg": -48.52,
+    "azimuthDeg": 348.08,
+    "fractionIlluminated": 0.23
+   },
+   "stars": [
+    {
+     "id": "hip677",
+     "altitudeDeg": 67.766,
+     "azimuthDeg": 102.844,
+     "magnitude": 2.07
+    },
+    {
+     "id": "hip746",
+     "altitudeDeg": 62.326,
+     "azimuthDeg": 27.931,
+     "magnitude": 2.28
+    },
+    {
+     "id": "hip1067",
+     "altitudeDeg": 58.281,
+     "azimuthDeg": 125.854,
+     "magnitude": 2.83
+    },
+    {
+     "id": "hip2912",
+     "altitudeDeg": 63.741,
+     "azimuthDeg": 86.943,
+     "magnitude": 4.34
+    },
+    {
+     "id": "hip3031",
+     "altitudeDeg": 61.901,
+     "azimuthDeg": 95.762,
+     "magnitude": 4.34
+    },
+    {
+     "id": "hip3092",
+     "altitudeDeg": 62.339,
+     "azimuthDeg": 92.56,
+     "magnitude": 3.27
+    },
+    {
+     "id": "hip3179",
+     "altitudeDeg": 60.431,
+     "azimuthDeg": 37.404,
+     "magnitude": 2.24
+    },
+    {
+     "id": "hip3693",
+     "altitudeDeg": 57.825,
+     "azimuthDeg": 102.868,
+     "magnitude": 4.08
+    },
+    {
+     "id": "hip3881",
+     "altitudeDeg": 62.374,
+     "azimuthDeg": 69.954,
+     "magnitude": 4.53
+    },
+    {
+     "id": "hip4427",
+     "altitudeDeg": 56.589,
+     "azimuthDeg": 32.279,
+     "magnitude": 2.15
+    },
+    {
+     "id": "hip4436",
+     "altitudeDeg": 60.799,
+     "azimuthDeg": 75.083,
+     "magnitude": 3.86
+    },
+    {
+     "id": "hip4463",
+     "altitudeDeg": 55.454,
+     "azimuthDeg": 102.06,
+     "magnitude": 4.4
+    },
+    {
+     "id": "hip5434",
+     "altitudeDeg": 58.713,
+     "azimuthDeg": 57.546,
+     "magnitude": 4.26
+    },
+    {
+     "id": "hip5447",
+     "altitudeDeg": 57.696,
+     "azimuthDeg": 79.621,
+     "magnitude": 2.07
+    },
+    {
+     "id": "hip6686",
+     "altitudeDeg": 53.516,
+     "azimuthDeg": 35.614,
+     "magnitude": 2.66
+    },
+    {
+     "id": "hip7607",
+     "altitudeDeg": 53.877,
+     "azimuthDeg": 55.496,
+     "magnitude": 3.59
+    },
+    {
+     "id": "hip8068",
+     "altitudeDeg": 52.889,
+     "azimuthDeg": 52.095,
+     "magnitude": 4.01
+    },
+    {
+     "id": "hip8832",
+     "altitudeDeg": 42.147,
+     "azimuthDeg": 96.807,
+     "magnitude": 3.88
+    },
+    {
+     "id": "hip8886",
+     "altitudeDeg": 49.264,
+     "azimuthDeg": 32.045,
+     "magnitude": 3.35
+    },
+    {
+     "id": "hip8903",
+     "altitudeDeg": 42.727,
+     "azimuthDeg": 94.879,
+     "magnitude": 2.64
+    },
+    {
+     "id": "hip9640",
+     "altitudeDeg": 48.803,
+     "azimuthDeg": 64.915,
+     "magnitude": 2.1
+    },
+    {
+     "id": "hip9884",
+     "altitudeDeg": 41.555,
+     "azimuthDeg": 89.815,
+     "magnitude": 2.01
+    },
+    {
+     "id": "hip12777",
+     "altitudeDeg": 43.096,
+     "azimuthDeg": 53.369,
+     "magnitude": 4.1
+    },
+    {
+     "id": "hip13209",
+     "altitudeDeg": 34.819,
+     "azimuthDeg": 79.738,
+     "magnitude": 3.61
+    },
+    {
+     "id": "hip13268",
+     "altitudeDeg": 42.962,
+     "azimuthDeg": 44.147,
+     "magnitude": 3.77
+    },
+    {
+     "id": "hip13531",
+     "altitudeDeg": 42.089,
+     "azimuthDeg": 48.291,
+     "magnitude": 3.93
+    },
+    {
+     "id": "hip14328",
+     "altitudeDeg": 40.643,
+     "azimuthDeg": 46.985,
+     "magnitude": 2.91
+    },
+    {
+     "id": "hip14354",
+     "altitudeDeg": 36.676,
+     "azimuthDeg": 65.108,
+     "magnitude": 3.32
+    },
+    {
+     "id": "hip14576",
+     "altitudeDeg": 36.878,
+     "azimuthDeg": 62.382,
+     "magnitude": 2.09
+    },
+    {
+     "id": "hip14632",
+     "altitudeDeg": 39.207,
+     "azimuthDeg": 51.786,
+     "magnitude": 4.05
+    },
+    {
+     "id": "hip14668",
+     "altitudeDeg": 37.885,
+     "azimuthDeg": 57.63,
+     "magnitude": 3.79
+    },
+    {
+     "id": "hip15863",
+     "altitudeDeg": 36.892,
+     "azimuthDeg": 50.695,
+     "magnitude": 1.79
+    },
+    {
+     "id": "hip15900",
+     "altitudeDeg": 18.124,
+     "azimuthDeg": 92.125,
+     "magnitude": 3.61
+    },
+    {
+     "id": "hip16083",
+     "altitudeDeg": 18.063,
+     "azimuthDeg": 91.166,
+     "magnitude": 3.73
+    },
+    {
+     "id": "hip17358",
+     "altitudeDeg": 33.343,
+     "azimuthDeg": 51.962,
+     "magnitude": 3.01
+    },
+    {
+     "id": "hip17448",
+     "altitudeDeg": 26.714,
+     "azimuthDeg": 68.178,
+     "magnitude": 3.84
+    },
+    {
+     "id": "hip17531",
+     "altitudeDeg": 22.637,
+     "azimuthDeg": 75.529,
+     "magnitude": 4.3
+    },
+    {
+     "id": "hip17573",
+     "altitudeDeg": 22.465,
+     "azimuthDeg": 75.541,
+     "magnitude": 3.87
+    },
+    {
+     "id": "hip17608",
+     "altitudeDeg": 22.148,
+     "azimuthDeg": 75.863,
+     "magnitude": 4.14
+    },
+    {
+     "id": "hip17702",
+     "altitudeDeg": 22.005,
+     "azimuthDeg": 75.569,
+     "magnitude": 2.85
+    },
+    {
+     "id": "hip17847",
+     "altitudeDeg": 21.653,
+     "azimuthDeg": 75.398,
+     "magnitude": 3.62
+    },
+    {
+     "id": "hip18246",
+     "altitudeDeg": 24.698,
+     "azimuthDeg": 67.459,
+     "magnitude": 2.84
+    },
+    {
+     "id": "hip18532",
+     "altitudeDeg": 27.817,
+     "azimuthDeg": 59.047,
+     "magnitude": 2.9
+    },
+    {
+     "id": "hip18614",
+     "altitudeDeg": 25.697,
+     "azimuthDeg": 63.139,
+     "magnitude": 3.98
+    },
+    {
+     "id": "hip18724",
+     "altitudeDeg": 12.96,
+     "azimuthDeg": 83.89,
+     "magnitude": 3.41
+    },
+    {
+     "id": "hip20205",
+     "altitudeDeg": 10.989,
+     "azimuthDeg": 78.535,
+     "magnitude": 3.65
+    },
+    {
+     "id": "hip20455",
+     "altitudeDeg": 11.481,
+     "azimuthDeg": 76.498,
+     "magnitude": 3.77
+    },
+    {
+     "id": "hip20889",
+     "altitudeDeg": 11.323,
+     "azimuthDeg": 74.34,
+     "magnitude": 3.53
+    },
+    {
+     "id": "hip20894",
+     "altitudeDeg": 9.394,
+     "azimuthDeg": 77.074,
+     "magnitude": 3.4
+    },
+    {
+     "id": "hip21421",
+     "altitudeDeg": 8.355,
+     "azimuthDeg": 75.519,
+     "magnitude": 0.87
+    },
+    {
+     "id": "hip22449",
+     "altitudeDeg": -0.076,
+     "azimuthDeg": 81.164,
+     "magnitude": 3.19
+    },
+    {
+     "id": "hip22509",
+     "altitudeDeg": 0.944,
+     "azimuthDeg": 79.505,
+     "magnitude": 4.35
+    },
+    {
+     "id": "hip22549",
+     "altitudeDeg": -1.162,
+     "azimuthDeg": 82.043,
+     "magnitude": 3.68
+    },
+    {
+     "id": "hip22797",
+     "altitudeDeg": -3.677,
+     "azimuthDeg": 84.11,
+     "magnitude": 3.71
+    },
+    {
+     "id": "hip22845",
+     "altitudeDeg": 0.857,
+     "azimuthDeg": 77.871,
+     "magnitude": 4.64
+    },
+    {
+     "id": "hip23015",
+     "altitudeDeg": 14.143,
+     "azimuthDeg": 58.863,
+     "magnitude": 2.69
+    },
+    {
+     "id": "hip23123",
+     "altitudeDeg": -4.972,
+     "azimuthDeg": 84.042,
+     "magnitude": 4.47
+    },
+    {
+     "id": "hip23416",
+     "altitudeDeg": 19.291,
+     "azimuthDeg": 49.063,
+     "magnitude": 3.03
+    },
+    {
+     "id": "hip23453",
+     "altitudeDeg": 17.704,
+     "azimuthDeg": 51.43,
+     "magnitude": 3.69
+    },
+    {
+     "id": "hip23767",
+     "altitudeDeg": 17.162,
+     "azimuthDeg": 50.847,
+     "magnitude": 3.18
+    },
+    {
+     "id": "hip24436",
+     "altitudeDeg": -14.091,
+     "azimuthDeg": 89.697,
+     "magnitude": 0.18
+    },
+    {
+     "id": "hip24608",
+     "altitudeDeg": 18.322,
+     "azimuthDeg": 45.628,
+     "magnitude": 0.08
+    },
+    {
+     "id": "hip25281",
+     "altitudeDeg": -12.619,
+     "azimuthDeg": 83.391,
+     "magnitude": 3.35
+    },
+    {
+     "id": "hip25336",
+     "altitudeDeg": -7.379,
+     "azimuthDeg": 76.276,
+     "magnitude": 1.64
+    },
+    {
+     "id": "hip25428",
+     "altitudeDeg": 6.382,
+     "azimuthDeg": 58.74,
+     "magnitude": 1.65
+    },
+    {
+     "id": "hip25930",
+     "altitudeDeg": -12.835,
+     "azimuthDeg": 80.511,
+     "magnitude": 2.25
+    },
+    {
+     "id": "hip26207",
+     "altitudeDeg": -7.057,
+     "azimuthDeg": 71.897,
+     "magnitude": 3.39
+    },
+    {
+     "id": "hip26311",
+     "altitudeDeg": -14.22,
+     "azimuthDeg": 80.582,
+     "magnitude": 1.69
+    },
+    {
+     "id": "hip26451",
+     "altitudeDeg": -0.347,
+     "azimuthDeg": 62.875,
+     "magnitude": 2.97
+    },
+    {
+     "id": "hip26727",
+     "altitudeDeg": -15.571,
+     "azimuthDeg": 80.469,
+     "magnitude": 1.74
+    },
+    {
+     "id": "hip27366",
+     "altitudeDeg": -21.598,
+     "azimuthDeg": 85.893,
+     "magnitude": 2.07
+    },
+    {
+     "id": "hip27913",
+     "altitudeDeg": -3.873,
+     "azimuthDeg": 60.97,
+     "magnitude": 4.39
+    },
+    {
+     "id": "hip27989",
+     "altitudeDeg": -12.477,
+     "azimuthDeg": 70.647,
+     "magnitude": 0.45
+    },
+    {
+     "id": "hip28360",
+     "altitudeDeg": 11.744,
+     "azimuthDeg": 41.735,
+     "magnitude": 1.9
+    },
+    {
+     "id": "hip28380",
+     "altitudeDeg": 6.587,
+     "azimuthDeg": 47.578,
+     "magnitude": 2.65
+    },
+    {
+     "id": "hip28614",
+     "altitudeDeg": -12.365,
+     "azimuthDeg": 67.718,
+     "magnitude": 4.12
+    },
+    {
+     "id": "hip28716",
+     "altitudeDeg": -5.625,
+     "azimuthDeg": 59.565,
+     "magnitude": 4.64
+    },
+    {
+     "id": "hip29038",
+     "altitudeDeg": -9.896,
+     "azimuthDeg": 62.967,
+     "magnitude": 4.42
+    },
+    {
+     "id": "hip29426",
+     "altitudeDeg": -11.053,
+     "azimuthDeg": 62.659,
+     "magnitude": 4.45
+    },
+    {
+     "id": "hip91262",
+     "altitudeDeg": 44.968,
+     "azimuthDeg": 290.966,
+     "magnitude": 0.03
+    },
+    {
+     "id": "hip91919",
+     "altitudeDeg": 46.585,
+     "azimuthDeg": 291.637,
+     "magnitude": 4.67
+    },
+    {
+     "id": "hip91971",
+     "altitudeDeg": 46.105,
+     "azimuthDeg": 288.724,
+     "magnitude": 4.34
+    },
+    {
+     "id": "hip92420",
+     "altitudeDeg": 45.77,
+     "azimuthDeg": 282.445,
+     "magnitude": 3.52
+    },
+    {
+     "id": "hip92791",
+     "altitudeDeg": 47.756,
+     "azimuthDeg": 286.917,
+     "magnitude": 4.22
+    },
+    {
+     "id": "hip93194",
+     "altitudeDeg": 47.273,
+     "azimuthDeg": 280.579,
+     "magnitude": 3.25
+    },
+    {
+     "id": "hip93244",
+     "altitudeDeg": 39.003,
+     "azimuthDeg": 259.124,
+     "magnitude": 4.02
+    },
+    {
+     "id": "hip93747",
+     "altitudeDeg": 39.43,
+     "azimuthDeg": 256.803,
+     "magnitude": 2.99
+    },
+    {
+     "id": "hip93805",
+     "altitudeDeg": 27.126,
+     "azimuthDeg": 239.787,
+     "magnitude": 3.43
+    },
+    {
+     "id": "hip94779",
+     "altitudeDeg": 53.222,
+     "azimuthDeg": 312.285,
+     "magnitude": 3.8
+    },
+    {
+     "id": "hip95501",
+     "altitudeDeg": 36.2,
+     "azimuthDeg": 242.367,
+     "magnitude": 3.36
+    },
+    {
+     "id": "hip95853",
+     "altitudeDeg": 55.334,
+     "azimuthDeg": 309.927,
+     "magnitude": 3.76
+    },
+    {
+     "id": "hip95947",
+     "altitudeDeg": 51.783,
+     "azimuthDeg": 269.773,
+     "magnitude": 3.05
+    },
+    {
+     "id": "hip96468",
+     "altitudeDeg": 34.94,
+     "azimuthDeg": 236.139,
+     "magnitude": 4.36
+    },
+    {
+     "id": "hip97165",
+     "altitudeDeg": 58.363,
+     "azimuthDeg": 298.227,
+     "magnitude": 2.86
+    },
+    {
+     "id": "hip97278",
+     "altitudeDeg": 45.101,
+     "azimuthDeg": 244.843,
+     "magnitude": 2.72
+    },
+    {
+     "id": "hip97649",
+     "altitudeDeg": 44.718,
+     "azimuthDeg": 241.97,
+     "magnitude": 0.76
+    },
+    {
+     "id": "hip97804",
+     "altitudeDeg": 39.259,
+     "azimuthDeg": 234.317,
+     "magnitude": 3.87
+    },
+    {
+     "id": "hip98036",
+     "altitudeDeg": 43.746,
+     "azimuthDeg": 238.439,
+     "magnitude": 3.71
+    },
+    {
+     "id": "hip98110",
+     "altitudeDeg": 59.334,
+     "azimuthDeg": 278.373,
+     "magnitude": 3.89
+    },
+    {
+     "id": "hip99473",
+     "altitudeDeg": 40.774,
+     "azimuthDeg": 228.024,
+     "magnitude": 3.24
+    },
+    {
+     "id": "hip100453",
+     "altitudeDeg": 65.175,
+     "azimuthDeg": 287.773,
+     "magnitude": 2.23
+    },
+    {
+     "id": "hip101093",
+     "altitudeDeg": 58.109,
+     "azimuthDeg": 334.69,
+     "magnitude": 4.21
+    },
+    {
+     "id": "hip102098",
+     "altitudeDeg": 68.202,
+     "azimuthDeg": 301.308,
+     "magnitude": 1.25
+    },
+    {
+     "id": "hip102422",
+     "altitudeDeg": 60.22,
+     "azimuthDeg": 335.492,
+     "magnitude": 3.41
+    },
+    {
+     "id": "hip102488",
+     "altitudeDeg": 69.018,
+     "azimuthDeg": 269.936,
+     "magnitude": 2.48
+    },
+    {
+     "id": "hip104732",
+     "altitudeDeg": 72.975,
+     "azimuthDeg": 252.872,
+     "magnitude": 3.21
+    },
+    {
+     "id": "hip105199",
+     "altitudeDeg": 62.012,
+     "azimuthDeg": 342.779,
+     "magnitude": 2.45
+    },
+    {
+     "id": "hip106032",
+     "altitudeDeg": 55.275,
+     "azimuthDeg": 351.247,
+     "magnitude": 3.23
+    },
+    {
+     "id": "hip107259",
+     "altitudeDeg": 66.786,
+     "azimuthDeg": 345.051,
+     "magnitude": 4.23
+    },
+    {
+     "id": "hip107315",
+     "altitudeDeg": 61.304,
+     "azimuthDeg": 203.169,
+     "magnitude": 2.38
+    },
+    {
+     "id": "hip107354",
+     "altitudeDeg": 75.476,
+     "azimuthDeg": 223.105,
+     "magnitude": 4.14
+    },
+    {
+     "id": "hip109176",
+     "altitudeDeg": 77.697,
+     "azimuthDeg": 203.361,
+     "magnitude": 3.77
+    },
+    {
+     "id": "hip109410",
+     "altitudeDeg": 84.78,
+     "azimuthDeg": 227.995,
+     "magnitude": 4.28
+    },
+    {
+     "id": "hip109427",
+     "altitudeDeg": 59.152,
+     "azimuthDeg": 188.839,
+     "magnitude": 3.52
+    },
+    {
+     "id": "hip109492",
+     "altitudeDeg": 68.36,
+     "azimuthDeg": 353.603,
+     "magnitude": 3.39
+    },
+    {
+     "id": "hip109857",
+     "altitudeDeg": 69.589,
+     "azimuthDeg": 354.665,
+     "magnitude": 4.18
+    },
+    {
+     "id": "hip110991",
+     "altitudeDeg": 68.341,
+     "azimuthDeg": 0.151,
+     "magnitude": 4.07
+    },
+    {
+     "id": "hip112029",
+     "altitudeDeg": 63.908,
+     "azimuthDeg": 172.695,
+     "magnitude": 3.41
+    },
+    {
+     "id": "hip112158",
+     "altitudeDeg": 82.803,
+     "azimuthDeg": 154.144,
+     "magnitude": 2.93
+    },
+    {
+     "id": "hip112440",
+     "altitudeDeg": 76.251,
+     "azimuthDeg": 162.32,
+     "magnitude": 3.97
+    },
+    {
+     "id": "hip112724",
+     "altitudeDeg": 60.398,
+     "azimuthDeg": 4.242,
+     "magnitude": 3.5
+    },
+    {
+     "id": "hip112748",
+     "altitudeDeg": 77.002,
+     "azimuthDeg": 157.708,
+     "magnitude": 3.51
+    },
+    {
+     "id": "hip113881",
+     "altitudeDeg": 78.585,
+     "azimuthDeg": 136.862,
+     "magnitude": 2.44
+    },
+    {
+     "id": "hip113963",
+     "altitudeDeg": 66.989,
+     "azimuthDeg": 157.06,
+     "magnitude": 2.49
+    },
+    {
+     "id": "hip116631",
+     "altitudeDeg": 75.207,
+     "azimuthDeg": 58.448,
+     "magnitude": 4.29
+    },
+    {
+     "id": "hip116727",
+     "altitudeDeg": 48.417,
+     "azimuthDeg": 5.558,
+     "magnitude": 3.21
+    }
+   ],
+   "visibleConstellationIds": [
+    "pegasus",
+    "andromeda",
+    "cassiopeia",
+    "cepheus",
+    "perseus",
+    "cygnus",
+    "lyra",
+    "aquila",
+    "aries"
+   ],
+   "nearHorizonConstellationIds": [
+    "auriga"
+   ],
+   "belowHorizonConstellationIds": [
+    "taurus",
+    "orion"
+   ],
+   "quizEligibleConstellationIds": [
+    "pegasus",
+    "andromeda",
+    "cassiopeia",
+    "cepheus",
+    "perseus",
+    "cygnus",
+    "lyra",
+    "aquila",
+    "aries"
+   ],
+   "constellationViews": {
+    "pegasus": {
+     "status": "visible",
+     "centerAltitudeDeg": 70.54,
+     "centerAzimuthDeg": 146.25,
+     "lowestRequiredAltitudeDeg": 58.28,
+     "directionKo": "남남동",
+     "heightKo": "거의 머리 위",
+     "whereKo": "거의 머리 위에 떠 있어요"
+    },
+    "andromeda": {
+     "status": "visible",
+     "centerAltitudeDeg": 59.93,
+     "centerAzimuthDeg": 82.12,
+     "lowestRequiredAltitudeDeg": 48.8,
+     "directionKo": "동",
+     "heightKo": "높이",
+     "whereKo": "동쪽 하늘에 높이 떠 있어요"
+    },
+    "cassiopeia": {
+     "status": "visible",
+     "centerAltitudeDeg": 56.46,
+     "centerAzimuthDeg": 33.13,
+     "lowestRequiredAltitudeDeg": 49.26,
+     "directionKo": "북북동",
+     "heightKo": "높이",
+     "whereKo": "북북동쪽 하늘에 높이 떠 있어요"
+    },
+    "cepheus": {
+     "status": "visible",
+     "centerAltitudeDeg": 59.18,
+     "centerAzimuthDeg": 356.25,
+     "lowestRequiredAltitudeDeg": 48.42,
+     "directionKo": "북",
+     "heightKo": "높이",
+     "whereKo": "북쪽 하늘에 높이 떠 있어요"
+    },
+    "perseus": {
+     "status": "visible",
+     "centerAltitudeDeg": 33.59,
+     "centerAzimuthDeg": 56.75,
+     "lowestRequiredAltitudeDeg": 24.7,
+     "directionKo": "동북동",
+     "heightKo": "중간 높이",
+     "whereKo": "동북동쪽 하늘 중간 높이에 떠 있어요"
+    },
+    "cygnus": {
+     "status": "visible",
+     "centerAltitudeDeg": 63.17,
+     "centerAzimuthDeg": 284.72,
+     "lowestRequiredAltitudeDeg": 51.78,
+     "directionKo": "서북서",
+     "heightKo": "높이",
+     "whereKo": "서북서쪽 하늘에 높이 떠 있어요"
+    },
+    "lyra": {
+     "status": "visible",
+     "centerAltitudeDeg": 46.44,
+     "centerAzimuthDeg": 285.96,
+     "lowestRequiredAltitudeDeg": 44.97,
+     "directionKo": "서북서",
+     "heightKo": "높이",
+     "whereKo": "서북서쪽 하늘에 높이 떠 있어요"
+    },
+    "aquila": {
+     "status": "visible",
+     "centerAltitudeDeg": 41.98,
+     "centerAzimuthDeg": 242.12,
+     "lowestRequiredAltitudeDeg": 36.2,
+     "directionKo": "서남서",
+     "heightKo": "중간 높이",
+     "whereKo": "서남서쪽 하늘 중간 높이에 떠 있어요"
+    },
+    "taurus": {
+     "status": "belowHorizon",
+     "centerAltitudeDeg": 7.41,
+     "centerAzimuthDeg": 69.96,
+     "lowestRequiredAltitudeDeg": -0.35,
+     "directionKo": "동북동",
+     "heightKo": "지평선 가까이",
+     "whereKo": "동북동쪽 지평선 가까이에 있어요"
+    },
+    "orion": {
+     "status": "belowHorizon",
+     "centerAltitudeDeg": -14.09,
+     "centerAzimuthDeg": 80.53,
+     "lowestRequiredAltitudeDeg": -21.6,
+     "directionKo": "동",
+     "heightKo": "지평선 아래",
+     "whereKo": "지평선 아래에 있어요"
+    },
+    "aries": {
+     "status": "visible",
+     "centerAltitudeDeg": 42.18,
+     "centerAzimuthDeg": 93.82,
+     "lowestRequiredAltitudeDeg": 41.56,
+     "directionKo": "동",
+     "heightKo": "중간 높이",
+     "whereKo": "동쪽 하늘 중간 높이에 떠 있어요"
+    },
+    "auriga": {
+     "status": "nearHorizon",
+     "centerAltitudeDeg": 12.82,
+     "centerAzimuthDeg": 50.3,
+     "lowestRequiredAltitudeDeg": 6.38,
+     "directionKo": "북동",
+     "heightKo": "지평선 가까이",
+     "whereKo": "북동쪽 지평선 가까이에 있어요"
+    }
+   }
+  },
+  {
+   "id": "t22",
+   "labelKo": "밤 10시",
+   "localISO": "2026-11-04T22:00:00+09:00",
+   "utcISO": "2026-11-04T13:00:00Z",
+   "isNextDay": false,
+   "sunAltitudeDeg": -54.35,
+   "twilight": "night",
+   "twilightKo": "완전히 어두운 밤하늘이에요.",
+   "moon": {
+    "altitudeDeg": -45.26,
+    "azimuthDeg": 30.29,
+    "fractionIlluminated": 0.223
+   },
+   "stars": [
+    {
+     "id": "hip677",
+     "altitudeDeg": 81.247,
+     "azimuthDeg": 210.445,
+     "magnitude": 2.07
+    },
+    {
+     "id": "hip746",
+     "altitudeDeg": 67.378,
+     "azimuthDeg": 353.546,
+     "magnitude": 2.28
+    },
+    {
+     "id": "hip1067",
+     "altitudeDeg": 68.165,
+     "azimuthDeg": 190.052,
+     "magnitude": 2.83
+    },
+    {
+     "id": "hip2912",
+     "altitudeDeg": 86.535,
+     "azimuthDeg": 150.319,
+     "magnitude": 4.34
+    },
+    {
+     "id": "hip3031",
+     "altitudeDeg": 82.278,
+     "azimuthDeg": 163.712,
+     "magnitude": 4.34
+    },
+    {
+     "id": "hip3092",
+     "altitudeDeg": 83.708,
+     "azimuthDeg": 158.572,
+     "magnitude": 3.27
+    },
+    {
+     "id": "hip3179",
+     "altitudeDeg": 70.11,
+     "azimuthDeg": 4.844,
+     "magnitude": 2.24
+    },
+    {
+     "id": "hip3693",
+     "altitudeDeg": 76.89,
+     "azimuthDeg": 160.893,
+     "magnitude": 4.08
+    },
+    {
+     "id": "hip3881",
+     "altitudeDeg": 84.023,
+     "azimuthDeg": 41.964,
+     "magnitude": 4.53
+    },
+    {
+     "id": "hip4427",
+     "altitudeDeg": 65.619,
+     "azimuthDeg": 8.353,
+     "magnitude": 2.15
+    },
+    {
+     "id": "hip4436",
+     "altitudeDeg": 84.162,
+     "azimuthDeg": 70.435,
+     "magnitude": 3.86
+    },
+    {
+     "id": "hip4463",
+     "altitudeDeg": 75.318,
+     "azimuthDeg": 153.26,
+     "magnitude": 4.4
+    },
+    {
+     "id": "hip5434",
+     "altitudeDeg": 77.07,
+     "azimuthDeg": 32.59,
+     "magnitude": 4.26
+    },
+    {
+     "id": "hip5447",
+     "altitudeDeg": 81.632,
+     "azimuthDeg": 94.705,
+     "magnitude": 2.07
+    },
+    {
+     "id": "hip6686",
+     "altitudeDeg": 64.799,
+     "azimuthDeg": 16.764,
+     "magnitude": 2.66
+    },
+    {
+     "id": "hip7607",
+     "altitudeDeg": 72.651,
+     "azimuthDeg": 41.378,
+     "magnitude": 3.59
+    },
+    {
+     "id": "hip8068",
+     "altitudeDeg": 70.661,
+     "azimuthDeg": 37.994,
+     "magnitude": 4.01
+    },
+    {
+     "id": "hip8832",
+     "altitudeDeg": 64.508,
+     "azimuthDeg": 127.462,
+     "magnitude": 3.88
+    },
+    {
+     "id": "hip8886",
+     "altitudeDeg": 60.114,
+     "azimuthDeg": 19.016,
+     "magnitude": 3.35
+    },
+    {
+     "id": "hip8903",
+     "altitudeDeg": 65.424,
+     "azimuthDeg": 124.546,
+     "magnitude": 2.64
+    },
+    {
+     "id": "hip9640",
+     "altitudeDeg": 70.874,
+     "azimuthDeg": 65.702,
+     "magnitude": 2.1
+    },
+    {
+     "id": "hip9884",
+     "altitudeDeg": 65.001,
+     "azimuthDeg": 115.21,
+     "magnitude": 2.01
+    },
+    {
+     "id": "hip12777",
+     "altitudeDeg": 62.553,
+     "azimuthDeg": 52.224,
+     "magnitude": 4.1
+    },
+    {
+     "id": "hip13209",
+     "altitudeDeg": 58.767,
+     "azimuthDeg": 97.429,
+     "magnitude": 3.61
+    },
+    {
+     "id": "hip13268",
+     "altitudeDeg": 59.438,
+     "azimuthDeg": 39.864,
+     "magnitude": 3.77
+    },
+    {
+     "id": "hip13531",
+     "altitudeDeg": 60.06,
+     "azimuthDeg": 46.048,
+     "magnitude": 3.93
+    },
+    {
+     "id": "hip14328",
+     "altitudeDeg": 58.332,
+     "azimuthDeg": 45.55,
+     "magnitude": 2.91
+    },
+    {
+     "id": "hip14354",
+     "altitudeDeg": 59.237,
+     "azimuthDeg": 74.014,
+     "magnitude": 3.32
+    },
+    {
+     "id": "hip14576",
+     "altitudeDeg": 58.926,
+     "azimuthDeg": 69.79,
+     "magnitude": 2.09
+    },
+    {
+     "id": "hip14632",
+     "altitudeDeg": 58.508,
+     "azimuthDeg": 53.091,
+     "magnitude": 4.05
+    },
+    {
+     "id": "hip14668",
+     "altitudeDeg": 58.838,
+     "azimuthDeg": 62.225,
+     "magnitude": 3.79
+    },
+    {
+     "id": "hip15863",
+     "altitudeDeg": 56.039,
+     "azimuthDeg": 53.206,
+     "magnitude": 1.79
+    },
+    {
+     "id": "hip15900",
+     "altitudeDeg": 41.505,
+     "azimuthDeg": 113.552,
+     "magnitude": 3.61
+    },
+    {
+     "id": "hip16083",
+     "altitudeDeg": 41.537,
+     "azimuthDeg": 112.332,
+     "magnitude": 3.73
+    },
+    {
+     "id": "hip17358",
+     "altitudeDeg": 53.066,
+     "azimuthDeg": 56.997,
+     "magnitude": 3.01
+    },
+    {
+     "id": "hip17448",
+     "altitudeDeg": 49.878,
+     "azimuthDeg": 81.483,
+     "magnitude": 3.84
+    },
+    {
+     "id": "hip17531",
+     "altitudeDeg": 46.458,
+     "azimuthDeg": 92.049,
+     "magnitude": 4.3
+    },
+    {
+     "id": "hip17573",
+     "altitudeDeg": 46.287,
+     "azimuthDeg": 92.079,
+     "magnitude": 3.87
+    },
+    {
+     "id": "hip17608",
+     "altitudeDeg": 45.986,
+     "azimuthDeg": 92.531,
+     "magnitude": 4.14
+    },
+    {
+     "id": "hip17702",
+     "altitudeDeg": 45.83,
+     "azimuthDeg": 92.151,
+     "magnitude": 2.85
+    },
+    {
+     "id": "hip17847",
+     "altitudeDeg": 45.469,
+     "azimuthDeg": 91.952,
+     "magnitude": 3.62
+    },
+    {
+     "id": "hip18246",
+     "altitudeDeg": 47.792,
+     "azimuthDeg": 80.935,
+     "magnitude": 2.84
+    },
+    {
+     "id": "hip18532",
+     "altitudeDeg": 49.456,
+     "azimuthDeg": 68.833,
+     "magnitude": 2.9
+    },
+    {
+     "id": "hip18614",
+     "altitudeDeg": 48.143,
+     "azimuthDeg": 74.931,
+     "magnitude": 3.98
+    },
+    {
+     "id": "hip18724",
+     "altitudeDeg": 36.874,
+     "azimuthDeg": 102.889,
+     "magnitude": 3.41
+    },
+    {
+     "id": "hip20205",
+     "altitudeDeg": 34.922,
+     "azimuthDeg": 96.412,
+     "magnitude": 3.65
+    },
+    {
+     "id": "hip20455",
+     "altitudeDeg": 35.355,
+     "azimuthDeg": 93.952,
+     "magnitude": 3.77
+    },
+    {
+     "id": "hip20889",
+     "altitudeDeg": 35.099,
+     "azimuthDeg": 91.374,
+     "magnitude": 3.53
+    },
+    {
+     "id": "hip20894",
+     "altitudeDeg": 33.29,
+     "azimuthDeg": 94.725,
+     "magnitude": 3.4
+    },
+    {
+     "id": "hip21421",
+     "altitudeDeg": 32.192,
+     "azimuthDeg": 92.947,
+     "magnitude": 0.87
+    },
+    {
+     "id": "hip22449",
+     "altitudeDeg": 23.878,
+     "azimuthDeg": 99.526,
+     "magnitude": 3.19
+    },
+    {
+     "id": "hip22509",
+     "altitudeDeg": 24.892,
+     "azimuthDeg": 97.7,
+     "magnitude": 4.35
+    },
+    {
+     "id": "hip22549",
+     "altitudeDeg": 22.787,
+     "azimuthDeg": 100.476,
+     "magnitude": 3.68
+    },
+    {
+     "id": "hip22797",
+     "altitudeDeg": 20.237,
+     "azimuthDeg": 102.65,
+     "magnitude": 3.71
+    },
+    {
+     "id": "hip22845",
+     "altitudeDeg": 24.778,
+     "azimuthDeg": 95.901,
+     "magnitude": 4.64
+    },
+    {
+     "id": "hip23015",
+     "altitudeDeg": 36.044,
+     "azimuthDeg": 72.504,
+     "magnitude": 2.69
+    },
+    {
+     "id": "hip23123",
+     "altitudeDeg": 18.945,
+     "azimuthDeg": 102.544,
+     "magnitude": 4.47
+    },
+    {
+     "id": "hip23416",
+     "altitudeDeg": 38.881,
+     "azimuthDeg": 59.491,
+     "magnitude": 3.03
+    },
+    {
+     "id": "hip23453",
+     "altitudeDeg": 37.942,
+     "azimuthDeg": 62.789,
+     "magnitude": 3.69
+    },
+    {
+     "id": "hip23767",
+     "altitudeDeg": 37.277,
+     "azimuthDeg": 62.284,
+     "magnitude": 3.18
+    },
+    {
+     "id": "hip24436",
+     "altitudeDeg": 9.591,
+     "azimuthDeg": 107.882,
+     "magnitude": 0.18
+    },
+    {
+     "id": "hip24608",
+     "altitudeDeg": 37.029,
+     "azimuthDeg": 55.887,
+     "magnitude": 0.08
+    },
+    {
+     "id": "hip25281",
+     "altitudeDeg": 11.313,
+     "azimuthDeg": 101.71,
+     "magnitude": 3.35
+    },
+    {
+     "id": "hip25336",
+     "altitudeDeg": 16.5,
+     "azimuthDeg": 94.45,
+     "magnitude": 1.64
+    },
+    {
+     "id": "hip25428",
+     "altitudeDeg": 28.389,
+     "azimuthDeg": 74.02,
+     "magnitude": 1.65
+    },
+    {
+     "id": "hip25930",
+     "altitudeDeg": 11.119,
+     "azimuthDeg": 98.843,
+     "magnitude": 2.25
+    },
+    {
+     "id": "hip26207",
+     "altitudeDeg": 16.605,
+     "azimuthDeg": 89.906,
+     "magnitude": 3.39
+    },
+    {
+     "id": "hip26311",
+     "altitudeDeg": 9.735,
+     "azimuthDeg": 98.917,
+     "magnitude": 1.69
+    },
+    {
+     "id": "hip26451",
+     "altitudeDeg": 22.377,
+     "azimuthDeg": 79.687,
+     "magnitude": 2.97
+    },
+    {
+     "id": "hip26727",
+     "altitudeDeg": 8.383,
+     "azimuthDeg": 98.809,
+     "magnitude": 1.74
+    },
+    {
+     "id": "hip27366",
+     "altitudeDeg": 2.273,
+     "azimuthDeg": 103.871,
+     "magnitude": 2.07
+    },
+    {
+     "id": "hip27913",
+     "altitudeDeg": 18.618,
+     "azimuthDeg": 78.203,
+     "magnitude": 4.39
+    },
+    {
+     "id": "hip27989",
+     "altitudeDeg": 11.113,
+     "azimuthDeg": 89.029,
+     "magnitude": 0.45
+    },
+    {
+     "id": "hip28360",
+     "altitudeDeg": 29.637,
+     "azimuthDeg": 53.898,
+     "magnitude": 1.9
+    },
+    {
+     "id": "hip28380",
+     "altitudeDeg": 26.239,
+     "azimuthDeg": 61.767,
+     "magnitude": 2.65
+    },
+    {
+     "id": "hip28614",
+     "altitudeDeg": 10.985,
+     "azimuthDeg": 86.115,
+     "magnitude": 4.12
+    },
+    {
+     "id": "hip28716",
+     "altitudeDeg": 16.676,
+     "azimuthDeg": 77.026,
+     "magnitude": 4.64
+    },
+    {
+     "id": "hip29038",
+     "altitudeDeg": 12.922,
+     "azimuthDeg": 81.099,
+     "magnitude": 4.42
+    },
+    {
+     "id": "hip29426",
+     "altitudeDeg": 11.736,
+     "azimuthDeg": 80.944,
+     "magnitude": 4.45
+    },
+    {
+     "id": "hip91262",
+     "altitudeDeg": 23.416,
+     "azimuthDeg": 301.935,
+     "magnitude": 0.03
+    },
+    {
+     "id": "hip91919",
+     "altitudeDeg": 25.096,
+     "azimuthDeg": 302.034,
+     "magnitude": 4.67
+    },
+    {
+     "id": "hip91971",
+     "altitudeDeg": 24.188,
+     "azimuthDeg": 299.991,
+     "magnitude": 4.34
+    },
+    {
+     "id": "hip92420",
+     "altitudeDeg": 23.049,
+     "azimuthDeg": 295.377,
+     "magnitude": 3.52
+    },
+    {
+     "id": "hip92791",
+     "altitudeDeg": 25.554,
+     "azimuthDeg": 298.29,
+     "magnitude": 4.22
+    },
+    {
+     "id": "hip93194",
+     "altitudeDeg": 24.332,
+     "azimuthDeg": 293.736,
+     "magnitude": 3.25
+    },
+    {
+     "id": "hip93244",
+     "altitudeDeg": 15.057,
+     "azimuthDeg": 277.789,
+     "magnitude": 4.02
+    },
+    {
+     "id": "hip93747",
+     "altitudeDeg": 15.521,
+     "azimuthDeg": 275.934,
+     "magnitude": 2.99
+    },
+    {
+     "id": "hip93805",
+     "altitudeDeg": 4.556,
+     "azimuthDeg": 260.463,
+     "magnitude": 3.43
+    },
+    {
+     "id": "hip94779",
+     "altitudeDeg": 35.484,
+     "azimuthDeg": 314.267,
+     "magnitude": 3.8
+    },
+    {
+     "id": "hip95501",
+     "altitudeDeg": 13.236,
+     "azimuthDeg": 263.941,
+     "magnitude": 3.36
+    },
+    {
+     "id": "hip95853",
+     "altitudeDeg": 36.899,
+     "azimuthDeg": 311.682,
+     "magnitude": 3.76
+    },
+    {
+     "id": "hip95947",
+     "altitudeDeg": 28.026,
+     "azimuthDeg": 285.416,
+     "magnitude": 3.05
+    },
+    {
+     "id": "hip96468",
+     "altitudeDeg": 12.768,
+     "azimuthDeg": 258.606,
+     "magnitude": 4.36
+    },
+    {
+     "id": "hip97165",
+     "altitudeDeg": 37.506,
+     "azimuthDeg": 302.84,
+     "magnitude": 2.86
+    },
+    {
+     "id": "hip97278",
+     "altitudeDeg": 21.829,
+     "azimuthDeg": 267.073,
+     "magnitude": 2.72
+    },
+    {
+     "id": "hip97649",
+     "altitudeDeg": 21.716,
+     "azimuthDeg": 264.847,
+     "magnitude": 0.76
+    },
+    {
+     "id": "hip97804",
+     "altitudeDeg": 17.279,
+     "azimuthDeg": 257.94,
+     "magnitude": 3.87
+    },
+    {
+     "id": "hip98036",
+     "altitudeDeg": 21.144,
+     "azimuthDeg": 262.001,
+     "magnitude": 3.71
+    },
+    {
+     "id": "hip98110",
+     "altitudeDeg": 36.059,
+     "azimuthDeg": 290.125,
+     "magnitude": 3.89
+    },
+    {
+     "id": "hip99473",
+     "altitudeDeg": 19.78,
+     "azimuthDeg": 253.311,
+     "magnitude": 3.24
+    },
+    {
+     "id": "hip100453",
+     "altitudeDeg": 42.644,
+     "azimuthDeg": 294.151,
+     "magnitude": 2.23
+    },
+    {
+     "id": "hip101093",
+     "altitudeDeg": 45.748,
+     "azimuthDeg": 325.82,
+     "magnitude": 4.21
+    },
+    {
+     "id": "hip102098",
+     "altitudeDeg": 47.209,
+     "azimuthDeg": 299.947,
+     "magnitude": 1.25
+    },
+    {
+     "id": "hip102422",
+     "altitudeDeg": 47.716,
+     "azimuthDeg": 324.555,
+     "magnitude": 3.41
+    },
+    {
+     "id": "hip102488",
+     "altitudeDeg": 45.211,
+     "azimuthDeg": 283.777,
+     "magnitude": 2.48
+    },
+    {
+     "id": "hip104732",
+     "altitudeDeg": 49.121,
+     "azimuthDeg": 275.612,
+     "magnitude": 3.21
+    },
+    {
+     "id": "hip105199",
+     "altitudeDeg": 51.287,
+     "azimuthDeg": 327.148,
+     "magnitude": 2.45
+    },
+    {
+     "id": "hip106032",
+     "altitudeDeg": 48.831,
+     "azimuthDeg": 339.084,
+     "magnitude": 3.23
+    },
+    {
+     "id": "hip107259",
+     "altitudeDeg": 55.462,
+     "azimuthDeg": 322.929,
+     "magnitude": 4.23
+    },
+    {
+     "id": "hip107315",
+     "altitudeDeg": 44.215,
+     "azimuthDeg": 244.69,
+     "magnitude": 2.38
+    },
+    {
+     "id": "hip107354",
+     "altitudeDeg": 53.526,
+     "azimuthDeg": 264.204,
+     "magnitude": 4.14
+    },
+    {
+     "id": "hip109176",
+     "altitudeDeg": 57.818,
+     "azimuthDeg": 259.452,
+     "magnitude": 3.77
+    },
+    {
+     "id": "hip109410",
+     "altitudeDeg": 61.526,
+     "azimuthDeg": 273.225,
+     "magnitude": 4.28
+    },
+    {
+     "id": "hip109427",
+     "altitudeDeg": 46.074,
+     "azimuthDeg": 234.502,
+     "magnitude": 3.52
+    },
+    {
+     "id": "hip109492",
+     "altitudeDeg": 58.946,
+     "azimuthDeg": 324.733,
+     "magnitude": 3.39
+    },
+    {
+     "id": "hip109857",
+     "altitudeDeg": 59.991,
+     "azimuthDeg": 323.253,
+     "magnitude": 4.18
+    },
+    {
+     "id": "hip110991",
+     "altitudeDeg": 60.88,
+     "azimuthDeg": 327.619,
+     "magnitude": 4.07
+    },
+    {
+     "id": "hip112029",
+     "altitudeDeg": 54.581,
+     "azimuthDeg": 229.835,
+     "magnitude": 3.41
+    },
+    {
+     "id": "hip112158",
+     "altitudeDeg": 67.113,
+     "azimuthDeg": 261.192,
+     "magnitude": 2.93
+    },
+    {
+     "id": "hip112440",
+     "altitudeDeg": 64.418,
+     "azimuthDeg": 246.185,
+     "magnitude": 3.97
+    },
+    {
+     "id": "hip112724",
+     "altitudeDeg": 57.255,
+     "azimuthDeg": 341.834,
+     "magnitude": 3.5
+    },
+    {
+     "id": "hip112748",
+     "altitudeDeg": 65.67,
+     "azimuthDeg": 247.048,
+     "magnitude": 3.51
+    },
+    {
+     "id": "hip113881",
+     "altitudeDeg": 70.168,
+     "azimuthDeg": 250.234,
+     "magnitude": 2.44
+    },
+    {
+     "id": "hip113963",
+     "altitudeDeg": 61.515,
+     "azimuthDeg": 226.411,
+     "magnitude": 2.49
+    },
+    {
+     "id": "hip116631",
+     "altitudeDeg": 78.358,
+     "azimuthDeg": 307.975,
+     "magnitude": 4.29
+    },
+    {
+     "id": "hip116727",
+     "altitudeDeg": 48.769,
+     "azimuthDeg": 356.05,
+     "magnitude": 3.21
+    }
+   ],
+   "visibleConstellationIds": [
+    "pegasus",
+    "andromeda",
+    "cassiopeia",
+    "cepheus",
+    "perseus",
+    "cygnus",
+    "lyra",
+    "taurus",
+    "aries",
+    "auriga"
+   ],
+   "nearHorizonConstellationIds": [
+    "aquila",
+    "orion"
+   ],
+   "belowHorizonConstellationIds": [],
+   "quizEligibleConstellationIds": [
+    "pegasus",
+    "andromeda",
+    "cassiopeia",
+    "cepheus",
+    "perseus",
+    "cygnus",
+    "lyra",
+    "taurus",
+    "aries",
+    "auriga"
+   ],
+   "constellationViews": {
+    "pegasus": {
+     "status": "visible",
+     "centerAltitudeDeg": 66.63,
+     "centerAzimuthDeg": 229.39,
+     "lowestRequiredAltitudeDeg": 44.21,
+     "directionKo": "남서",
+     "heightKo": "높이",
+     "whereKo": "남서쪽 하늘에 높이 떠 있어요"
+    },
+    "andromeda": {
+     "status": "visible",
+     "centerAltitudeDeg": 83.86,
+     "centerAzimuthDeg": 105.18,
+     "lowestRequiredAltitudeDeg": 70.87,
+     "directionKo": "동남동",
+     "heightKo": "거의 머리 위",
+     "whereKo": "거의 머리 위에 떠 있어요"
+    },
+    "cassiopeia": {
+     "status": "visible",
+     "centerAltitudeDeg": 65.88,
+     "centerAzimuthDeg": 9.35,
+     "lowestRequiredAltitudeDeg": 60.11,
+     "directionKo": "북",
+     "heightKo": "높이",
+     "whereKo": "북쪽 하늘에 높이 떠 있어요"
+    },
+    "cepheus": {
+     "status": "visible",
+     "centerAltitudeDeg": 53.56,
+     "centerAzimuthDeg": 338.33,
+     "lowestRequiredAltitudeDeg": 48.77,
+     "directionKo": "북북서",
+     "heightKo": "높이",
+     "whereKo": "북북서쪽 하늘에 높이 떠 있어요"
+    },
+    "perseus": {
+     "status": "visible",
+     "centerAltitudeDeg": 54.52,
+     "centerAzimuthDeg": 63.31,
+     "lowestRequiredAltitudeDeg": 47.79,
+     "directionKo": "동북동",
+     "heightKo": "높이",
+     "whereKo": "동북동쪽 하늘에 높이 떠 있어요"
+    },
+    "cygnus": {
+     "status": "visible",
+     "centerAltitudeDeg": 40.38,
+     "centerAzimuthDeg": 293.05,
+     "lowestRequiredAltitudeDeg": 28.03,
+     "directionKo": "서북서",
+     "heightKo": "중간 높이",
+     "whereKo": "서북서쪽 하늘 중간 높이에 떠 있어요"
+    },
+    "lyra": {
+     "status": "visible",
+     "centerAltitudeDeg": 24.14,
+     "centerAzimuthDeg": 297.87,
+     "lowestRequiredAltitudeDeg": 23.05,
+     "directionKo": "서북서",
+     "heightKo": "조금 낮게",
+     "whereKo": "서북서쪽 하늘에 조금 낮게 떠 있어요"
+    },
+    "aquila": {
+     "status": "nearHorizon",
+     "centerAltitudeDeg": 18.99,
+     "centerAzimuthDeg": 264.56,
+     "lowestRequiredAltitudeDeg": 13.24,
+     "directionKo": "서",
+     "heightKo": "조금 낮게",
+     "whereKo": "서쪽 하늘에 조금 낮게 떠 있어요"
+    },
+    "taurus": {
+     "status": "visible",
+     "centerAltitudeDeg": 30.88,
+     "centerAzimuthDeg": 86.58,
+     "lowestRequiredAltitudeDeg": 22.38,
+     "directionKo": "동",
+     "heightKo": "중간 높이",
+     "whereKo": "동쪽 하늘 중간 높이에 떠 있어요"
+    },
+    "orion": {
+     "status": "nearHorizon",
+     "centerAltitudeDeg": 9.86,
+     "centerAzimuthDeg": 98.86,
+     "lowestRequiredAltitudeDeg": 2.27,
+     "directionKo": "동",
+     "heightKo": "지평선 가까이",
+     "whereKo": "동쪽 지평선 가까이에 있어요"
+    },
+    "aries": {
+     "status": "visible",
+     "centerAltitudeDeg": 65.07,
+     "centerAzimuthDeg": 122.43,
+     "lowestRequiredAltitudeDeg": 64.51,
+     "directionKo": "동남동",
+     "heightKo": "높이",
+     "whereKo": "동남동쪽 하늘에 높이 떠 있어요"
+    },
+    "auriga": {
+     "status": "visible",
+     "centerAltitudeDeg": 32.94,
+     "centerAzimuthDeg": 62.98,
+     "lowestRequiredAltitudeDeg": 26.24,
+     "directionKo": "동북동",
+     "heightKo": "중간 높이",
+     "whereKo": "동북동쪽 하늘 중간 높이에 떠 있어요"
+    }
+   }
+  },
+  {
+   "id": "t00",
+   "labelKo": "다음 날 0시",
+   "localISO": "2026-11-05T00:00:00+09:00",
+   "utcISO": "2026-11-04T15:00:00Z",
+   "isNextDay": true,
+   "sunAltitudeDeg": -68.51,
+   "twilight": "night",
+   "twilightKo": "완전히 어두운 밤하늘이에요.",
+   "moon": {
+    "altitudeDeg": -29.13,
+    "azimuthDeg": 60.57,
+    "fractionIlluminated": 0.215
+   },
+   "stars": [
+    {
+     "id": "hip677",
+     "altitudeDeg": 59.749,
+     "azimuthDeg": 265.708,
+     "magnitude": 2.07
+    },
+    {
+     "id": "hip746",
+     "altitudeDeg": 58.314,
+     "azimuthDeg": 326.177,
+     "magnitude": 2.28
+    },
+    {
+     "id": "hip1067",
+     "altitudeDeg": 52.997,
+     "azimuthDeg": 243.466,
+     "magnitude": 2.83
+    },
+    {
+     "id": "hip2912",
+     "altitudeDeg": 67.043,
+     "azimuthDeg": 270.82,
+     "magnitude": 4.34
+    },
+    {
+     "id": "hip3031",
+     "altitudeDeg": 65.831,
+     "azimuthDeg": 260.16,
+     "magnitude": 4.34
+    },
+    {
+     "id": "hip3092",
+     "altitudeDeg": 66.608,
+     "azimuthDeg": 263.515,
+     "magnitude": 3.27
+    },
+    {
+     "id": "hip3179",
+     "altitudeDeg": 63.226,
+     "azimuthDeg": 326.286,
+     "magnitude": 2.24
+    },
+    {
+     "id": "hip3693",
+     "altitudeDeg": 64.951,
+     "azimuthDeg": 247.316,
+     "magnitude": 4.08
+    },
+    {
+     "id": "hip3881",
+     "altitudeDeg": 70.358,
+     "azimuthDeg": 290.375,
+     "magnitude": 4.53
+    },
+    {
+     "id": "hip4427",
+     "altitudeDeg": 61.984,
+     "azimuthDeg": 336.103,
+     "magnitude": 2.15
+    },
+    {
+     "id": "hip4436",
+     "altitudeDeg": 71.758,
+     "azimuthDeg": 282.528,
+     "magnitude": 3.86
+    },
+    {
+     "id": "hip4463",
+     "altitudeDeg": 66.22,
+     "azimuthDeg": 242.351,
+     "magnitude": 4.4
+    },
+    {
+     "id": "hip5434",
+     "altitudeDeg": 72.026,
+     "azimuthDeg": 311.914,
+     "magnitude": 4.26
+    },
+    {
+     "id": "hip5447",
+     "altitudeDeg": 74.05,
+     "azimuthDeg": 271.872,
+     "magnitude": 2.07
+    },
+    {
+     "id": "hip6686",
+     "altitudeDeg": 64.485,
+     "azimuthDeg": 341.916,
+     "magnitude": 2.66
+    },
+    {
+     "id": "hip7607",
+     "altitudeDeg": 74.965,
+     "azimuthDeg": 326.097,
+     "magnitude": 3.59
+    },
+    {
+     "id": "hip8068",
+     "altitudeDeg": 73.923,
+     "azimuthDeg": 333.566,
+     "magnitude": 4.01
+    },
+    {
+     "id": "hip8832",
+     "altitudeDeg": 70.891,
+     "azimuthDeg": 206.288,
+     "magnitude": 3.88
+    },
+    {
+     "id": "hip8886",
+     "altitudeDeg": 62.608,
+     "azimuthDeg": 351.844,
+     "magnitude": 3.35
+    },
+    {
+     "id": "hip8903",
+     "altitudeDeg": 72.39,
+     "azimuthDeg": 207.366,
+     "magnitude": 2.64
+    },
+    {
+     "id": "hip9640",
+     "altitudeDeg": 82.674,
+     "azimuthDeg": 321.292,
+     "magnitude": 2.1
+    },
+    {
+     "id": "hip9884",
+     "altitudeDeg": 75.899,
+     "azimuthDeg": 200.821,
+     "magnitude": 2.01
+    },
+    {
+     "id": "hip12777",
+     "altitudeDeg": 77.237,
+     "azimuthDeg": 11.626,
+     "magnitude": 4.1
+    },
+    {
+     "id": "hip13209",
+     "altitudeDeg": 79.475,
+     "azimuthDeg": 153.33,
+     "magnitude": 3.61
+    },
+    {
+     "id": "hip13268",
+     "altitudeDeg": 70.525,
+     "azimuthDeg": 9.378,
+     "magnitude": 3.77
+    },
+    {
+     "id": "hip13531",
+     "altitudeDeg": 73.402,
+     "azimuthDeg": 13.734,
+     "magnitude": 3.93
+    },
+    {
+     "id": "hip14328",
+     "altitudeDeg": 72.137,
+     "azimuthDeg": 17.805,
+     "magnitude": 2.91
+    },
+    {
+     "id": "hip14354",
+     "altitudeDeg": 82.515,
+     "azimuthDeg": 71.369,
+     "magnitude": 3.32
+    },
+    {
+     "id": "hip14576",
+     "altitudeDeg": 81.268,
+     "azimuthDeg": 58.522,
+     "magnitude": 2.09
+    },
+    {
+     "id": "hip14632",
+     "altitudeDeg": 75.235,
+     "azimuthDeg": 26.584,
+     "magnitude": 4.05
+    },
+    {
+     "id": "hip14668",
+     "altitudeDeg": 78.847,
+     "azimuthDeg": 40.546,
+     "magnitude": 3.79
+    },
+    {
+     "id": "hip15863",
+     "altitudeDeg": 73.522,
+     "azimuthDeg": 33.2,
+     "magnitude": 1.79
+    },
+    {
+     "id": "hip15900",
+     "altitudeDeg": 59.478,
+     "azimuthDeg": 152.01,
+     "magnitude": 3.61
+    },
+    {
+     "id": "hip16083",
+     "altitudeDeg": 59.897,
+     "azimuthDeg": 150.401,
+     "magnitude": 3.73
+    },
+    {
+     "id": "hip17358",
+     "altitudeDeg": 72.486,
+     "azimuthDeg": 45.367,
+     "magnitude": 3.01
+    },
+    {
+     "id": "hip17448",
+     "altitudeDeg": 73.83,
+     "azimuthDeg": 100.666,
+     "magnitude": 3.84
+    },
+    {
+     "id": "hip17531",
+     "altitudeDeg": 69.52,
+     "azimuthDeg": 121.68,
+     "magnitude": 4.3
+    },
+    {
+     "id": "hip17573",
+     "altitudeDeg": 69.349,
+     "azimuthDeg": 121.627,
+     "magnitude": 3.87
+    },
+    {
+     "id": "hip17608",
+     "altitudeDeg": 68.984,
+     "azimuthDeg": 122.293,
+     "magnitude": 4.14
+    },
+    {
+     "id": "hip17702",
+     "altitudeDeg": 68.892,
+     "azimuthDeg": 121.477,
+     "magnitude": 2.85
+    },
+    {
+     "id": "hip17847",
+     "altitudeDeg": 68.57,
+     "azimuthDeg": 120.888,
+     "magnitude": 3.62
+    },
+    {
+     "id": "hip18246",
+     "altitudeDeg": 71.747,
+     "azimuthDeg": 99.38,
+     "magnitude": 2.84
+    },
+    {
+     "id": "hip18532",
+     "altitudeDeg": 72.29,
+     "azimuthDeg": 72.784,
+     "magnitude": 2.9
+    },
+    {
+     "id": "hip18614",
+     "altitudeDeg": 71.832,
+     "azimuthDeg": 86.449,
+     "magnitude": 3.98
+    },
+    {
+     "id": "hip18724",
+     "altitudeDeg": 58.147,
+     "azimuthDeg": 133.857,
+     "magnitude": 3.41
+    },
+    {
+     "id": "hip20205",
+     "altitudeDeg": 57.547,
+     "azimuthDeg": 123.39,
+     "magnitude": 3.65
+    },
+    {
+     "id": "hip20455",
+     "altitudeDeg": 58.354,
+     "azimuthDeg": 119.823,
+     "magnitude": 3.77
+    },
+    {
+     "id": "hip20889",
+     "altitudeDeg": 58.435,
+     "azimuthDeg": 115.778,
+     "magnitude": 3.53
+    },
+    {
+     "id": "hip20894",
+     "altitudeDeg": 56.208,
+     "azimuthDeg": 120.315,
+     "magnitude": 3.4
+    },
+    {
+     "id": "hip21421",
+     "altitudeDeg": 55.369,
+     "azimuthDeg": 117.373,
+     "magnitude": 0.87
+    },
+    {
+     "id": "hip22449",
+     "altitudeDeg": 46.188,
+     "azimuthDeg": 124.207,
+     "magnitude": 3.19
+    },
+    {
+     "id": "hip22509",
+     "altitudeDeg": 47.486,
+     "azimuthDeg": 122.084,
+     "magnitude": 4.35
+    },
+    {
+     "id": "hip22549",
+     "altitudeDeg": 44.951,
+     "azimuthDeg": 125.134,
+     "magnitude": 3.68
+    },
+    {
+     "id": "hip22797",
+     "altitudeDeg": 42.051,
+     "azimuthDeg": 127.171,
+     "magnitude": 3.71
+    },
+    {
+     "id": "hip22845",
+     "altitudeDeg": 47.644,
+     "azimuthDeg": 119.67,
+     "magnitude": 4.64
+    },
+    {
+     "id": "hip23015",
+     "altitudeDeg": 59.604,
+     "azimuthDeg": 85.778,
+     "magnitude": 2.69
+    },
+    {
+     "id": "hip23123",
+     "altitudeDeg": 40.805,
+     "azimuthDeg": 126.694,
+     "magnitude": 4.47
+    },
+    {
+     "id": "hip23416",
+     "altitudeDeg": 60.23,
+     "azimuthDeg": 64.372,
+     "magnitude": 3.03
+    },
+    {
+     "id": "hip23453",
+     "altitudeDeg": 60.037,
+     "azimuthDeg": 69.88,
+     "magnitude": 3.69
+    },
+    {
+     "id": "hip23767",
+     "altitudeDeg": 59.293,
+     "azimuthDeg": 69.446,
+     "magnitude": 3.18
+    },
+    {
+     "id": "hip24436",
+     "altitudeDeg": 30.585,
+     "azimuthDeg": 130.553,
+     "magnitude": 0.18
+    },
+    {
+     "id": "hip24608",
+     "altitudeDeg": 57.59,
+     "azimuthDeg": 60.243,
+     "magnitude": 0.08
+    },
+    {
+     "id": "hip25281",
+     "altitudeDeg": 33.454,
+     "azimuthDeg": 123.923,
+     "magnitude": 3.35
+    },
+    {
+     "id": "hip25336",
+     "altitudeDeg": 39.636,
+     "azimuthDeg": 116.207,
+     "magnitude": 1.64
+    },
+    {
+     "id": "hip25428",
+     "altitudeDeg": 52.108,
+     "azimuthDeg": 89.38,
+     "magnitude": 1.65
+    },
+    {
+     "id": "hip25930",
+     "altitudeDeg": 33.719,
+     "azimuthDeg": 120.555,
+     "magnitude": 2.25
+    },
+    {
+     "id": "hip26207",
+     "altitudeDeg": 40.194,
+     "azimuthDeg": 110.574,
+     "magnitude": 3.39
+    },
+    {
+     "id": "hip26311",
+     "altitudeDeg": 32.339,
+     "azimuthDeg": 120.393,
+     "magnitude": 1.69
+    },
+    {
+     "id": "hip26451",
+     "altitudeDeg": 46.326,
+     "azimuthDeg": 97.629,
+     "magnitude": 2.97
+    },
+    {
+     "id": "hip26727",
+     "altitudeDeg": 31.018,
+     "azimuthDeg": 120.034,
+     "magnitude": 1.74
+    },
+    {
+     "id": "hip27366",
+     "altitudeDeg": 24.179,
+     "azimuthDeg": 124.545,
+     "magnitude": 2.07
+    },
+    {
+     "id": "hip27913",
+     "altitudeDeg": 42.542,
+     "azimuthDeg": 95.78,
+     "magnitude": 4.39
+    },
+    {
+     "id": "hip27989",
+     "altitudeDeg": 34.783,
+     "azimuthDeg": 108.97,
+     "magnitude": 0.45
+    },
+    {
+     "id": "hip28360",
+     "altitudeDeg": 50.042,
+     "azimuthDeg": 61.351,
+     "magnitude": 1.9
+    },
+    {
+     "id": "hip28380",
+     "altitudeDeg": 48.438,
+     "azimuthDeg": 72.954,
+     "magnitude": 2.65
+    },
+    {
+     "id": "hip28614",
+     "altitudeDeg": 34.822,
+     "azimuthDeg": 105.484,
+     "magnitude": 4.12
+    },
+    {
+     "id": "hip28716",
+     "altitudeDeg": 40.566,
+     "azimuthDeg": 94.361,
+     "magnitude": 4.64
+    },
+    {
+     "id": "hip29038",
+     "altitudeDeg": 36.877,
+     "azimuthDeg": 99.488,
+     "magnitude": 4.42
+    },
+    {
+     "id": "hip29426",
+     "altitudeDeg": 35.69,
+     "azimuthDeg": 99.297,
+     "magnitude": 4.45
+    },
+    {
+     "id": "hip91262",
+     "altitudeDeg": 4.727,
+     "azimuthDeg": 316.416,
+     "magnitude": 0.03
+    },
+    {
+     "id": "hip91919",
+     "altitudeDeg": 6.37,
+     "azimuthDeg": 316.05,
+     "magnitude": 4.67
+    },
+    {
+     "id": "hip91971",
+     "altitudeDeg": 5.005,
+     "azimuthDeg": 314.49,
+     "magnitude": 4.34
+    },
+    {
+     "id": "hip92420",
+     "altitudeDeg": 2.869,
+     "azimuthDeg": 310.659,
+     "magnitude": 3.52
+    },
+    {
+     "id": "hip92791",
+     "altitudeDeg": 5.937,
+     "azimuthDeg": 312.643,
+     "magnitude": 4.22
+    },
+    {
+     "id": "hip93194",
+     "altitudeDeg": 3.78,
+     "azimuthDeg": 308.902,
+     "magnitude": 3.25
+    },
+    {
+     "id": "hip93244",
+     "altitudeDeg": -7.911,
+     "azimuthDeg": 295.683,
+     "magnitude": 4.02
+    },
+    {
+     "id": "hip93747",
+     "altitudeDeg": -7.652,
+     "azimuthDeg": 293.836,
+     "magnitude": 2.99
+    },
+    {
+     "id": "hip93805",
+     "altitudeDeg": -19.398,
+     "azimuthDeg": 278.772,
+     "magnitude": 3.43
+    },
+    {
+     "id": "hip94779",
+     "altitudeDeg": 19.482,
+     "azimuthDeg": 323.09,
+     "magnitude": 3.8
+    },
+    {
+     "id": "hip95501",
+     "altitudeDeg": -10.685,
+     "azimuthDeg": 282.242,
+     "magnitude": 3.36
+    },
+    {
+     "id": "hip95853",
+     "altitudeDeg": 20.101,
+     "azimuthDeg": 320.493,
+     "magnitude": 3.76
+    },
+    {
+     "id": "hip95947",
+     "altitudeDeg": 5.94,
+     "azimuthDeg": 300.831,
+     "magnitude": 3.05
+    },
+    {
+     "id": "hip96468",
+     "altitudeDeg": -11.17,
+     "azimuthDeg": 276.95,
+     "magnitude": 4.36
+    },
+    {
+     "id": "hip97165",
+     "altitudeDeg": 18.485,
+     "azimuthDeg": 313.203,
+     "magnitude": 2.86
+    },
+    {
+     "id": "hip97278",
+     "altitudeDeg": -1.999,
+     "azimuthDeg": 284.959,
+     "magnitude": 2.72
+    },
+    {
+     "id": "hip97649",
+     "altitudeDeg": -2.186,
+     "azimuthDeg": 282.895,
+     "magnitude": 0.76
+    },
+    {
+     "id": "hip97804",
+     "altitudeDeg": -6.648,
+     "azimuthDeg": 276.382,
+     "magnitude": 3.87
+    },
+    {
+     "id": "hip98036",
+     "altitudeDeg": -2.807,
+     "azimuthDeg": 280.255,
+     "magnitude": 3.71
+    },
+    {
+     "id": "hip98110",
+     "altitudeDeg": 14.575,
+     "azimuthDeg": 303.286,
+     "magnitude": 3.89
+    },
+    {
+     "id": "hip99473",
+     "altitudeDeg": -3.986,
+     "azimuthDeg": 272.071,
+     "magnitude": 3.24
+    },
+    {
+     "id": "hip100453",
+     "altitudeDeg": 21.686,
+     "azimuthDeg": 304.938,
+     "magnitude": 2.23
+    },
+    {
+     "id": "hip101093",
+     "altitudeDeg": 32.328,
+     "azimuthDeg": 327.614,
+     "magnitude": 4.21
+    },
+    {
+     "id": "hip102098",
+     "altitudeDeg": 27.169,
+     "azimuthDeg": 307.962,
+     "magnitude": 1.25
+    },
+    {
+     "id": "hip102422",
+     "altitudeDeg": 33.721,
+     "azimuthDeg": 325.659,
+     "magnitude": 3.41
+    },
+    {
+     "id": "hip102488",
+     "altitudeDeg": 22.654,
+     "azimuthDeg": 296.477,
+     "magnitude": 2.48
+    },
+    {
+     "id": "hip104732",
+     "altitudeDeg": 25.723,
+     "azimuthDeg": 289.844,
+     "magnitude": 3.21
+    },
+    {
+     "id": "hip105199",
+     "altitudeDeg": 37.666,
+     "azimuthDeg": 325.512,
+     "magnitude": 2.45
+    },
+    {
+     "id": "hip106032",
+     "altitudeDeg": 39.308,
+     "azimuthDeg": 335.568,
+     "magnitude": 3.23
+    },
+    {
+     "id": "hip107259",
+     "altitudeDeg": 40.17,
+     "azimuthDeg": 320.137,
+     "magnitude": 4.23
+    },
+    {
+     "id": "hip107315",
+     "altitudeDeg": 20.962,
+     "azimuthDeg": 266.843,
+     "magnitude": 2.38
+    },
+    {
+     "id": "hip107354",
+     "altitudeDeg": 29.598,
+     "azimuthDeg": 281.468,
+     "magnitude": 4.14
+    },
+    {
+     "id": "hip109176",
+     "altitudeDeg": 33.868,
+     "azimuthDeg": 278.279,
+     "magnitude": 3.77
+    },
+    {
+     "id": "hip109410",
+     "altitudeDeg": 37.898,
+     "azimuthDeg": 286.614,
+     "magnitude": 4.28
+    },
+    {
+     "id": "hip109427",
+     "altitudeDeg": 23.939,
+     "azimuthDeg": 259.49,
+     "magnitude": 3.52
+    },
+    {
+     "id": "hip109492",
+     "altitudeDeg": 43.689,
+     "azimuthDeg": 319.004,
+     "magnitude": 3.39
+    },
+    {
+     "id": "hip109857",
+     "altitudeDeg": 44.214,
+     "azimuthDeg": 317.371,
+     "magnitude": 4.18
+    },
+    {
+     "id": "hip110991",
+     "altitudeDeg": 46.093,
+     "azimuthDeg": 319.324,
+     "magnitude": 4.07
+    },
+    {
+     "id": "hip112029",
+     "altitudeDeg": 32.891,
+     "azimuthDeg": 258.343,
+     "magnitude": 3.41
+    },
+    {
+     "id": "hip112158",
+     "altitudeDeg": 43.158,
+     "azimuthDeg": 279.356,
+     "magnitude": 2.93
+    },
+    {
+     "id": "hip112440",
+     "altitudeDeg": 40.893,
+     "azimuthDeg": 270.859,
+     "magnitude": 3.97
+    },
+    {
+     "id": "hip112724",
+     "altitudeDeg": 47.246,
+     "azimuthDeg": 331.07,
+     "magnitude": 3.5
+    },
+    {
+     "id": "hip112748",
+     "altitudeDeg": 42.086,
+     "azimuthDeg": 271.563,
+     "magnitude": 3.51
+    },
+    {
+     "id": "hip113881",
+     "altitudeDeg": 46.408,
+     "azimuthDeg": 273.972,
+     "magnitude": 2.44
+    },
+    {
+     "id": "hip113963",
+     "altitudeDeg": 40.053,
+     "azimuthDeg": 258.542,
+     "magnitude": 2.49
+    },
+    {
+     "id": "hip116631",
+     "altitudeDeg": 57.07,
+     "azimuthDeg": 294.955,
+     "magnitude": 4.29
+    },
+    {
+     "id": "hip116727",
+     "altitudeDeg": 45.366,
+     "azimuthDeg": 348.269,
+     "magnitude": 3.21
+    }
+   ],
+   "visibleConstellationIds": [
+    "pegasus",
+    "andromeda",
+    "cassiopeia",
+    "cepheus",
+    "perseus",
+    "taurus",
+    "orion",
+    "aries",
+    "auriga"
+   ],
+   "nearHorizonConstellationIds": [
+    "cygnus",
+    "lyra"
+   ],
+   "belowHorizonConstellationIds": [
+    "aquila"
+   ],
+   "quizEligibleConstellationIds": [
+    "pegasus",
+    "andromeda",
+    "cassiopeia",
+    "cepheus",
+    "perseus",
+    "taurus",
+    "orion",
+    "aries",
+    "auriga"
+   ],
+   "constellationViews": {
+    "pegasus": {
+     "status": "visible",
+     "centerAltitudeDeg": 44.54,
+     "centerAzimuthDeg": 262.28,
+     "lowestRequiredAltitudeDeg": 20.96,
+     "directionKo": "서",
+     "heightKo": "중간 높이",
+     "whereKo": "서쪽 하늘 중간 높이에 떠 있어요"
+    },
+    "andromeda": {
+     "status": "visible",
+     "centerAltitudeDeg": 71.47,
+     "centerAzimuthDeg": 271.19,
+     "lowestRequiredAltitudeDeg": 59.75,
+     "directionKo": "서",
+     "heightKo": "거의 머리 위",
+     "whereKo": "거의 머리 위에 떠 있어요"
+    },
+    "cassiopeia": {
+     "status": "visible",
+     "centerAltitudeDeg": 62.47,
+     "centerAzimuthDeg": 336.13,
+     "lowestRequiredAltitudeDeg": 58.31,
+     "directionKo": "북북서",
+     "heightKo": "높이",
+     "whereKo": "북북서쪽 하늘에 높이 떠 있어요"
+    },
+    "cepheus": {
+     "status": "visible",
+     "centerAltitudeDeg": 43.07,
+     "centerAzimuthDeg": 331.71,
+     "lowestRequiredAltitudeDeg": 37.67,
+     "directionKo": "북북서",
+     "heightKo": "중간 높이",
+     "whereKo": "북북서쪽 하늘 중간 높이에 떠 있어요"
+    },
+    "perseus": {
+     "status": "visible",
+     "centerAltitudeDeg": 75.68,
+     "centerAzimuthDeg": 54.23,
+     "lowestRequiredAltitudeDeg": 71.75,
+     "directionKo": "북동",
+     "heightKo": "거의 머리 위",
+     "whereKo": "거의 머리 위에 떠 있어요"
+    },
+    "cygnus": {
+     "status": "nearHorizon",
+     "centerAltitudeDeg": 19.29,
+     "centerAzimuthDeg": 304.65,
+     "lowestRequiredAltitudeDeg": 5.94,
+     "directionKo": "북서",
+     "heightKo": "조금 낮게",
+     "whereKo": "북서쪽 하늘에 조금 낮게 떠 있어요"
+    },
+    "lyra": {
+     "status": "nearHorizon",
+     "centerAltitudeDeg": 4.47,
+     "centerAzimuthDeg": 312.62,
+     "lowestRequiredAltitudeDeg": 2.87,
+     "directionKo": "북서",
+     "heightKo": "지평선 가까이",
+     "whereKo": "북서쪽 지평선 가까이에 있어요"
+    },
+    "aquila": {
+     "status": "belowHorizon",
+     "centerAltitudeDeg": -4.92,
+     "centerAzimuthDeg": 282.7,
+     "lowestRequiredAltitudeDeg": -10.69,
+     "directionKo": "서북서",
+     "heightKo": "지평선 아래",
+     "whereKo": "지평선 아래에 있어요"
+    },
+    "taurus": {
+     "status": "visible",
+     "centerAltitudeDeg": 54.66,
+     "centerAzimuthDeg": 107.71,
+     "lowestRequiredAltitudeDeg": 46.33,
+     "directionKo": "동남동",
+     "heightKo": "높이",
+     "whereKo": "동남동쪽 하늘에 높이 떠 있어요"
+    },
+    "orion": {
+     "status": "visible",
+     "centerAltitudeDeg": 32.47,
+     "centerAzimuthDeg": 120.35,
+     "lowestRequiredAltitudeDeg": 24.18,
+     "directionKo": "동남동",
+     "heightKo": "중간 높이",
+     "whereKo": "동남동쪽 하늘 중간 높이에 떠 있어요"
+    },
+    "aries": {
+     "status": "visible",
+     "centerAltitudeDeg": 73.08,
+     "centerAzimuthDeg": 205.14,
+     "lowestRequiredAltitudeDeg": 70.89,
+     "directionKo": "남남서",
+     "heightKo": "거의 머리 위",
+     "whereKo": "거의 머리 위에 떠 있어요"
+    },
+    "auriga": {
+     "status": "visible",
+     "centerAltitudeDeg": 55.21,
+     "centerAzimuthDeg": 72.36,
+     "lowestRequiredAltitudeDeg": 48.44,
+     "directionKo": "동북동",
+     "heightKo": "높이",
+     "whereKo": "동북동쪽 하늘에 높이 떠 있어요"
+    }
+   }
+  }
+ ]
+}

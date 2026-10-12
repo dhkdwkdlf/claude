@@ -1,0 +1,127 @@
+{
+ "startedAt": "2026-10-12T03:56:40.755Z",
+ "chromium": "141.0.7390.37",
+ "checks": [
+  {
+   "id": "C-01/600x960",
+   "name": "세로 600×960: 카드·이름·생일 구간·안내 문구가 잘리지 않음",
+   "pass": true,
+   "detail": "card 370×554"
+  },
+  {
+   "id": "F-03",
+   "name": "12장 모두 순서대로 등장하고 12번째 → 1번째로 이어짐",
+   "pass": false,
+   "detail": "aries,gemini,leo,libra,sagittarius,aquarius,aries,gemini,leo,libra,sagittarius,aquarius"
+  },
+  {
+   "id": "F-04",
+   "name": "반대 방향 12회 이동 후 처음 카드로 복귀",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-06",
+   "name": "12개 카드 이미지 로드·이름·생일 구간 텍스트 존재",
+   "pass": true,
+   "detail": "12/12 이미지"
+  },
+  {
+   "id": "F-05",
+   "name": "정렬된 가운데 카드에 은은한 빛 효과",
+   "pass": false,
+   "detail": "opacity 0.183037"
+  },
+  {
+   "id": "F-07",
+   "name": "첫 탭: 확대 + 설명 + '한 번 더' 안내, 운세는 열리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-08",
+   "name": "두 번째 탭: 뒤집혀 뒷면 운세 표시",
+   "pass": true,
+   "detail": "내 열정이 누군가에게 좋은 자극이 돼요. 즐겁게 하는 "
+  },
+  {
+   "id": "F-10",
+   "name": "결과 표제가 11월 4일 고정",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-09b",
+   "name": "'재미로 만나는 별자리 이야기예요.' 안내",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-11",
+   "name": "결과 3분 유지 — 자동 닫기·재추첨 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-12",
+   "name": "결과에서 슬라이드 → 앞면 BROWSE 복귀, 방금 카드 중앙 유지",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-12b",
+   "name": "결과에서 오른쪽 슬라이드도 복귀",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-07b",
+   "name": "빠른 연속 탭(4회)으로 운세까지 건너뛰지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-07c",
+   "name": "드래그 직후 운세가 우연히 열리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-09",
+   "name": "같은 별자리(taurus) 12회 완전 중복 없음, 13회째 ≠ 12회째",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-10b",
+   "name": "기기 날짜를 바꿔도 화면 행사일 2026. 11. 4.",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-01/누수",
+   "name": "50회 연속 체험 후 리스너·타이머·DOM 누적 없음",
+   "pass": true,
+   "detail": "listeners 28→28, intervals 0→0, nodes 342→342"
+  },
+  {
+   "id": "실행",
+   "name": "검수 스크립트가 끝까지 실행됨",
+   "pass": false,
+   "detail": "Error: page.evaluate: TypeError: Cannot read properties of undefined (reading 'domInteractive')\n    at eval (eval at evaluate (:370:30), <anonymous>:3:45)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  }
+ ],
+ "screenshots": [
+  "fortune-600x960-browse.jpg",
+  "fortune-600x960-preview.jpg",
+  "fortune-600x960-result.jpg"
+ ],
+ "externalRequests": [],
+ "consoleErrors": [],
+ "finishedAt": "2026-10-12T03:58:56.620Z",
+ "summary": {
+  "total": 18,
+  "pass": 15,
+  "fail": 3
+ }
+}
