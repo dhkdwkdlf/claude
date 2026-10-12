@@ -1,5 +1,5 @@
 /* 별자리 부스 서비스 워커 (빌드 시 생성). 자기 앱 범위만 관리한다. */
-const CACHE_NAME = "fortune-v1.0.0+20261012-c022682a02";
+const CACHE_NAME = "fortune-v1.0.0+20261012-7a078e338a";
 const CACHE_PREFIX = "fortune-v";
 const BASE = "/fortune/";
 const PRECACHE = ["/fortune/art/aquarius.webp","/fortune/art/aries.webp","/fortune/art/cancer.webp","/fortune/art/capricorn.webp","/fortune/art/gemini.webp","/fortune/art/leo.webp","/fortune/art/libra.webp","/fortune/art/pisces.webp","/fortune/art/sagittarius.webp","/fortune/art/scorpio.webp","/fortune/art/taurus.webp","/fortune/art/virgo.webp","/fortune/assets/GowunBatang-Bold.subset-DV4VzIHC.woff2","/fortune/assets/GowunBatang-Regular.subset-DDL4HcVx.woff2","/fortune/assets/NotoSansKR-Bold.subset-25Rfu__e.woff2","/fortune/assets/NotoSansKR-Regular.subset-DVUY0z-S.woff2","/fortune/assets/index-8-Jefq8X.js","/fortune/assets/index-B1eEDNAe.css","/fortune/icons/apple-touch-icon.png","/fortune/icons/icon-192.png","/fortune/icons/icon-512.png","/fortune/icons/icon-maskable-512.png","/fortune/","/fortune/manifest.webmanifest","/fortune/precache-manifest.json"];

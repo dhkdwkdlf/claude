@@ -1,10 +1,10 @@
 {
  "appId": "fortune",
  "version": "1.0.0+20261012",
- "contentHash": "c022682a02",
- "cacheName": "fortune-v1.0.0+20261012-c022682a02",
+ "contentHash": "7a078e338a",
+ "cacheName": "fortune-v1.0.0+20261012-7a078e338a",
  "base": "/fortune/",
- "totalBytes": 2564225,
+ "totalBytes": 2648277,
  "files": [
   "/fortune/art/aquarius.webp",
   "/fortune/art/aries.webp",

@@ -60,7 +60,7 @@ const rows = [
   ["F-11", "결과 자동 닫지 않음", status(["F-11"])],
   ["F-12", "슬라이드하면 회전하며 첫 화면 전환", status(["F-12"])],
   ["F-13", "맑고 환한 밤하늘 분위기", ["통과(스크린샷 검수)", "docs/screenshots/*.jpg — 남색 배경+밝은 카드, 본문 대비 AA 이상(#F7FAFF/#142543 = 15.6:1, #16243D/#F7FAFF = 14.9:1, #7A5A16/#F2D79B = 5.9:1)"]],
-  ["F-14", "깔끔하고 세련된 카드 이미지", ["통과(사람 검수)·일부 임시", "9장 생성 이미지(같은 스타일 문구)·3장 수작업 SVG(염소·물병·물고기, API 크레딧 소진으로 임시). ASSET_LICENSES.md"]],
+  ["F-14", "깔끔하고 세련된 카드 이미지", ["통과(사람 검수)", "12장 모두 같은 스타일 문구로 생성(9장 API, 3장 사용자가 ChatGPT 에서 생성)·900×1350 WebP 통일·가장자리 남색 블렌딩. ASSET_LICENSES.md"]],
   ["F-15", "AI 결과물처럼 보이지 않는 공들인 디자인", ["통과(사람 검수)", "글꼴 번들(Gowun Batang/Noto Sans KR), 통일된 선화·여백·금색 포인트, 스크린샷 참고. 최종 판단은 사용자"]],
   ["S-01", "11월 4일 한국에서 볼 대표 별자리 시간별 표시", status(["S-01"])],
   ["S-02", "여러 번 확인하고 처음으로 자연스럽게 복귀", status(["S-02"])],
@@ -118,7 +118,6 @@ lines.push("| 저사양(2GB) 기기 fps·첫 조작 시간 | 미검증(에뮬레
 lines.push("| Wake Lock·전체화면 실제 동작 | 미검증 | 운영자 화면 버튼으로 요청 후 10분 방치해 화면 꺼짐 여부 확인. 미지원이면 기기 자동 잠금 해제 |");
 lines.push("| safe-area(노치·홈 바) 겹침 | 미검증 | 홈 화면 앱으로 열어 하단 '처음으로 돌아가기' 버튼이 홈 바에 가리지 않는지 |");
 lines.push("| Stellarium 대조 | 미검증(astropy 독립 재계산으로 대체) | `docs/ASTRONOMY_VALIDATION.md` 의 Stellarium 절차 |");
-lines.push("| 염소·물병·물고기 카드 생성 이미지 | 임시(수작업 SVG) | OpenAI 크레딧 충전 후 `scripts/generate-card-art.py --only capricorn,aquarius,pisces` → `optimize-card-art.py` → 재빌드 |");
 lines.push("| 배포 주소 | 없음 | 이 환경에서는 배포하지 않았음. `release/*.zip` 을 HTTPS 서버에 올려 사용 (주소를 지어내지 않음) |");
 lines.push("");
 writeFileSync(`${root}docs/TEST_REPORT.md`, lines.join("\n"));

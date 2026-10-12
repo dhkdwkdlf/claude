@@ -71,7 +71,7 @@ OPENAI_API_KEY=... python3 scripts/generate-card-art.py [--only capricorn,aquari
 python3 scripts/optimize-card-art.py <원본 폴더>     # → apps/fortune/public/art/*.webp
 ```
 
-API 를 쓸 수 없으면 `node scripts/fallback-card-art.mjs <폴더> capricorn,aquarius,pisces` 로 수작업 선화를 렌더합니다.
+ChatGPT 웹에서 같은 프롬프트(`scripts/generate-card-art.py` 의 STYLE + SUBJECTS)로 생성한 PNG 를 원본 폴더에 `<id>.png` 로 넣고 `optimize-card-art.py` 를 실행해도 됩니다. API 를 쓸 수 없으면 `node scripts/fallback-card-art.mjs <폴더> capricorn,aquarius,pisces` 로 예비 선화를 렌더합니다.
 
 ## 운영자 화면
 
