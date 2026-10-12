@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-10-12T04:02:50.615Z",
+ "startedAt": "2026-10-12T04:09:49.102Z",
  "chromium": "141.0.7390.37",
  "checks": [
   {
@@ -42,7 +42,7 @@
    "id": "F-08",
    "name": "두 번째 탭: 뒤집혀 뒷면 운세 표시",
    "pass": true,
-   "detail": "씩씩한 발걸음이 주변 친구에게도 힘이 돼요. 함께하면 "
+   "detail": "잠깐 멈추고 숨을 고르면 더 좋은 생각이 떠올라요. 천"
   },
   {
    "id": "F-10",
@@ -100,13 +100,13 @@
   },
   {
    "id": "F-01/누수",
-   "name": "50회 연속 체험 후 리스너·타이머·DOM 누적 없음",
+   "name": "50회 연속 체험 후 window/document 리스너·타이머·DOM 누적 없음",
    "pass": true,
-   "detail": "listeners 28→28, intervals 0→0, nodes 342→342"
+   "detail": "persistent listeners 18→18, intervals 0→0, nodes 342→342, addEventListener 누계 43→178"
   },
   {
    "id": "F-01/시간",
-   "name": "캐시 재실행 → 첫 조작 가능까지 82 ms 이하 (5회: 82, 49, 52, 48, 63)",
+   "name": "캐시 재실행 → 첫 조작 가능까지 82 ms 이하 (5회: 73, 75, 57, 70, 82)",
    "pass": true,
    "detail": "{\"note\":\"navigation timing 없음(가상 시계)\"}"
   },
@@ -174,7 +174,7 @@
    "id": "S-03",
    "name": "10회 출제 모두 학습한 별자리에서만 선택됨",
    "pass": true,
-   "detail": "카시오페이아자리,안드로메다자리,페가수스자리"
+   "detail": "카시오페이아자리,페가수스자리,안드로메다자리"
   },
   {
    "id": "S-06",
@@ -244,13 +244,13 @@
   },
   {
    "id": "F-01/sky/누수",
-   "name": "50회 연속 체험 후 리스너·타이머·DOM 누적 없음",
-   "pass": false,
-   "detail": "listeners 2987→6227, intervals 1→1, nodes 869→869"
+   "name": "50회 연속 체험 후 window/document 리스너·타이머·DOM 누적 없음",
+   "pass": true,
+   "detail": "persistent listeners 18→18, intervals 1→1, nodes 869→869, 노드별 addEventListener 누계 47→47 (다시 그린 노드와 함께 해제됨)"
   },
   {
    "id": "F-01/sky/시간",
-   "name": "캐시 재실행 → 첫 조작 가능까지 153 ms 이하 (5회: 153, 46, 38, 48, 47)",
+   "name": "캐시 재실행 → 첫 조작 가능까지 91 ms 이하 (5회: 91, 40, 48, 43, 50)",
    "pass": true,
    "detail": ""
   },
@@ -414,7 +414,7 @@
    "id": "F-02/분리",
    "name": "캐시 이름이 앱 ID + 버전으로 분리됨",
    "pass": true,
-   "detail": "fortune-v1.0.0+20261012-652980af48 / sky-v1.0.0+20261012-5e9aa314af"
+   "detail": "fortune-v1.0.0+20261012-652980af48 / sky-v1.0.0+20261012-16adc4cb7d"
   },
   {
    "id": "F-02/sky",
@@ -487,10 +487,10 @@
  ],
  "externalRequests": [],
  "consoleErrors": [],
- "finishedAt": "2026-10-12T04:08:53.908Z",
+ "finishedAt": "2026-10-12T04:15:50.972Z",
  "summary": {
   "total": 75,
-  "pass": 74,
-  "fail": 1
+  "pass": 75,
+  "fail": 0
  }
 }

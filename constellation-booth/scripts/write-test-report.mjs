@@ -34,7 +34,7 @@ try {
 }
 let astro = "";
 if (existsSync(`${root}docs/ASTRONOMY_VALIDATION.md`)) {
-  const m = readFileSync(`${root}docs/ASTRONOMY_VALIDATION.md`, "utf8").match(/대조한 별 × 시각: .*?\n- 판정: (.*)/s);
+  const m = readFileSync(`${root}docs/ASTRONOMY_VALIDATION.md`, "utf8").match(/대조한 별 × 시각: [^\n]*\n- 판정: [^\n]*/);
   astro = m ? m[0].replace(/\n- /g, " · ") : "";
 }
 const meta = JSON.parse(readFileSync(`${root}data/sky-data-metadata.json`, "utf8"));
