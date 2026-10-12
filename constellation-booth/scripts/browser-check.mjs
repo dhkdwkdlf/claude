@@ -440,12 +440,15 @@ async function skyFlow(vw, vh, label) {
       for (let i = 0; i < n; i++) {
         await page.locator(".chips .chip:not(.is-near)").first().click();
         await page.waitForTimeout(120);
-        const nm = await page.locator("#detail-name").textContent();
         await page.click("#btn-detail-quiz");
-        await page.waitForTimeout(120);
-        await page.fill("#answer", nm);
-        await page.click("#btn-submit");
-        await page.waitForTimeout(450);
+        await page.waitForTimeout(150);
+        // 출제가 랜덤이므로 보이는 별자리 이름을 차례로 입력해 정답을 찾는다
+        for (const nm of poolNames) {
+          await page.fill("#answer", nm);
+          await page.click("#btn-submit");
+          await page.waitForTimeout(320);
+          if (await page.locator("#screen-success").isVisible()) break;
+        }
         await page.click("#btn-home-success");
         await page.waitForTimeout(350);
         await page.click("#btn-explore");
