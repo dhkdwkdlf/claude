@@ -79,6 +79,12 @@ python3 scripts/optimize-card-art.py <원본 폴더>     # → apps/fortune/publ
 
 ChatGPT 웹에서 같은 프롬프트(`scripts/generate-card-art.py` 의 STYLE + SUBJECTS)로 생성한 PNG 를 원본 폴더에 `<id>.png` 로 넣고 `optimize-card-art.py` 를 실행해도 됩니다. API 를 쓸 수 없으면 `node scripts/fallback-card-art.mjs <폴더> capricorn,aquarius,pisces` 로 예비 선화를 렌더합니다.
 
+## '모양 씌우기' 선화 교체
+
+1. `scripts/shape-refs/<id>-stars.png`(별 배치 참고 이미지)를 첨부해 이미지 모델로 선화를 생성합니다(프롬프트는 `docs/BOOTH_OPERATION.md` 끝의 부록).
+2. 결과를 `<id>.png` 로 모아 `python3 scripts/import-shape-art.py <폴더>` → `apps/sky/public/shapes/<id>.webp` 와 `data/shape-placements.json` 이 갱신됩니다.
+3. 별 위치와 어긋나면 `data/shape-placements.json` 의 x/y/width/height 를 조정하고 `npm run build`.
+
 ## 운영자 화면
 
 참가자 화면에는 설정 버튼이 없습니다. 첫 화면의 작은 날짜 글자를 2.5초 안에 5번 두드리거나 주소에 `#operator` 를 붙이면 열립니다. 오프라인 준비 상태·누락 파일·버전, 업데이트 적용, 전체화면·화면 켜짐 유지, 저사양 모드, 참가자 화면 초기화, (앱 1) 덱 초기화, (앱 2) 기본 시간·행사 설정.

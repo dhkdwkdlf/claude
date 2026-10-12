@@ -62,3 +62,13 @@
 | 퀴즈 화면에서 다른 별자리로 바꾸고 싶어요 | 문제는 바뀌지 않습니다. '처음으로' → 별자리 알아보기부터 다시 |
 | 화면이 멈춘 것 같아요 | 운영자 화면 → '참가자 화면 초기화'. 그래도 안 되면 앱 종료 후 홈 아이콘으로 재실행(오프라인에서도 됩니다) |
 | 글자가 작아요/커요 | 태블릿 설정의 글자 크기는 기본값 권장. 앱은 본문 18px 이상·버튼 56px 이상으로 설계 |
+
+## 부록 — '모양 씌우기' 선화 생성 프롬프트
+
+`scripts/shape-refs/<id>-stars.png` 를 첨부하고 아래 문구의 `[SUBJECT]` 만 바꿔 생성합니다. 결과는 `<id>.png` 로 저장해 `python3 scripts/import-shape-art.py <폴더>` 로 반영합니다.
+
+```
+Using the attached image as the exact canvas and layout, draw [SUBJECT] as a refined, elegant single-weight line-art figure so that the figure's body naturally fits over the star pattern and connecting lines shown (treat the dots as the figure's key joints; do not move, redraw or add stars). Keep the same 1024x1024 square canvas and composition; the figure should fill roughly the same area as the star pattern. Thin, even, hand-inked ivory (#F7FAFF) lines only, no fills, no shading, no gradients, no gold stars, no text, no labels, no frame. Solid flat deep-navy background (#142543). Calm, classical star-atlas illustration mood, like an antique celestial chart redrawn in a minimal modern line style. Do not draw the star dots or the connecting lines themselves; draw only the figure.
+```
+
+[SUBJECT] 예: pegasus = the winged horse Pegasus seen upside-down as on the sky: the large square is its body, the neck and head extend from the lower-right corner toward the far right, two front legs extend from the upper corner, wings sweep from the left side. (나머지 11개는 같은 요령으로 별자리 형상과 별 배치의 대응을 설명)

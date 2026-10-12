@@ -19,7 +19,8 @@ IAU 공식 별자리 경계는 사용하지 않는다(별을 잇는 교육용 �
 | 12별자리 카드 일러스트 `apps/fortune/public/art/*.webp` — 양·황소·쌍둥이·게·사자·처녀·천칭·전갈·사수 (9장) | OpenAI 이미지 API(`gpt-image-2`)로 생성 후 검수·WebP 변환 (`scripts/generate-card-art.py`, `scripts/optimize-card-art.py`) | 같은 스타일 문구로 생성해 선 굵기·여백·색 수를 통일. 생성 이미지의 권리는 OpenAI 이용약관에 따라 생성한 사용자에게 귀속 |
 | 염소·물병·물고기 (3장) | 사용자가 ChatGPT(공식 웹)에서 같은 스타일 문구로 생성해 제공 → `scripts/optimize-card-art.py` 로 검수·변환 | 9장과 동일한 프롬프트·배경색·크기 규칙. 권리는 생성한 사용자에게 귀속 |
 | (예비) 수작업 SVG 선화 `scripts/fallback-card-art.mjs` | 자체 제작 | API 를 쓸 수 없을 때의 대체용. 현재 빌드에는 포함되지 않음 |
-| 앱 2 '모양 씌우기' 실루엣 (`apps/sky/src/shapes.ts`) | 자체 제작 (실제 별 좌표 프레임 위에 그린 선화) | 천문 좌표·연결 데이터를 생성 이미지로 대신하지 않음 |
+| 앱 2 '모양 씌우기' 선화 `apps/sky/public/shapes/*.webp` (12장) | 사용자가 ChatGPT 에서 `scripts/shape-refs/*-stars.png`(실제 별 배치)를 첨부해 생성 → `scripts/import-shape-art.py` 로 배경 제거·아이보리 선 통일·WebP 변환 | 별 좌표·연결선은 데이터로 그리고, 선화는 그 위에 닮음 변환으로 얹는 장식 레이어. 권리는 생성한 사용자에게 귀속. 오리온은 방패 버전 채택(활 버전은 미사용) |
+| (예비) 앱 2 SVG 실루엣 (`apps/sky/src/shapes.ts`) | 자체 제작 | 선화 이미지가 없는 별자리에만 표시되는 대체용. 현재는 12개 모두 이미지가 있어 사용되지 않음 |
 | PWA 아이콘 (`apps/*/public/icons/*.png`) | 자체 제작 SVG → `scripts/make-icons.mjs` 로 렌더 | — |
 | 배경 별·반짝임·별가루 | 코드로 그림 (Canvas/CSS) | — |
 

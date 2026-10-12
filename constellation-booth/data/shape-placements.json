@@ -1,4 +1,101 @@
 {
   "$comment": "모양 씌우기 선화 이미지 배치. 기준 프레임(1000×1000, 북쪽 위·동쪽 왼쪽) 좌표. 이미지가 있는 별자리만 적는다. scripts/import-shape-art.py 가 채운다.",
-  "placements": {}
+  "placements": {
+    "andromeda": {
+      "asset": "shapes/andromeda.webp",
+      "x": 0,
+      "y": 0,
+      "width": 1000,
+      "height": 1000,
+      "opacity": 0.88
+    },
+    "aquila": {
+      "asset": "shapes/aquila.webp",
+      "x": 0,
+      "y": 0,
+      "width": 1000,
+      "height": 1000,
+      "opacity": 0.88
+    },
+    "aries": {
+      "asset": "shapes/aries.webp",
+      "x": 0,
+      "y": 0,
+      "width": 1000,
+      "height": 1000,
+      "opacity": 0.88
+    },
+    "auriga": {
+      "asset": "shapes/auriga.webp",
+      "x": 0,
+      "y": 0,
+      "width": 1000,
+      "height": 1000,
+      "opacity": 0.88
+    },
+    "cassiopeia": {
+      "asset": "shapes/cassiopeia.webp",
+      "x": 0,
+      "y": 0,
+      "width": 1000,
+      "height": 1000,
+      "opacity": 0.88
+    },
+    "cepheus": {
+      "asset": "shapes/cepheus.webp",
+      "x": 0,
+      "y": 0,
+      "width": 1000,
+      "height": 1000,
+      "opacity": 0.88
+    },
+    "cygnus": {
+      "asset": "shapes/cygnus.webp",
+      "x": 0,
+      "y": 0,
+      "width": 1000,
+      "height": 1000,
+      "opacity": 0.88
+    },
+    "lyra": {
+      "asset": "shapes/lyra.webp",
+      "x": 0,
+      "y": 0,
+      "width": 1000,
+      "height": 1000,
+      "opacity": 0.88
+    },
+    "orion": {
+      "asset": "shapes/orion.webp",
+      "x": 0,
+      "y": 0,
+      "width": 1000,
+      "height": 1000,
+      "opacity": 0.88
+    },
+    "pegasus": {
+      "asset": "shapes/pegasus.webp",
+      "x": 0,
+      "y": 0,
+      "width": 1000,
+      "height": 1000,
+      "opacity": 0.88
+    },
+    "perseus": {
+      "asset": "shapes/perseus.webp",
+      "x": 0,
+      "y": 0,
+      "width": 1000,
+      "height": 1000,
+      "opacity": 0.88
+    },
+    "taurus": {
+      "asset": "shapes/taurus.webp",
+      "x": 0,
+      "y": 0,
+      "width": 1000,
+      "height": 1000,
+      "opacity": 0.88
+    }
+  }
 }

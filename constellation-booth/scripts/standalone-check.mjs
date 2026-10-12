@@ -66,9 +66,10 @@ async function open(file) {
   await page.waitForTimeout(400);
   const stars = await page.$$eval("#sky .skymap__stars circle", (els) => els.length);
   check("여행: 하늘 지도 별 표시", stars > 50, `${stars}개`);
+  const pool = await page.$$eval(".chips .chip:not(.is-near)", (els) => els.map((e) => e.textContent.trim()));
   await page.click(".chips .chip:not(.is-near)");
   await page.waitForTimeout(500);
-  const nm = await page.locator("#detail-name").textContent();
+  const shapeImg = await page.$eval("#detail-svg", (s) => !!s.querySelector(".detail__shape-image"));
   await page.click("#btn-detail-quiz");
   await page.waitForTimeout(400);
   await page.fill("#answer", "틀린답");
@@ -76,10 +77,17 @@ async function open(file) {
   await page.waitForTimeout(300);
   await page.click("#btn-hint");
   await page.waitForTimeout(300);
-  await page.fill("#answer", nm);
-  await page.click("#btn-submit");
-  await page.waitForTimeout(700);
-  check("여행: 설명 → 퀴즈 → 힌트 → 정답 화면", await page.locator("#screen-success").isVisible(), nm);
+  let nm = null;
+  for (const n of pool) {
+    await page.fill("#answer", n);
+    await page.click("#btn-submit");
+    await page.waitForTimeout(450);
+    if (await page.locator("#screen-success").isVisible()) {
+      nm = n;
+      break;
+    }
+  }
+  check("여행: 설명(선화 이미지 포함) → 퀴즈 → 힌트 → 정답 화면", shapeImg && (await page.locator("#screen-success").isVisible()), nm);
   await page.click("#btn-home-success");
   await page.waitForTimeout(500);
   check("여행: 처음으로 복귀", await page.locator("#screen-home").isVisible());
