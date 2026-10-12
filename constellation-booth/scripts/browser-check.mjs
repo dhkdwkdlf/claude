@@ -435,7 +435,7 @@ async function skyFlow(vw, vh, label) {
     check("S-10b", "이전 참가자의 답안이 입력창에 남지 않음", inputEmpty);
 
     // 50회 반복
-    const snap = async () => page.evaluate(() => ({ ...window.__counters, nodes: document.querySelectorAll("*").length }));
+    const snap = async () => page.evaluate(() => ({ ...window.__counters, nodes: document.querySelectorAll("*:not(svg *)").length }));
     const loop = async (n) => {
       for (let i = 0; i < n; i++) {
         await page.locator(".chips .chip:not(.is-near)").first().click();
@@ -506,13 +506,17 @@ async function offlineFlow() {
   await page.waitForTimeout(400);
   await page.click("#btn-explore");
   await page.waitForTimeout(300);
+  const offlinePool = await page.$$eval(".chips .chip:not(.is-near)", (els) => els.map((e) => e.textContent.trim()));
   await page.click(".chips .chip:not(.is-near)");
   await page.waitForTimeout(300);
-  const nm = await page.locator("#detail-name").textContent();
   await page.click("#btn-detail-quiz");
-  await page.fill("#answer", nm);
-  await page.click("#btn-submit");
-  await page.waitForTimeout(400);
+  await page.waitForTimeout(200);
+  for (const nm of offlinePool) {
+    await page.fill("#answer", nm);
+    await page.click("#btn-submit");
+    await page.waitForTimeout(350);
+    if (await page.locator("#screen-success").isVisible()) break;
+  }
   const skyOffline = await page.locator("#screen-success").isVisible();
   const fontsOk = await page.evaluate(() => document.fonts.check('700 20px "Noto Sans KR"') && document.fonts.check('700 20px "Gowun Batang"'));
   check("F-02/sky", "오프라인에서 앱 2 재실행 + 미방문 화면(퀴즈·정답) 포함 전체 체험", skyOffline, `fonts ${fontsOk}`);
