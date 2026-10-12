@@ -1,0 +1,18 @@
+{
+  "id": "/sky/",
+  "name": "11월 4일의 별자리 여행",
+  "short_name": "별자리 여행",
+  "description": "별자리 부스 — 계절별 볼 수 있는 별자리 찾기 (2026. 11. 4. 봉화 기준)",
+  "start_url": "/sky/",
+  "scope": "/sky/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#142543",
+  "theme_color": "#142543",
+  "lang": "ko",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

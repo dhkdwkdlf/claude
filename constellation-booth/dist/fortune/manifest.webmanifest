@@ -1,0 +1,18 @@
+{
+  "id": "/fortune/",
+  "name": "별빛이 전하는 오늘의 한마디",
+  "short_name": "별자리 운세",
+  "description": "별자리 부스 — 즉석 별자리 운세 확인하기 (2026. 11. 4.)",
+  "start_url": "/fortune/",
+  "scope": "/fortune/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#142543",
+  "theme_color": "#142543",
+  "lang": "ko",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

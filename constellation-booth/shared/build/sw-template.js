@@ -1,0 +1,74 @@
+/* 별자리 부스 서비스 워커 (빌드 시 생성). 자기 앱 범위만 관리한다. */
+const CACHE_NAME = __CACHE_NAME__;
+const CACHE_PREFIX = __CACHE_PREFIX__;
+const BASE = __BASE__;
+const PRECACHE = __PRECACHE__;
+
+self.addEventListener("install", (event) => {
+  // 전체 필수 자산을 한 번에 내려받는다. 하나라도 실패하면 설치가 실패하고 '준비 완료'가 되지 않는다.
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(async (cache) => {
+      await cache.addAll(PRECACHE.map((u) => new Request(u, { cache: "reload" })));
+      // 첫 설치(기존 워커 없음)일 때만 즉시 활성화. 갱신은 운영자가 적용한다.
+      const existing = await self.registration.active;
+      if (!existing) await self.skipWaiting();
+    }),
+  );
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    (async () => {
+      const names = await caches.keys();
+      await Promise.all(
+        names
+          .filter((n) => n.startsWith(CACHE_PREFIX) && n !== CACHE_NAME)
+          .map((n) => caches.delete(n)),
+      );
+      await self.clients.claim();
+    })(),
+  );
+});
+
+self.addEventListener("fetch", (event) => {
+  const req = event.request;
+  if (req.method !== "GET") return;
+  const url = new URL(req.url);
+  if (url.origin !== self.location.origin || !url.pathname.startsWith(BASE)) return;
+
+  event.respondWith(
+    (async () => {
+      const cache = await caches.open(CACHE_NAME);
+      const key = req.mode === "navigate" ? BASE : url.pathname;
+      const hit = (await cache.match(key)) || (await cache.match(req, { ignoreSearch: true }));
+      if (hit) return hit;
+      try {
+        return await fetch(req);
+      } catch (err) {
+        const fallback = await cache.match(BASE);
+        if (req.mode === "navigate" && fallback) return fallback;
+        throw err;
+      }
+    })(),
+  );
+});
+
+self.addEventListener("message", (event) => {
+  const data = event.data || {};
+  if (data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  } else if (data.type === "GET_STATUS") {
+    event.waitUntil(
+      (async () => {
+        const cache = await caches.open(CACHE_NAME);
+        const missing = [];
+        for (const u of PRECACHE) {
+          if (!(await cache.match(u))) missing.push(u);
+        }
+        const reply = { type: "STATUS", cacheName: CACHE_NAME, total: PRECACHE.length, missing };
+        if (event.ports && event.ports[0]) event.ports[0].postMessage(reply);
+        else if (event.source) event.source.postMessage(reply);
+      })(),
+    );
+  }
+});

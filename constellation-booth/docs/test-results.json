@@ -1,0 +1,497 @@
+{
+ "startedAt": "2026-10-12T06:05:29.378Z",
+ "chromium": "141.0.7390.37",
+ "checks": [
+  {
+   "id": "C-01/600x960",
+   "name": "세로 600×960: 카드·이름·생일 구간·안내 문구가 잘리지 않음",
+   "pass": true,
+   "detail": "card 370×554"
+  },
+  {
+   "id": "F-03",
+   "name": "12장 모두 순서대로 등장하고 12번째 → 1번째로 이어짐",
+   "pass": true,
+   "detail": "aries,taurus,gemini,cancer,leo,virgo,libra,scorpio,sagittarius,capricorn,aquarius,pisces"
+  },
+  {
+   "id": "F-04",
+   "name": "반대 방향 12회 이동 후 처음 카드로 복귀",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-06",
+   "name": "12개 카드 이미지 로드·이름·생일 구간 텍스트 존재",
+   "pass": true,
+   "detail": "12/12 이미지"
+  },
+  {
+   "id": "F-05",
+   "name": "정렬된 가운데 카드에 은은한 빛 효과",
+   "pass": true,
+   "detail": "opacity 1"
+  },
+  {
+   "id": "F-07",
+   "name": "첫 탭: 확대 + 설명 + '한 번 더' 안내, 운세는 열리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-08",
+   "name": "두 번째 탭: 뒤집혀 뒷면 운세 표시",
+   "pass": true,
+   "detail": "도전하는 마음이 멋진 하루를 만들어요. 결과보다 해 보"
+  },
+  {
+   "id": "F-10",
+   "name": "결과 표제가 11월 4일 고정",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-09b",
+   "name": "'재미로 만나는 별자리 이야기예요.' 안내",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-11",
+   "name": "결과 3분 유지 — 자동 닫기·재추첨 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-12",
+   "name": "결과에서 슬라이드 → 앞면 BROWSE 복귀, 방금 카드 중앙 유지",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-12b",
+   "name": "결과에서 오른쪽 슬라이드도 복귀",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-07b",
+   "name": "빠른 연속 탭(4회)으로 운세까지 건너뛰지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-07c",
+   "name": "드래그 직후 운세가 우연히 열리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-09",
+   "name": "같은 별자리(taurus) 12회 완전 중복 없음, 13회째 ≠ 12회째",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-10b",
+   "name": "기기 날짜를 바꿔도 화면 행사일 2026. 11. 4.",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-01/누수",
+   "name": "50회 연속 체험 후 window/document 리스너·타이머·DOM 누적 없음",
+   "pass": true,
+   "detail": "persistent listeners 18→18, intervals 0→0, nodes 342→342, addEventListener 누계 43→178"
+  },
+  {
+   "id": "F-01/시간",
+   "name": "캐시 재실행 → 첫 조작 가능까지 72 ms 이하 (5회: 65, 59, 72, 57, 64)",
+   "pass": true,
+   "detail": "{\"note\":\"navigation timing 없음(가상 시계)\"}"
+  },
+  {
+   "id": "콘솔/fortune/600x960",
+   "name": "콘솔 오류 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/600x960/home",
+   "name": "세로 600×960: 홈 큰 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/600x960/explore",
+   "name": "탐색 화면: 시간 버튼·퀴즈 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/600x960/quiz",
+   "name": "퀴즈 입력창·정답 확인 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "S-01",
+   "name": "시간 4개를 바꾸면 가시 별자리 목록과 별 좌표가 바뀌고 '다음 날 0시' 안내",
+   "pass": true,
+   "detail": "{\"t18\":8,\"t20\":9,\"t22\":10,\"t00\":9}"
+  },
+  {
+   "id": "S-01b",
+   "name": "화면에 '봉화 기준 · 한국 시간' 표시",
+   "pass": true,
+   "detail": "2026. 11. 4. · 봉화 기준 · 한국 시간"
+  },
+  {
+   "id": "S-01c",
+   "name": "설정-데이터 불일치 경고 없음(일치)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "S-02",
+   "name": "별자리 3개를 연속으로 확인해도 탐색 화면 유지",
+   "pass": true,
+   "detail": "페가수스자리,안드로메다자리,카시오페이아자리"
+  },
+  {
+   "id": "S-02b",
+   "name": "학습 화면: 별·선·모양·이름 레이어 표시 및 토글",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "S-01d",
+   "name": "설명에 해당 시간의 방향·높이 표기",
+   "pass": true,
+   "detail": "밤 8시에는 거의 머리 위에 떠 있어요 (고도 약 71°)."
+  },
+  {
+   "id": "S-03",
+   "name": "10회 출제 모두 현재 시각에 보이는 별자리 중에서 선택되고 여러 별자리가 섞여 나옴",
+   "pass": true,
+   "detail": "페르세우스자리,독수리자리,안드로메다자리,세페우스자리,거문고자리"
+  },
+  {
+   "id": "S-06",
+   "name": "최초 문제: 반짝이는 별만, 선·모양·이름 없음, 힌트 버튼 숨김",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "S-05a",
+   "name": "빈 입력 제출은 유효 오답이 아니라 힌트가 나오지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "S-04b",
+   "name": "한글 조합(compositionstart) 중 Enter 는 오답 판정하지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "S-05",
+   "name": "유효 오답 → 안내 문구 + 힌트 버튼 등장, 입력값 유지, 선은 자동 표시되지 않음",
+   "pass": true,
+   "detail": "조금 달라요. 힌트를 보고 다시 생각해 볼까요?"
+  },
+  {
+   "id": "S-07",
+   "name": "힌트 1회=선 잇기, 2회=모양 씌우기(이름 없음), 3회=초성, 4회 없음, 이후 오답에도 단계 유지",
+   "pass": true,
+   "detail": "초성 힌트: ㅍ ㄹ ㅅ ㅇ ㅅ"
+  },
+  {
+   "id": "S-04",
+   "name": "부분 문자열은 실패, 공백 포함 전체 이름은 정답",
+   "pass": true,
+   "detail": "페르세우스자리"
+  },
+  {
+   "id": "S-08",
+   "name": "정답: 이름 + 별·선·모양 다시 표시, 입력창 닫힘",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "S-09",
+   "name": "오른쪽 하단 큰 '처음으로 돌아가기' (높이 ≥64px, 너비 40~55%)",
+   "pass": true,
+   "detail": "291×72 @ 289,870"
+  },
+  {
+   "id": "S-08b",
+   "name": "정답 화면 3분 유지(자동 닫기·다음 문제 없음)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "S-10",
+   "name": "복귀 후 HOME, 학습 목록·문제·힌트 초기화; 학습 없이도 HOME 에서 바로 퀴즈 시작",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "S-10b",
+   "name": "이전 참가자의 답안이 입력창에 남지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-01/sky/누수",
+   "name": "50회 연속 체험 후 window/document 리스너·타이머·DOM 누적 없음",
+   "pass": true,
+   "detail": "persistent listeners 18→18, intervals 1→1, nodes 122→122, 노드별 addEventListener 누계 47→47 (다시 그린 노드와 함께 해제됨)"
+  },
+  {
+   "id": "F-01/sky/시간",
+   "name": "캐시 재실행 → 첫 조작 가능까지 166 ms 이하 (5회: 166, 56, 52, 46, 56)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "콘솔/sky/600x960",
+   "name": "콘솔 오류 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/768x1024",
+   "name": "세로 768×1024: 카드·이름·생일 구간·안내 문구가 잘리지 않음",
+   "pass": true,
+   "detail": "card 380×570"
+  },
+  {
+   "id": "콘솔/fortune/768x1024",
+   "name": "콘솔 오류 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/768x1024/home",
+   "name": "세로 768×1024: 홈 큰 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/768x1024/explore",
+   "name": "탐색 화면: 시간 버튼·퀴즈 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/768x1024/quiz",
+   "name": "퀴즈 입력창·정답 확인 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "콘솔/sky/768x1024",
+   "name": "콘솔 오류 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/800x1280",
+   "name": "세로 800×1280: 카드·이름·생일 구간·안내 문구가 잘리지 않음",
+   "pass": true,
+   "detail": "card 380×570"
+  },
+  {
+   "id": "콘솔/fortune/800x1280",
+   "name": "콘솔 오류 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/800x1280/home",
+   "name": "세로 800×1280: 홈 큰 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/800x1280/explore",
+   "name": "탐색 화면: 시간 버튼·퀴즈 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/800x1280/quiz",
+   "name": "퀴즈 입력창·정답 확인 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "콘솔/sky/800x1280",
+   "name": "콘솔 오류 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/360x640",
+   "name": "세로 360×640: 카드·이름·생일 구간·안내 문구가 잘리지 않음",
+   "pass": true,
+   "detail": "card 211×317"
+  },
+  {
+   "id": "콘솔/fortune/360x640",
+   "name": "콘솔 오류 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/360x640/home",
+   "name": "세로 360×640: 홈 큰 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/360x640/explore",
+   "name": "탐색 화면: 시간 버튼·퀴즈 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/360x640/quiz",
+   "name": "퀴즈 입력창·정답 확인 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "콘솔/sky/360x640",
+   "name": "콘솔 오류 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/landscape",
+   "name": "세로 1024×700: 카드·이름·생일 구간·안내 문구가 잘리지 않음",
+   "pass": true,
+   "detail": "card 296×444"
+  },
+  {
+   "id": "콘솔/fortune/landscape",
+   "name": "콘솔 오류 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/landscape/home",
+   "name": "세로 1024×700: 홈 큰 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/landscape/explore",
+   "name": "탐색 화면: 시간 버튼·퀴즈 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "C-01/sky/landscape/quiz",
+   "name": "퀴즈 입력창·정답 확인 버튼이 잘리지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "콘솔/sky/landscape",
+   "name": "콘솔 오류 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-02/설치",
+   "name": "두 앱 서비스 워커 설치 및 전체 자산 사전 캐시 완료",
+   "pass": true,
+   "detail": "fortune 25/25, sky 25/25"
+  },
+  {
+   "id": "F-02/분리",
+   "name": "캐시 이름이 앱 ID + 버전으로 분리됨",
+   "pass": true,
+   "detail": "fortune-v1.0.0+20261012-9ec24f63e9 / sky-v1.0.0+20261012-49df8b3687"
+  },
+  {
+   "id": "F-02/sky",
+   "name": "오프라인에서 앱 2 재실행 + 미방문 화면(퀴즈·정답) 포함 전체 체험",
+   "pass": true,
+   "detail": "fonts true"
+  },
+  {
+   "id": "F-02/fortune",
+   "name": "오프라인에서 앱 1 재실행 + 12개 이미지 + 운세 열기",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-02/새로고침",
+   "name": "오프라인 새로고침 후에도 동작",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-02/독립",
+   "name": "앱 1 캐시를 지워도 앱 2는 오프라인 실행",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "콘솔/offline",
+   "name": "오프라인 검사 중 콘솔 오류 없음(캐시 삭제 후 앱 1 미접속)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "F-02/외부요청",
+   "name": "행사 중 외부 네트워크 요청 없음 (CDN·폰트·API)",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "screenshots": [
+  "fortune-600x960-browse.jpg",
+  "fortune-600x960-preview.jpg",
+  "fortune-600x960-result.jpg",
+  "sky-600x960-home.jpg",
+  "sky-600x960-explore.jpg",
+  "sky-600x960-detail.jpg",
+  "sky-600x960-quiz.jpg",
+  "sky-600x960-hint1.jpg",
+  "sky-600x960-hint2.jpg",
+  "sky-600x960-hint3.jpg",
+  "sky-600x960-success.jpg",
+  "fortune-768x1024-browse.jpg",
+  "sky-768x1024-home.jpg",
+  "sky-768x1024-explore.jpg",
+  "sky-768x1024-detail.jpg",
+  "sky-768x1024-quiz.jpg",
+  "fortune-800x1280-browse.jpg",
+  "sky-800x1280-home.jpg",
+  "sky-800x1280-explore.jpg",
+  "sky-800x1280-detail.jpg",
+  "sky-800x1280-quiz.jpg",
+  "fortune-360x640-browse.jpg",
+  "sky-360x640-home.jpg",
+  "sky-360x640-explore.jpg",
+  "sky-360x640-detail.jpg",
+  "sky-360x640-quiz.jpg",
+  "fortune-landscape-browse.jpg",
+  "sky-landscape-home.jpg",
+  "sky-landscape-explore.jpg",
+  "sky-landscape-detail.jpg",
+  "sky-landscape-quiz.jpg"
+ ],
+ "externalRequests": [],
+ "consoleErrors": [],
+ "finishedAt": "2026-10-12T06:12:58.920Z",
+ "summary": {
+  "total": 75,
+  "pass": 75,
+  "fail": 0
+ }
+}

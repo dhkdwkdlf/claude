@@ -1,0 +1,96 @@
+/* 별자리 부스 공통 디자인 토큰 — 두 앱이 함께 사용한다. */
+:root {
+  /* 색: 맑고 환한 밤하늘 */
+  --sky-900: #0f1c35;
+  --sky-800: #142543;
+  --sky-700: #1d3560;
+  --sky-600: #29486f;
+  --sky-500: #3b5f8c;
+  --sky-300: #8fb0da;
+  --lavender: #b9c6ea;
+  --lavender-soft: #dce8f8;
+  --card: #f7faff;
+  --card-edge: #e3ecfa;
+  --ink: #16243d;
+  --ink-soft: #3f5577;
+  --ink-muted: #6b7f9e;
+  --gold: #f2d79b;
+  --gold-deep: #d9b45f;
+  --gold-ink: #7a5a16;
+  --success: #3f8f6a;
+  --success-soft: #dff3e8;
+  --warn: #b7791f;
+  --warn-soft: #fff3d6;
+  --focus: #ffd97a;
+
+  /* 글꼴 */
+  --font-title: "Gowun Batang", "Noto Serif KR", "Apple SD Gothic Neo", "Nanum Myeongjo", serif;
+  --font-body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", system-ui, sans-serif;
+  --text-base: 18px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 30px;
+  --text-3xl: 36px;
+
+  /* 치수 */
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --tap-min: 48px;
+  --btn-h: 56px;
+  --gutter: 20px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  /* 움직임 */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.2, 1);
+  --dur-snap: 320ms;
+  --dur-preview: 260ms;
+  --dur-flip: 560ms;
+  --dur-fade: 240ms;
+
+  /* 그림자·빛 */
+  --shadow-card: 0 18px 40px rgba(8, 16, 38, 0.45), 0 2px 6px rgba(8, 16, 38, 0.25);
+  --glow-gold: 0 0 0 2px rgba(242, 215, 155, 0.55), 0 0 28px 6px rgba(242, 215, 155, 0.35);
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/NotoSansKR-Regular.subset.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/NotoSansKR-Bold.subset.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Gowun Batang";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/GowunBatang-Regular.subset.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Gowun Batang";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/GowunBatang-Bold.subset.woff2") format("woff2");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-snap: 160ms;
+    --dur-preview: 120ms;
+    --dur-flip: 260ms;
+    --dur-fade: 120ms;
+  }
+}

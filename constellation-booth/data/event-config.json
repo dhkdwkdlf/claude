@@ -1,0 +1,31 @@
+{
+  "eventDate": "2026-11-04",
+  "eventDateLabel": "2026. 11. 4. 수요일",
+  "timeZone": "Asia/Seoul",
+  "utcOffsetMinutes": 540,
+  "location": {
+    "label": "경상북도 봉화군",
+    "shortLabel": "봉화",
+    "latitude": 36.9,
+    "longitude": 128.73,
+    "elevationM": 0,
+    "isProvisional": true,
+    "note": "봉화읍 인근 대표점(교육용 대략값). 실제 행사장 좌표가 확정되면 이 값을 바꾸고 `npm run sky:generate` 로 데이터를 다시 생성한다."
+  },
+  "slots": [
+    { "id": "t18", "localTime": "18:00", "localDate": "2026-11-04", "labelKo": "저녁 6시" },
+    { "id": "t20", "localTime": "20:00", "localDate": "2026-11-04", "labelKo": "밤 8시" },
+    { "id": "t22", "localTime": "22:00", "localDate": "2026-11-04", "labelKo": "밤 10시" },
+    { "id": "t00", "localTime": "00:00", "localDate": "2026-11-05", "labelKo": "다음 날 0시" }
+  ],
+  "defaultSlotId": "t20",
+  "visibility": {
+    "quizMinAltitudeDeg": 15,
+    "horizonAltitudeDeg": 0
+  },
+  "lowPerformanceMode": false,
+  "fortune": {
+    "titleDateLabel": "11월 4일",
+    "resultTitle": "11월 4일, 별빛이 전하는 한마디"
+  }
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <title>별빛이 전하는 오늘의 한마디</title>
+    <meta name="description" content="별자리 부스 — 즉석 별자리 운세 확인하기" />
+    <meta name="theme-color" content="#142543" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="별자리 운세" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/icon-192.png" type="image/png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <script type="module" crossorigin src="/fortune/assets/index-DPmeAPJT.js"></script>
+    <link rel="stylesheet" crossorigin href="/fortune/assets/index-B1eEDNAe.css">
+  </head>
+  <body>
+    <canvas class="bg-stars" aria-hidden="true"></canvas>
+    <div id="app" class="app">
+      <header class="header">
+        <h1 class="title">별빛이 전하는 오늘의 한마디</h1>
+        <p class="subtitle">내 생일이 들어 있는 별자리를 찾아보세요.</p>
+        <p class="meta" id="event-date">2026. 11. 4. 수요일</p>
+      </header>
+      <main class="stage" id="stage" aria-label="12별자리 카드"></main>
+      <footer class="footer">
+        <p class="hint" id="hint" aria-live="polite">옆으로 밀어 찾고, 가운데 카드를 두 번 눌러 보세요.</p>
+        <button class="btn btn--ghost btn--small" id="return-btn" type="button" hidden>처음으로</button>
+      </footer>
+    </div>
+    <noscript>이 앱은 JavaScript 가 필요합니다.</noscript>
+  </body>
+</html>

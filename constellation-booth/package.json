@@ -1,0 +1,29 @@
+{
+  "name": "constellation-booth",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "별자리 부스 태블릿 앱 2종 (즉석 별자리 운세 / 11월 4일의 별자리 여행)",
+  "scripts": {
+    "dev:fortune": "vite --config apps/fortune/vite.config.ts",
+    "dev:sky": "vite --config apps/sky/vite.config.ts",
+    "build": "npm run build:fortune && npm run build:sky && npm run build:standalone",
+    "build:fortune": "vite build --config apps/fortune/vite.config.ts",
+    "build:sky": "vite build --config apps/sky/vite.config.ts",
+    "preview": "node scripts/preview-server.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "validate": "node scripts/validate-content.ts",
+    "test": "node --test tests/*.test.ts",
+    "test:browser": "node scripts/browser-check.mjs",
+    "package": "node scripts/package-release.mjs",
+    "build:standalone": "node scripts/build-standalone.mjs",
+    "test:standalone": "node scripts/standalone-check.mjs",
+    "report": "node scripts/write-test-report.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.1",
+    "playwright": "1.64.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.4"
+  }
+}

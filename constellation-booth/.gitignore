@@ -1,0 +1,6 @@
+node_modules/
+.vite/
+*.tsbuildinfo
+!dist/
+scripts/art-raw/
+scripts/art-review/

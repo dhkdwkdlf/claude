@@ -1,0 +1,68 @@
+{
+  "generatedAt": "2026-10-12T03:49:07Z",
+  "configFingerprint": "10e5e58d995f371d",
+  "eventDate": "2026-11-04",
+  "timeZone": "Asia/Seoul",
+  "location": {
+    "label": "경상북도 봉화군",
+    "shortLabel": "봉화",
+    "latitude": 36.9,
+    "longitude": 128.73,
+    "elevationM": 0,
+    "isProvisional": true,
+    "note": "봉화읍 인근 대표점(교육용 대략값). 실제 행사장 좌표가 확정되면 이 값을 바꾸고 `npm run sky:generate` 로 데이터를 다시 생성한다."
+  },
+  "slots": [
+    {
+      "id": "t18",
+      "localISO": "2026-11-04T18:00:00+09:00",
+      "utcISO": "2026-11-04T09:00:00Z"
+    },
+    {
+      "id": "t20",
+      "localISO": "2026-11-04T20:00:00+09:00",
+      "utcISO": "2026-11-04T11:00:00Z"
+    },
+    {
+      "id": "t22",
+      "localISO": "2026-11-04T22:00:00+09:00",
+      "utcISO": "2026-11-04T13:00:00Z"
+    },
+    {
+      "id": "t00",
+      "localISO": "2026-11-05T00:00:00+09:00",
+      "utcISO": "2026-11-04T15:00:00Z"
+    }
+  ],
+  "tools": {
+    "skyfield": "1.55",
+    "ephemeris": "DE421 (skyfield-data 7.0.0 번들)",
+    "timescale": "Skyfield builtin (내장 윤초·ΔT 표)"
+  },
+  "catalog": {
+    "name": "HYG Database v3.8 (hyg_v38.csv.gz)",
+    "url": "https://github.com/astronexus/HYG-Database",
+    "license": "CC BY-SA 2.5",
+    "coordinateSystem": "ICRS (J2000 적도좌표), epoch 2000.0",
+    "properMotion": "mas/yr (RA 성분은 cos δ 포함, Hipparcos 규약)",
+    "extractedFile": "scripts/catalog/stars.csv",
+    "starCount": 126
+  },
+  "method": {
+    "position": "observer.at(t).observe(star).apparent().altaz() — 지심 관측 후 광행차·중력 편향 적용한 겉보기 위치",
+    "refraction": "적용하지 않음 (고도 15° 이상에서 0.06° 미만)",
+    "azimuthConvention": "북 0°, 동 90°, 남 180°, 서 270°",
+    "visibility": "대표 도형의 필수 별이 모두 고도 15° 이상이면 표시·출제 후보, 0°~15° 는 '지평선 가까이', 0° 미만은 제외"
+  },
+  "twilight": {
+    "sunset": "2026-11-04T17:25+09:00",
+    "civilTwilightEnd": "2026-11-04T17:52+09:00",
+    "nauticalTwilightEnd": "2026-11-04T18:22+09:00",
+    "astronomicalTwilightEnd": "2026-11-04T18:53+09:00"
+  },
+  "lineFigureSource": {
+    "name": "Stellarium 'Modern (IAU)' sky culture constellation lines",
+    "url": "https://github.com/Stellarium/stellarium/tree/master/skycultures/modern_iau",
+    "licenseNote": "CC BY-SA 4.0. 본 데이터는 해당 연결선을 참고해 교육용으로 단순화(일부 선 생략·추가)한 것이다."
+  }
+}
