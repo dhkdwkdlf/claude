@@ -30,7 +30,7 @@ export async function requestFullscreen(): Promise<"ok" | "unsupported" | "faile
   const fn = el.requestFullscreen ?? el.webkitRequestFullscreen;
   if (!fn) return "unsupported";
   try {
-    await fn.call(el);
+    await fn.call(el, { navigationUI: "hide" });
     return "ok";
   } catch {
     return "failed";
