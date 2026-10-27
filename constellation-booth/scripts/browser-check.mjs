@@ -545,6 +545,55 @@ async function offlineFlow() {
   await ctx.close();
 }
 
+/* ------------------------------------------------------------------ 자동 전체화면 */
+async function autoFullscreenFlow() {
+  const isFs = (page) => page.evaluate(() => document.fullscreenElement !== null);
+  for (const [app, key, tapTarget] of [
+    ["fortune", "booth-fortune:autoFullscreen", "#hint"],
+    ["sky", "booth-sky:autoFullscreen", ".home__head .title"],
+  ]) {
+    const ctx = await browser.newContext({ viewport: { width: 600, height: 960 }, hasTouch: true, isMobile: true });
+    const page = await newPage(ctx, app);
+    await page.goto(`${ORIGIN}/${app}/`, { waitUntil: "networkidle" });
+    await page.waitForTimeout(300);
+    const before = await isFs(page);
+    await page.tap(tapTarget);
+    await page.waitForTimeout(300);
+    const entered = await isFs(page);
+    await page.evaluate(() => document.exitFullscreen());
+    await page.waitForTimeout(300);
+    const exited = !(await isFs(page));
+    await page.tap(tapTarget);
+    await page.waitForTimeout(300);
+    const reentered = await isFs(page);
+    check(`FS-01/${app}`, "첫 터치에 전체화면, 풀린 뒤 다음 터치에 다시 전체화면", !before && entered && exited && reentered, `before ${before}, entered ${entered}, exited ${exited}, re ${reentered}`);
+
+    await page.evaluate(() => document.exitFullscreen());
+    await page.goto(`${ORIGIN}/${app}/#operator`, { waitUntil: "networkidle" });
+    await page.waitForTimeout(300);
+    const toggle = page.locator(".operator__row", { hasText: "자동 전체화면" }).locator("input[type=checkbox]");
+    const shownOn = (await toggle.count()) === 1 && (await toggle.isChecked());
+    await toggle.click();
+    await page.goto(`${ORIGIN}/${app}/`, { waitUntil: "networkidle" });
+    await page.waitForTimeout(300);
+    const stored = await page.evaluate((k) => localStorage.getItem(k), key);
+    await page.tap(tapTarget);
+    await page.waitForTimeout(300);
+    const stayedOff = !(await isFs(page));
+    check(`FS-02/${app}`, "운영자 화면에 '자동 전체화면' 켜짐 기본값, 끄면 새로고침 후에도 터치로 전체화면 안 됨", shownOn && stored === "false" && stayedOff, `shown ${shownOn}, stored ${stored}`);
+    await ctx.close();
+
+    const mctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+    const mpage = await newPage(mctx, app);
+    await mpage.goto(`${ORIGIN}/${app}/`, { waitUntil: "networkidle" });
+    await mpage.waitForTimeout(300);
+    await mpage.click(tapTarget);
+    await mpage.waitForTimeout(300);
+    check(`FS-03/${app}`, "PC 마우스 클릭으로는 전체화면이 되지 않음", !(await isFs(mpage)));
+    await mctx.close();
+  }
+}
+
 /* ------------------------------------------------------------------ 실행 */
 try {
   for (const [w, h, label] of [
@@ -558,6 +607,7 @@ try {
     await skyFlow(w, h, label);
   }
   await offlineFlow();
+  await autoFullscreenFlow();
   check("F-02/외부요청", "행사 중 외부 네트워크 요청 없음 (CDN·폰트·API)", results.externalRequests.length === 0, results.externalRequests.map((r) => r.url).slice(0, 5).join(", "));
 } catch (err) {
   check("실행", "검수 스크립트가 끝까지 실행됨", false, String(err).slice(0, 300));

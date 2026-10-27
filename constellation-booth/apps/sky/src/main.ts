@@ -16,6 +16,7 @@ import { guessLowPerformance, prefersReducedMotion, requestWakeLock } from "@sha
 import { mountStarsBackground } from "@shared/utils/stars-bg.ts";
 import { registerServiceWorker } from "@shared/pwa/register.ts";
 import { createOperatorPanel } from "@shared/utils/operator-panel.ts";
+import { installAutoFullscreen } from "@shared/utils/auto-fullscreen.ts";
 
 import { bindSkyMapSelection, renderSkyMap } from "./render-sky.ts";
 import { renderDetail, type DetailRender, type ShapePlacement } from "./render-detail.ts";
@@ -367,10 +368,12 @@ void requestWakeLock();
 void registerServiceWorker(BASE);
 
 /* ---------- 운영자 ---------- */
+const autoFullscreen = installAutoFullscreen(storage);
 const operator = createOperatorPanel({
   appName: "별자리 여행",
   version: VERSION,
   base: BASE,
+  autoFullscreen,
   buildSections() {
     const lowPerf = el("input", { type: "checkbox" }) as HTMLInputElement;
     lowPerf.checked = settings.lowPerformance;

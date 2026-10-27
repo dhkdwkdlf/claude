@@ -1,5 +1,5 @@
 {
- "startedAt": "2026-10-12T06:05:29.378Z",
+ "startedAt": "2026-10-27T05:06:13.782Z",
  "chromium": "141.0.7390.37",
  "checks": [
   {
@@ -42,7 +42,7 @@
    "id": "F-08",
    "name": "두 번째 탭: 뒤집혀 뒷면 운세 표시",
    "pass": true,
-   "detail": "도전하는 마음이 멋진 하루를 만들어요. 결과보다 해 보"
+   "detail": "밤하늘의 양자리처럼 작지만 또렷하게 빛나는 하루예요. "
   },
   {
    "id": "F-10",
@@ -102,11 +102,11 @@
    "id": "F-01/누수",
    "name": "50회 연속 체험 후 window/document 리스너·타이머·DOM 누적 없음",
    "pass": true,
-   "detail": "persistent listeners 18→18, intervals 0→0, nodes 342→342, addEventListener 누계 43→178"
+   "detail": "persistent listeners 19→19, intervals 0→0, nodes 342→342, addEventListener 누계 44→179"
   },
   {
    "id": "F-01/시간",
-   "name": "캐시 재실행 → 첫 조작 가능까지 72 ms 이하 (5회: 65, 59, 72, 57, 64)",
+   "name": "캐시 재실행 → 첫 조작 가능까지 94 ms 이하 (5회: 94, 71, 75, 82, 81)",
    "pass": true,
    "detail": "{\"note\":\"navigation timing 없음(가상 시계)\"}"
   },
@@ -174,7 +174,7 @@
    "id": "S-03",
    "name": "10회 출제 모두 현재 시각에 보이는 별자리 중에서 선택되고 여러 별자리가 섞여 나옴",
    "pass": true,
-   "detail": "페르세우스자리,독수리자리,안드로메다자리,세페우스자리,거문고자리"
+   "detail": "페가수스자리,카시오페이아자리,독수리자리,양자리,세페우스자리,페르세우스자리,백조자리,안드로메다자리"
   },
   {
    "id": "S-06",
@@ -204,13 +204,13 @@
    "id": "S-07",
    "name": "힌트 1회=선 잇기, 2회=모양 씌우기(이름 없음), 3회=초성, 4회 없음, 이후 오답에도 단계 유지",
    "pass": true,
-   "detail": "초성 힌트: ㅍ ㄹ ㅅ ㅇ ㅅ"
+   "detail": "초성 힌트: ㅋ ㅅ ㅇ ㅍ ㅇ ㅇ"
   },
   {
    "id": "S-04",
    "name": "부분 문자열은 실패, 공백 포함 전체 이름은 정답",
    "pass": true,
-   "detail": "페르세우스자리"
+   "detail": "카시오페이아자리"
   },
   {
    "id": "S-08",
@@ -246,11 +246,11 @@
    "id": "F-01/sky/누수",
    "name": "50회 연속 체험 후 window/document 리스너·타이머·DOM 누적 없음",
    "pass": true,
-   "detail": "persistent listeners 18→18, intervals 1→1, nodes 122→122, 노드별 addEventListener 누계 47→47 (다시 그린 노드와 함께 해제됨)"
+   "detail": "persistent listeners 19→19, intervals 1→1, nodes 122→122, 노드별 addEventListener 누계 48→48 (다시 그린 노드와 함께 해제됨)"
   },
   {
    "id": "F-01/sky/시간",
-   "name": "캐시 재실행 → 첫 조작 가능까지 166 ms 이하 (5회: 166, 56, 52, 46, 56)",
+   "name": "캐시 재실행 → 첫 조작 가능까지 129 ms 이하 (5회: 129, 53, 48, 62, 51)",
    "pass": true,
    "detail": ""
   },
@@ -414,7 +414,7 @@
    "id": "F-02/분리",
    "name": "캐시 이름이 앱 ID + 버전으로 분리됨",
    "pass": true,
-   "detail": "fortune-v1.0.0+20261012-9ec24f63e9 / sky-v1.0.0+20261012-49df8b3687"
+   "detail": "fortune-v1.0.0+20261027-a34a951b9b / sky-v1.0.0+20261027-dc470662e5"
   },
   {
    "id": "F-02/sky",
@@ -443,6 +443,42 @@
   {
    "id": "콘솔/offline",
    "name": "오프라인 검사 중 콘솔 오류 없음(캐시 삭제 후 앱 1 미접속)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "FS-01/fortune",
+   "name": "첫 터치에 전체화면, 풀린 뒤 다음 터치에 다시 전체화면",
+   "pass": true,
+   "detail": "before false, entered true, exited true, re true"
+  },
+  {
+   "id": "FS-02/fortune",
+   "name": "운영자 화면에 '자동 전체화면' 켜짐 기본값, 끄면 새로고침 후에도 터치로 전체화면 안 됨",
+   "pass": true,
+   "detail": "shown true, stored false"
+  },
+  {
+   "id": "FS-03/fortune",
+   "name": "PC 마우스 클릭으로는 전체화면이 되지 않음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "id": "FS-01/sky",
+   "name": "첫 터치에 전체화면, 풀린 뒤 다음 터치에 다시 전체화면",
+   "pass": true,
+   "detail": "before false, entered true, exited true, re true"
+  },
+  {
+   "id": "FS-02/sky",
+   "name": "운영자 화면에 '자동 전체화면' 켜짐 기본값, 끄면 새로고침 후에도 터치로 전체화면 안 됨",
+   "pass": true,
+   "detail": "shown true, stored false"
+  },
+  {
+   "id": "FS-03/sky",
+   "name": "PC 마우스 클릭으로는 전체화면이 되지 않음",
    "pass": true,
    "detail": ""
   },
@@ -488,10 +524,10 @@
  ],
  "externalRequests": [],
  "consoleErrors": [],
- "finishedAt": "2026-10-12T06:12:58.920Z",
+ "finishedAt": "2026-10-27T05:14:05.477Z",
  "summary": {
-  "total": 75,
-  "pass": 75,
+  "total": 81,
+  "pass": 81,
   "fail": 0
  }
 }

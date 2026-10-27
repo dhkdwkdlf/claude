@@ -4,6 +4,7 @@
 import { el } from "./dom.ts";
 import { applyUpdate, checkForUpdate, getOfflineStatus, type OfflineStatus } from "../pwa/register.ts";
 import { requestFullscreen, requestWakeLock, wakeLockActive } from "./device.ts";
+import type { AutoFullscreen } from "./auto-fullscreen.ts";
 
 export interface OperatorRow {
   label: string;
@@ -23,6 +24,7 @@ export interface OperatorPanelOptions {
   appName: string;
   version: string;
   base: string;
+  autoFullscreen?: AutoFullscreen;
   buildSections(): OperatorSection[];
   actions?: Array<{ label: string; onClick: () => void | Promise<void>; primary?: boolean }>;
   onClose?: () => void;
@@ -92,6 +94,17 @@ export function createOperatorPanel(opts: OperatorPanelOptions): { open(): void;
     });
     screenActions.append(fs, wl);
     panel.append(screenActions);
+    if (opts.autoFullscreen) {
+      const auto = opts.autoFullscreen;
+      const box = el("input", { type: "checkbox" }) as HTMLInputElement;
+      box.checked = auto.enabled();
+      box.addEventListener("change", () => auto.setEnabled(box.checked));
+      const r = el("div", { class: "operator__row" });
+      const label = el("label", { text: "자동 전체화면" });
+      label.append(el("div", { text: "화면을 손가락으로 누르면 전체화면으로 바꿉니다. 풀려도 다음 터치에 다시 켜집니다. (마우스 클릭은 제외)", style: "font-size:14px;color:#6b7f9e" }));
+      r.append(label, box);
+      panel.append(r);
+    }
 
     for (const section of opts.buildSections()) {
       panel.append(el("h3", { text: section.title }));

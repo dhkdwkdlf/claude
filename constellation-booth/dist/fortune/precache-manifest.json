@@ -1,10 +1,10 @@
 {
  "appId": "fortune",
- "version": "1.0.0+20261012",
- "contentHash": "9ec24f63e9",
- "cacheName": "fortune-v1.0.0+20261012-9ec24f63e9",
+ "version": "1.0.0+20261027",
+ "contentHash": "a34a951b9b",
+ "cacheName": "fortune-v1.0.0+20261027-a34a951b9b",
  "base": "/fortune/",
- "totalBytes": 2648708,
+ "totalBytes": 2649654,
  "files": [
   "/fortune/art/aquarius.webp",
   "/fortune/art/aries.webp",
@@ -23,7 +23,7 @@
   "/fortune/assets/NotoSansKR-Bold.subset-25Rfu__e.woff2",
   "/fortune/assets/NotoSansKR-Regular.subset-DVUY0z-S.woff2",
   "/fortune/assets/index-B1eEDNAe.css",
-  "/fortune/assets/index-DPmeAPJT.js",
+  "/fortune/assets/index-DvhpEz3V.js",
   "/fortune/icons/apple-touch-icon.png",
   "/fortune/icons/icon-192.png",
   "/fortune/icons/icon-512.png",
