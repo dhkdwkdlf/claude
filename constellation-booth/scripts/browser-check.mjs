@@ -545,6 +545,76 @@ async function offlineFlow() {
   await ctx.close();
 }
 
+/* ------------------------------------------------------------------ 화면 자판 (갤럭시 탭 A7 가로 1334×800) */
+// 실제 자판은 띄울 수 없으므로 두 방식을 흉내 낸다.
+//  resize : interactive-widget=resizes-content 지원 → 브라우저가 화면 높이를 줄임 (뷰포트 크기 변경)
+//  visual : 미지원 → visualViewport 높이만 줄어듦 (가짜 visualViewport 로 흉내)
+const FAKE_VV = `
+  (() => {
+    const t = new EventTarget();
+    let h = null;
+    const fake = Object.create(t, {
+      height: { get: () => h ?? window.innerHeight },
+      width: { get: () => window.innerWidth },
+      offsetTop: { get: () => 0 },
+      offsetLeft: { get: () => 0 },
+      scale: { get: () => 1 },
+    });
+    fake.addEventListener = t.addEventListener.bind(t);
+    fake.removeEventListener = t.removeEventListener.bind(t);
+    Object.defineProperty(window, "visualViewport", { get: () => fake });
+    window.__setVV = (v) => { h = v; t.dispatchEvent(new Event("resize")); };
+  })();
+`;
+async function keyboardFlow() {
+  const boxOk = (b, top, bottom) => !!b && b.y >= top - 1 && b.y + b.height <= bottom + 1;
+  for (const [mode, vw, vh, kbVisible, label] of [
+    ["resize", 1334, 800, 440, "가로·높이 줄임"],
+    ["resize", 1334, 800, 380, "가로·자판 큼"],
+    ["visual", 1334, 800, 440, "가로·visualViewport"],
+    ["resize", 800, 1334, 900, "세로"],
+  ]) {
+    const ctx = await browser.newContext({ viewport: { width: vw, height: vh }, hasTouch: true, isMobile: true });
+    if (mode === "visual") await ctx.addInitScript(FAKE_VV);
+    const page = await newPage(ctx, "sky");
+    await page.goto(`${ORIGIN}/sky/`, { waitUntil: "networkidle" });
+    await page.waitForTimeout(300);
+    await page.click("#btn-quiz-home");
+    await page.waitForTimeout(500);
+    await page.focus("#answer");
+    if (mode === "resize") await page.setViewportSize({ width: vw, height: kbVisible });
+    else await page.evaluate((v) => window.__setVV(v), kbVisible);
+    await page.waitForTimeout(400);
+    await page.keyboard.type("엉뚱한답");
+    await page.keyboard.press("Enter");
+    await page.waitForTimeout(400);
+    const cls = await page.evaluate(() => document.documentElement.className);
+    const input = await page.locator("#answer").boundingBox();
+    const submit = await page.locator("#btn-submit").boundingBox();
+    const fb = await page.locator("#quiz-feedback").boundingBox();
+    const hint = await page.locator("#btn-hint").boundingBox();
+    const fig = await page.locator("#quiz-svg").boundingBox();
+    const value = await page.inputValue("#answer");
+    const wide = vw > kbVisible * 1.2;
+    await shot(page, `sky-keyboard-${vw}x${vh}-${mode}-${kbVisible}`);
+    check(
+      `K-01/${label}`,
+      `자판(보이는 높이 ${kbVisible}px) 위에 입력창·정답 확인·오답 안내·힌트 버튼이 모두 보이고 별 그림도 남음`,
+      cls.includes("is-kb-open") && cls.includes("is-kb-wide") === wide && boxOk(input, 0, kbVisible) && boxOk(submit, 0, kbVisible) && boxOk(fb, 0, kbVisible) && boxOk(hint, 0, kbVisible) && boxOk(fig, 0, kbVisible) && fig.height >= Math.min(220, kbVisible * 0.45) && value === "엉뚱한답",
+      `입력창 y ${Math.round(input.y)}..${Math.round(input.y + input.height)}, 힌트 y ${Math.round(hint?.y ?? -1)}..${Math.round((hint?.y ?? 0) + (hint?.height ?? 0))}, 그림 높이 ${Math.round(fig.height)}, ${wide ? "좌우 배치" : "세로 배치"}`,
+    );
+    // 자판 닫힘 → 원래 배치
+    await page.evaluate(() => document.activeElement.blur());
+    if (mode === "resize") await page.setViewportSize({ width: vw, height: vh });
+    else await page.evaluate(() => window.__setVV(null));
+    await page.waitForTimeout(400);
+    const closed = !(await page.evaluate(() => document.documentElement.classList.contains("is-kb-open")));
+    const topbar = await page.locator("#screen-quiz .topbar").isVisible();
+    check(`K-02/${label}`, "자판이 닫히면 원래 배치(상단 '처음으로' 포함)로 돌아옴", closed && topbar);
+    await ctx.close();
+  }
+}
+
 /* ------------------------------------------------------------------ 자동 전체화면 */
 async function autoFullscreenFlow() {
   const isFs = (page) => page.evaluate(() => document.fullscreenElement !== null);
@@ -608,6 +678,7 @@ try {
   }
   await offlineFlow();
   await autoFullscreenFlow();
+  await keyboardFlow();
   check("F-02/외부요청", "행사 중 외부 네트워크 요청 없음 (CDN·폰트·API)", results.externalRequests.length === 0, results.externalRequests.map((r) => r.url).slice(0, 5).join(", "));
 } catch (err) {
   check("실행", "검수 스크립트가 끝까지 실행됨", false, String(err).slice(0, 300));

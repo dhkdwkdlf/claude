@@ -652,6 +652,68 @@
     font-size: 30px;
   }
 }
+/* 화면 자판이 열린 동안 (shared/utils/keyboard-inset.ts): 앱을 자판 위 '보이는 부분'에 맞추고
+   퀴즈는 입력창·안내가 자판에 가리지 않게 다시 배치한다 */
+.is-kb-open .app {
+  height: var(--app-h, 100dvh);
+  top: var(--vv-top, 0px);
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.is-kb-open .screen--quiz {
+  gap: 6px;
+}
+.is-kb-open .screen--quiz .topbar,
+.is-kb-open .screen--quiz .hint--tight {
+  display: none;
+}
+.is-kb-open .quiz__question {
+  font-size: var(--text-lg);
+}
+.is-kb-open .quiz__fig {
+  min-height: 0;
+}
+.is-kb-open .quiz__feedback {
+  min-height: 0;
+}
+.is-kb-open .quiz__hint-row {
+  min-height: 0;
+}
+/* 가로로 넓을 때: 왼쪽 별 그림, 오른쪽 문제·입력창·안내 (가로 화면의 760px 가운데 칸 대신 폭 전체 사용) */
+.is-kb-wide .app {
+  padding-left: calc(var(--safe-left) + 24px);
+  padding-right: calc(var(--safe-right) + 24px);
+}
+.is-kb-wide .screen--quiz:not([hidden]) {
+  display: grid;
+  grid-template-columns: minmax(0, 560px) minmax(360px, 520px);
+  grid-auto-rows: min-content;
+  align-content: center;
+  justify-content: center;
+  column-gap: 24px;
+  row-gap: 10px;
+}
+.is-kb-wide .quiz__fig {
+  grid-column: 1;
+  grid-row: 1 / span 6;
+  width: 100%;
+  height: calc(var(--app-h, 100dvh) - 16px);
+}
+.is-kb-wide #btn-submit {
+  white-space: nowrap;
+}
+.is-kb-wide .screen--quiz > :not(.quiz__fig) {
+  grid-column: 2;
+}
+.is-kb-wide .quiz__question {
+  text-align: left;
+}
+.is-kb-wide .quiz__feedback {
+  text-align: left;
+}
+.is-kb-wide .quiz__hint-row {
+  justify-content: flex-start;
+}
 @media (orientation: landscape) and (max-height: 700px) {
   .home__head .subtitle {
     display: none;
