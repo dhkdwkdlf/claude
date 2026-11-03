@@ -17,6 +17,7 @@ import { mountStarsBackground } from "@shared/utils/stars-bg.ts";
 import { registerServiceWorker } from "@shared/pwa/register.ts";
 import { createOperatorPanel } from "@shared/utils/operator-panel.ts";
 import { installAutoFullscreen } from "@shared/utils/auto-fullscreen.ts";
+import { installKeyboardInset } from "@shared/utils/keyboard-inset.ts";
 
 import { bindSkyMapSelection, renderSkyMap } from "./render-sky.ts";
 import { renderDetail, type DetailRender, type ShapePlacement } from "./render-detail.ts";
@@ -363,6 +364,7 @@ window.addEventListener("popstate", () => {
 });
 
 /* ---------- 배경·기기 ---------- */
+installKeyboardInset();
 const bg = mountStarsBackground($<HTMLCanvasElement>(".bg-stars"), { reducedMotion, lowPerformance: settings.lowPerformance });
 void requestWakeLock();
 void registerServiceWorker(BASE);
